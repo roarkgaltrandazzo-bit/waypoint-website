@@ -3,95 +3,102 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Waypoint Mission Partners | Advancement Systems for Mission-Led Organizations</title>
-<meta name="description" content="Waypoint Mission Partners helps private schools, churches, and nonprofits build advancement systems for donor stewardship, board fundraising, campaigns, and sustainable funding." />
+<title>Waypoint Mission Partners | Advancement Framework</title>
+<meta name="description" content="Waypoint Mission Partners helps nonprofits, private schools, churches, and mission-driven organizations build advancement structure for sustainable funding." />
 <meta name="robots" content="index, follow" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --navy: #17365d;
-    --navy-deep: #0e223d;
-    --navy-soft: #25486f;
-    --forest: #3f5f3a;
-    --forest-deep: #2f4b2b;
-    --gold: #c9973f;
-    --gold-soft: #e1bd71;
-    --cream: #f8f3ea;
-    --paper: #fffaf2;
+    --navy: #19365a;
+    --navy-deep: #0d223b;
+    --navy-dark: #081827;
+    --navy-soft: #27496c;
+    --forest: #496842;
+    --forest-deep: #334d2f;
+    --gold: #c99a45;
+    --gold-soft: #e0bd75;
+    --cream: #f7f0e4;
+    --paper: #fffaf1;
     --white: #ffffff;
     --ink: #171717;
-    --ink-soft: #333333;
-    --ink-muted: #696969;
-    --rule: #ded4c2;
-    --rule-soft: #eee5d7;
-    --shadow: 0 18px 50px rgba(14, 34, 61, 0.11);
+    --ink-soft: #343434;
+    --ink-muted: #6b6b6b;
+    --rule: #d9cfbd;
+    --rule-soft: #eee4d3;
+    --shadow: 0 22px 60px rgba(13, 34, 59, 0.12);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
+
   html { scroll-behavior: smooth; }
+
   body {
     font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 17px;
-    line-height: 1.62;
     color: var(--ink-soft);
     background: var(--paper);
+    font-size: 17px;
+    line-height: 1.62;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
 
-  img { max-width: 100%; display: block; }
+  img { display: block; max-width: 100%; }
   a { color: inherit; }
 
   .container {
-    width: min(1120px, calc(100% - 48px));
+    width: min(1160px, calc(100% - 48px));
+    margin: 0 auto;
+  }
+
+  .container-wide {
+    width: min(1280px, calc(100% - 48px));
     margin: 0 auto;
   }
 
   .container-narrow {
-    width: min(760px, calc(100% - 48px));
+    width: min(820px, calc(100% - 48px));
     margin: 0 auto;
   }
 
   .skip-link {
     position: absolute;
+    top: 12px;
     left: -999px;
-    top: 16px;
     background: var(--navy-deep);
     color: var(--white);
     padding: 10px 14px;
     z-index: 1000;
   }
 
-  .skip-link:focus { left: 16px; }
+  .skip-link:focus { left: 12px; }
 
   header {
     position: sticky;
     top: 0;
-    z-index: 30;
-    background: rgba(255, 250, 242, 0.94);
+    z-index: 50;
+    background: rgba(255, 250, 241, 0.96);
     backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--rule-soft);
   }
 
   .header-inner {
-    min-height: 86px;
+    min-height: 116px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 24px;
+    justify-content: space-between;
+    gap: 32px;
   }
 
-  .logo-wrap {
+  .brand {
     display: flex;
     align-items: center;
-    gap: 14px;
     text-decoration: none;
   }
 
-  .logo-wrap img {
-    height: 52px;
+  .brand img {
+    height: 96px;
     width: auto;
   }
 
@@ -100,22 +107,21 @@
     align-items: center;
     gap: 24px;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--navy-deep);
   }
 
   nav a {
     text-decoration: none;
-    color: var(--navy-deep);
   }
 
   nav a:hover { color: var(--forest-deep); }
 
   .nav-cta {
-    padding: 11px 17px;
+    padding: 12px 18px;
+    border-radius: 999px;
     background: var(--navy-deep);
     color: var(--white);
-    border-radius: 999px;
   }
 
   .nav-cta:hover {
@@ -123,102 +129,121 @@
     background: var(--forest-deep);
   }
 
-  .hero {
-    position: relative;
-    overflow: hidden;
-    padding: 92px 0 88px;
-    background:
-      radial-gradient(circle at 85% 10%, rgba(201, 151, 63, 0.16), transparent 34%),
-      linear-gradient(135deg, var(--paper) 0%, #f6efe2 100%);
-  }
-
-  .hero-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(340px, 0.75fr);
-    gap: 64px;
-    align-items: center;
-  }
-
   .eyebrow {
     display: inline-flex;
     align-items: center;
     gap: 12px;
+    margin-bottom: 22px;
     font-size: 12px;
     font-weight: 800;
-    letter-spacing: 0.18em;
     text-transform: uppercase;
+    letter-spacing: 0.18em;
     color: var(--forest-deep);
-    margin-bottom: 24px;
   }
 
   .eyebrow::before {
     content: '';
-    width: 36px;
+    width: 34px;
     height: 1px;
     background: var(--forest-deep);
   }
 
-  h1, h2, h3 {
+  h1, h2, h3, h4 {
     font-family: 'Cormorant Garamond', Georgia, serif;
     color: var(--navy-deep);
     letter-spacing: -0.015em;
   }
 
   h1 {
-    font-size: clamp(44px, 6vw, 76px);
-    line-height: 0.98;
+    font-size: clamp(48px, 6.8vw, 88px);
+    line-height: 0.94;
     font-weight: 600;
-    max-width: 820px;
-    margin-bottom: 28px;
-  }
-
-  h1 em {
-    color: var(--forest-deep);
-    font-style: italic;
+    max-width: 880px;
+    margin-bottom: 26px;
   }
 
   h2 {
-    font-size: clamp(34px, 4.2vw, 52px);
-    line-height: 1.08;
+    font-size: clamp(34px, 4.2vw, 56px);
+    line-height: 1.05;
     font-weight: 600;
-    max-width: 860px;
+    max-width: 930px;
     margin-bottom: 24px;
   }
 
   h3 {
-    font-size: 26px;
-    line-height: 1.15;
+    font-size: 28px;
+    line-height: 1.12;
     font-weight: 600;
     margin-bottom: 12px;
   }
 
-  .lede {
+  h4 {
+    font-size: 21px;
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+
+  p { margin-bottom: 18px; }
+
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: 84px 0 78px;
+    background:
+      radial-gradient(circle at 88% 8%, rgba(201, 154, 69, 0.2), transparent 32%),
+      linear-gradient(135deg, #fffaf1 0%, #f5eddf 100%);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.72fr);
+    gap: 64px;
+    align-items: center;
+  }
+
+  .hero-logo-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 34px;
+    margin-bottom: 34px;
+    background: rgba(255, 255, 255, 0.58);
+    border: 1px solid var(--rule-soft);
+    border-radius: 28px;
+    box-shadow: 0 14px 44px rgba(13, 34, 59, 0.08);
+  }
+
+  .hero-logo-card img {
+    width: min(520px, 100%);
+    height: auto;
+  }
+
+  .hero-lede {
+    max-width: 720px;
     font-size: 21px;
     line-height: 1.55;
     color: var(--ink-soft);
-    max-width: 690px;
-    margin-bottom: 34px;
   }
 
   .button-row {
     display: flex;
     flex-wrap: wrap;
     gap: 14px;
+    margin-top: 32px;
     align-items: center;
-    margin-top: 34px;
   }
 
   .button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 50px;
+    min-height: 52px;
     padding: 14px 24px;
     border-radius: 999px;
     font-size: 15px;
     font-weight: 800;
-    letter-spacing: 0.035em;
     text-transform: uppercase;
+    letter-spacing: 0.035em;
     text-decoration: none;
     border: 1px solid transparent;
     transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
@@ -228,244 +253,375 @@
   .button-primary { background: var(--gold); color: var(--navy-deep); }
   .button-primary:hover { background: var(--gold-soft); }
   .button-secondary { border-color: var(--navy-deep); color: var(--navy-deep); background: transparent; }
-  .button-secondary:hover { background: rgba(14, 34, 61, 0.06); }
+  .button-secondary:hover { background: rgba(13, 34, 59, 0.06); }
+  .button-light { background: var(--paper); color: var(--navy-deep); }
+  .button-light:hover { background: var(--white); }
 
-  .hero-card {
+  .diagnosis-card {
     background: var(--navy-deep);
-    color: rgba(255, 250, 242, 0.82);
-    padding: 38px;
-    border-radius: 24px;
+    color: rgba(255, 250, 241, 0.82);
+    border-radius: 30px;
+    padding: 36px;
     box-shadow: var(--shadow);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  .hero-card-title {
+  .diagnosis-card h3 {
     color: var(--white);
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 32px;
-    line-height: 1.1;
-    margin-bottom: 16px;
-  }
-
-  .price-line {
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
-    margin: 22px 0 12px;
+    font-size: 34px;
   }
 
   .price {
+    margin: 18px 0 10px;
     font-family: 'Cormorant Garamond', Georgia, serif;
-    color: var(--gold-soft);
     font-size: 82px;
     line-height: 0.9;
-    font-weight: 600;
+    color: var(--gold-soft);
+    font-weight: 700;
   }
 
-  .price-caption {
-    font-size: 13px;
-    color: rgba(255, 250, 242, 0.7);
+  .small-note {
+    font-size: 14px;
+    color: rgba(255, 250, 241, 0.72);
   }
 
-  .stat-grid {
+  .mini-list {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+    margin: 22px 0 4px;
+  }
+
+  .mini-list li {
+    position: relative;
+    padding-left: 24px;
+  }
+
+  .mini-list li::before {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold-soft);
+  }
+
+  .metric-strip {
+    background: var(--navy-deep);
+    color: var(--paper);
+    padding: 28px 0;
+  }
+
+  .metrics {
+    display: grid;
+    grid-template-columns: 1.2fr 0.9fr 0.9fr 0.9fr;
+    gap: 1px;
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+  }
+
+  .metric {
+    background: var(--navy-deep);
+    padding: 24px;
+  }
+
+  .metric strong {
+    display: block;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 40px;
+    line-height: 1;
+    color: var(--gold-soft);
+    margin-bottom: 6px;
+  }
+
+  .metric span {
+    display: block;
+    font-size: 14px;
+    color: rgba(255, 250, 241, 0.76);
+  }
+
+  section { padding: 86px 0; }
+
+  .cream { background: var(--cream); }
+  .white { background: var(--white); }
+  .navy { background: var(--navy-deep); color: rgba(255, 250, 241, 0.8); }
+  .bordered { border-top: 1px solid var(--rule-soft); border-bottom: 1px solid var(--rule-soft); }
+
+  .section-intro {
+    max-width: 780px;
+    font-size: 19px;
+    margin-bottom: 42px;
+  }
+
+  .navy h2,
+  .navy h3,
+  .navy h4 { color: var(--white); }
+
+  .navy .eyebrow { color: var(--gold-soft); }
+  .navy .eyebrow::before { background: var(--gold-soft); }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 64px;
+    align-items: start;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  .card-grid.two { grid-template-columns: repeat(2, 1fr); }
+
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--rule-soft);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 12px 38px rgba(13, 34, 59, 0.06);
+  }
+
+  .white .card { background: var(--white); }
+
+  .navy .card {
+    background: rgba(255, 250, 241, 0.08);
+    border-color: rgba(255, 250, 241, 0.14);
+    color: rgba(255, 250, 241, 0.8);
+  }
+
+  .label {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: var(--forest-deep);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .navy .label { color: var(--gold-soft); }
+
+  .card p { font-size: 16px; margin-bottom: 0; }
+
+  .definition-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1px;
     background: var(--rule-soft);
     border: 1px solid var(--rule-soft);
-    margin-top: 34px;
   }
 
-  .stat {
-    background: rgba(255, 250, 242, 0.8);
-    padding: 18px;
-  }
-
-  .stat-label {
-    display: block;
-    font-size: 11px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.13em;
-    color: var(--ink-muted);
-    margin-bottom: 6px;
-  }
-
-  .stat-value {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 25px;
-    color: var(--navy-deep);
-    font-weight: 600;
-  }
-
-  section { padding: 86px 0; }
-
-  .section-intro {
-    max-width: 760px;
-    font-size: 19px;
-    margin-bottom: 44px;
-  }
-
-  .cream { background: var(--cream); }
-  .white { background: var(--white); }
-  .bordered { border-top: 1px solid var(--rule-soft); border-bottom: 1px solid var(--rule-soft); }
-
-  .problem-grid,
-  .service-grid,
-  .audience-grid,
-  .resource-grid {
-    display: grid;
-    gap: 22px;
-  }
-
-  .problem-grid { grid-template-columns: repeat(3, 1fr); }
-  .service-grid { grid-template-columns: repeat(3, 1fr); }
-  .audience-grid { grid-template-columns: repeat(3, 1fr); }
-  .resource-grid { grid-template-columns: repeat(3, 1fr); }
-
-  .card {
+  .definition {
     background: var(--paper);
-    border: 1px solid var(--rule-soft);
-    border-radius: 22px;
-    padding: 28px;
-    box-shadow: 0 10px 35px rgba(14, 34, 61, 0.055);
+    padding: 34px;
   }
 
-  .white .card { background: var(--white); }
-
-  .card-label {
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 0.14em;
-    color: var(--forest-deep);
-    text-transform: uppercase;
-    margin-bottom: 14px;
+  .definition h3 {
+    margin-bottom: 8px;
   }
 
-  .card p,
-  .resource-card p {
-    color: var(--ink-soft);
-    font-size: 16px;
-    margin-bottom: 0;
-  }
-
-  .link-card {
+  .definition .verb {
     display: block;
-    text-decoration: none;
+    margin-bottom: 16px;
+    color: var(--forest-deep);
+    font-weight: 800;
   }
 
-  .link-card:hover h3 { color: var(--forest-deep); }
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+  }
 
-  .split {
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 8px 12px;
+    color: var(--ink-muted);
+    font-size: 13px;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.48);
+  }
+
+  .compare-box {
     display: grid;
-    grid-template-columns: 0.88fr 1.12fr;
-    gap: 64px;
-    align-items: start;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--rule-soft);
+    border: 1px solid var(--rule-soft);
+    border-radius: 26px;
+    overflow: hidden;
+    box-shadow: 0 12px 38px rgba(13, 34, 59, 0.06);
   }
 
-  .check-list {
+  .compare-col {
+    background: var(--paper);
+    padding: 34px;
+  }
+
+  .compare-list {
     list-style: none;
     display: grid;
-    gap: 16px;
+    gap: 10px;
+    margin-top: 18px;
   }
 
-  .check-list li {
+  .compare-list li {
+    padding-left: 22px;
     position: relative;
-    padding-left: 30px;
   }
 
-  .check-list li::before {
+  .compare-list li::before {
     content: '';
     position: absolute;
     left: 0;
-    top: 10px;
+    top: 11px;
     width: 9px;
     height: 9px;
     background: var(--gold);
     border-radius: 50%;
-    box-shadow: 0 0 0 5px rgba(201, 151, 63, 0.18);
   }
 
-  .process {
-    counter-reset: step;
+  .discipline-card {
+    position: relative;
+    min-height: 330px;
+  }
+
+  .num {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 74px;
+    line-height: 0.85;
+    color: var(--gold);
+    opacity: 0.72;
+    margin-bottom: 20px;
+  }
+
+  .pathway {
     display: grid;
-    gap: 24px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-top: 34px;
   }
 
-  .process-item {
-    counter-increment: step;
-    display: grid;
-    grid-template-columns: 90px 1fr;
-    gap: 24px;
-    padding: 28px 0;
-    border-bottom: 1px solid var(--rule-soft);
+  .path-step {
+    background: var(--paper);
+    border: 1px solid var(--rule-soft);
+    border-radius: 20px;
+    padding: 20px;
+    min-height: 130px;
   }
 
-  .process-item:last-child { border-bottom: none; }
-
-  .process-num::before {
-    content: counter(step, decimal-leading-zero);
+  .path-step strong {
     display: block;
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 48px;
-    line-height: 1;
-    color: var(--gold);
-    font-weight: 600;
+    font-size: 24px;
+    color: var(--navy-deep);
+    margin-bottom: 8px;
   }
 
-  .assessment-band {
-    background: var(--navy-deep);
-    color: rgba(255, 250, 242, 0.82);
-    padding: 84px 0;
+  .lead-lag {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
   }
 
-  .assessment-band h2,
-  .assessment-band h3 { color: var(--white); }
-  .assessment-band .eyebrow { color: var(--gold-soft); }
-  .assessment-band .eyebrow::before { background: var(--gold-soft); }
+  .question-list {
+    list-style: none;
+    display: grid;
+    gap: 14px;
+    margin-top: 18px;
+  }
+
+  .question-list li {
+    border-bottom: 1px solid var(--rule-soft);
+    padding-bottom: 14px;
+  }
+
+  .rhythm-wheel {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    margin-top: 36px;
+  }
+
+  .rhythm-step {
+    background: var(--paper);
+    border: 1px solid var(--rule-soft);
+    border-radius: 999px;
+    min-height: 116px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .rhythm-step strong {
+    display: block;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 24px;
+    color: var(--navy-deep);
+    margin-bottom: 4px;
+  }
+
+  .rhythm-step span {
+    font-size: 13px;
+    color: var(--ink-muted);
+  }
+
+  .stuck-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .stuck-item {
+    padding: 22px;
+    border-radius: 20px;
+    background: var(--white);
+    border: 1px solid var(--rule-soft);
+  }
+
+  .stuck-item strong {
+    display: block;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    color: var(--navy-deep);
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
 
   .assessment-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.58fr);
-    gap: 54px;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 0.62fr);
+    gap: 58px;
     align-items: start;
   }
 
   .assessment-box {
-    background: rgba(255, 250, 242, 0.08);
-    border: 1px solid rgba(255, 250, 242, 0.14);
-    border-radius: 24px;
-    padding: 34px;
+    background: rgba(255, 250, 241, 0.08);
+    border: 1px solid rgba(255, 250, 241, 0.16);
+    border-radius: 28px;
+    padding: 36px;
+    box-shadow: var(--shadow);
   }
 
-  .assessment-list {
-    list-style: none;
-    display: grid;
-    gap: 13px;
-    margin-top: 22px;
-  }
-
-  .assessment-list li {
-    padding-left: 24px;
-    position: relative;
-  }
-
-  .assessment-list li::before {
-    content: '•';
-    position: absolute;
-    left: 4px;
-    color: var(--gold-soft);
-  }
+  .assessment-box .price { margin-top: 12px; }
 
   .form-placeholder {
-    border: 1px dashed rgba(255, 250, 242, 0.35);
+    margin-top: 20px;
+    padding: 22px;
     border-radius: 18px;
-    padding: 24px;
-    margin-top: 22px;
-    color: rgba(255, 250, 242, 0.72);
-    font-size: 15px;
+    border: 1px dashed rgba(255, 250, 241, 0.34);
     background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 250, 241, 0.7);
+    font-size: 15px;
   }
 
   details {
@@ -477,64 +633,74 @@
     cursor: pointer;
     list-style: none;
     font-family: 'Cormorant Garamond', Georgia, serif;
-    color: var(--navy-deep);
-    font-size: 24px;
+    font-size: 25px;
     font-weight: 600;
+    color: var(--navy-deep);
   }
 
   summary::-webkit-details-marker { display: none; }
-  details p { margin-top: 12px; max-width: 720px; }
+  details p { margin-top: 12px; max-width: 760px; }
 
   footer {
-    background: var(--navy-deep);
-    color: rgba(255, 250, 242, 0.72);
-    padding: 48px 0;
+    background: var(--navy-dark);
+    color: rgba(255, 250, 241, 0.72);
+    padding: 54px 0;
   }
 
   .footer-inner {
     display: flex;
     justify-content: space-between;
-    gap: 28px;
     align-items: flex-end;
     flex-wrap: wrap;
+    gap: 32px;
   }
 
-  .footer-brand {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 28px;
-    color: var(--white);
-    font-weight: 600;
+  .footer-logo img {
+    height: 86px;
+    width: auto;
+    filter: brightness(1.12);
   }
 
-  .footer-small { font-size: 14px; }
+  .footer-small {
+    font-size: 14px;
+    max-width: 520px;
+  }
 
-  @media (max-width: 920px) {
+  @media (max-width: 1020px) {
     nav { display: none; }
     .hero-grid,
-    .split,
+    .two-col,
     .assessment-grid { grid-template-columns: 1fr; }
-    .problem-grid,
-    .service-grid,
-    .audience-grid,
-    .resource-grid { grid-template-columns: 1fr 1fr; }
-    .stat-grid { grid-template-columns: 1fr; }
+    .metrics,
+    .card-grid,
+    .card-grid.two,
+    .definition-grid,
+    .compare-box,
+    .lead-lag { grid-template-columns: 1fr; }
+    .pathway,
+    .rhythm-wheel { grid-template-columns: repeat(2, 1fr); }
+    .stuck-grid { grid-template-columns: 1fr 1fr; }
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 680px) {
     .container,
-    .container-narrow { width: min(100% - 32px, 1120px); }
+    .container-wide,
+    .container-narrow { width: min(100% - 32px, 1160px); }
     header { position: relative; }
-    .header-inner { min-height: 72px; }
-    .logo-wrap img { height: 42px; }
-    .hero { padding: 64px 0; }
+    .header-inner { min-height: 96px; }
+    .brand img { height: 78px; }
+    .hero { padding: 58px 0; }
+    .hero-logo-card { padding: 20px; }
     section { padding: 62px 0; }
-    .problem-grid,
-    .service-grid,
-    .audience-grid,
-    .resource-grid { grid-template-columns: 1fr; }
-    .hero-card { padding: 28px; }
-    .process-item { grid-template-columns: 1fr; gap: 8px; }
     .button { width: 100%; }
+    .pathway,
+    .rhythm-wheel,
+    .stuck-grid { grid-template-columns: 1fr; }
+    .diagnosis-card,
+    .assessment-box { padding: 28px; }
+    .price { font-size: 68px; }
+    .footer-inner { align-items: flex-start; }
+    .footer-logo img { height: 72px; }
   }
 </style>
 <script type="application/ld+json">
@@ -542,15 +708,15 @@
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Waypoint Mission Partners",
-  "description": "Advancement advisory for private schools, churches, nonprofits, and mission-led organizations.",
-  "areaServed": "United States",
+  "description": "Advancement strategy and systems for nonprofits, private schools, churches, and mission-driven organizations.",
   "url": "https://www.waypointmissionpartners.com/",
+  "areaServed": "United States",
   "serviceType": [
-    "Advancement advisory",
-    "Donor stewardship strategy",
+    "Advancement assessment",
+    "Donor stewardship system",
     "Board fundraising enablement",
     "Campaign planning",
-    "Funding operations"
+    "Donor data and lead measure design"
   ]
 }
 </script>
@@ -558,17 +724,17 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <header>
-  <div class="container">
+  <div class="container-wide">
     <div class="header-inner">
-      <a class="logo-wrap" href="#top" aria-label="Waypoint Mission Partners home">
+      <a class="brand" href="#top" aria-label="Waypoint Mission Partners home">
         <img src="waypoint-logo.jpg" alt="Waypoint Mission Partners" />
       </a>
       <nav aria-label="Primary navigation">
-        <a href="#problems">Problems</a>
-        <a href="#services">Services</a>
-        <a href="#audience">Who We Help</a>
-        <a href="#resources">Resources</a>
-        <a class="nav-cta" href="#assessment">$199 Assessment</a>
+        <a href="#framework">Framework</a>
+        <a href="#disciplines">Disciplines</a>
+        <a href="#infrastructure">Infrastructure</a>
+        <a href="#rhythm">Annual Rhythm</a>
+        <a href="#assessment" class="nav-cta">$199 Assessment</a>
       </nav>
     </div>
   </div>
@@ -578,261 +744,395 @@
   <section class="hero" id="top">
     <div class="container hero-grid">
       <div>
-        <div class="eyebrow">Advancement Systems for Mission-Led Organizations</div>
-        <h1>Fundraising breaks when the mission has no <em>system</em> behind it.</h1>
-        <p class="lede">Waypoint Mission Partners helps private schools, churches, and nonprofits build the advancement structure underneath sustainable funding: donor cultivation, stewardship, board engagement, campaigns, and follow-through.</p>
+        <div class="hero-logo-card">
+          <img src="waypoint-logo.jpg" alt="Waypoint Mission Partners" />
+        </div>
+        <div class="eyebrow">Advancement Framework</div>
+        <h1>A stronger mission needs more than fundraising activity.</h1>
+        <p class="hero-lede">Waypoint Mission Partners helps nonprofits, private schools, churches, and mission-driven organizations build clearer advancement systems for sustainable funding.</p>
         <div class="button-row">
           <a class="button button-primary" href="#assessment">Start with the $199 Assessment</a>
-          <a class="button button-secondary" href="#services">See What We Build</a>
-        </div>
-        <div class="stat-grid" aria-label="Assessment summary">
-          <div class="stat">
-            <span class="stat-label">Entry Point</span>
-            <span class="stat-value">$199</span>
-          </div>
-          <div class="stat">
-            <span class="stat-label">First Step</span>
-            <span class="stat-value">45-minute call</span>
-          </div>
-          <div class="stat">
-            <span class="stat-label">Output</span>
-            <span class="stat-value">Written roadmap</span>
-          </div>
+          <a class="button button-secondary" href="#framework">Explore the Framework</a>
         </div>
       </div>
-      <aside class="hero-card" aria-label="Advancement assessment offer">
-        <div class="hero-card-title">Advancement Readiness Assessment</div>
-        <p>A focused review of your funding function across donor pipeline, cultivation, asks, stewardship, board engagement, and operational follow-through.</p>
-        <div class="price-line"><span class="price">$199</span></div>
-        <p class="price-caption">Built as a practical first step, not a vague consultation.</p>
-        <div class="button-row">
-          <a class="button button-primary" href="#assessment">Get Started</a>
-        </div>
+      <aside class="diagnosis-card">
+        <h3>Funding feels unpredictable when the system underneath it is unclear.</h3>
+        <p>Events, appeals, sponsorships, online giving, board connections, and personal relationships can all raise money. But pieces of activity are not the same as advancement structure.</p>
+        <ul class="mini-list">
+          <li>Donor ownership</li>
+          <li>Stewardship process</li>
+          <li>Cultivation plan</li>
+          <li>Usable records</li>
+          <li>Board roles</li>
+          <li>Lead measures</li>
+          <li>Annual rhythm</li>
+        </ul>
       </aside>
     </div>
   </section>
 
-  <section class="white bordered" id="problems">
+  <section class="metric-strip" aria-label="Sector funding data">
+    <div class="container-wide metrics">
+      <div class="metric">
+        <strong>$592.5B</strong>
+        <span>U.S. charitable giving in 2024, according to Giving USA.</span>
+      </div>
+      <div class="metric">
+        <strong>3.5%</strong>
+        <span>Giving dollars rose while donor health weakened.</span>
+      </div>
+      <div class="metric">
+        <strong>4.5%</strong>
+        <span>Donor counts dropped in FEP 2024 reporting.</span>
+      </div>
+      <div class="metric">
+        <strong>2.6%</strong>
+        <span>Retention fell, which is easy to miss when dollars alone are reviewed.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="white bordered" id="framework">
     <div class="container">
-      <div class="eyebrow">The Problem</div>
-      <h2>Most small nonprofits are not short on care. They are short on advancement infrastructure.</h2>
-      <p class="section-intro">Good people can still end up trapped in event-driven fundraising, inconsistent follow-up, weak donor records, and board members who want to help but do not know what help should look like.</p>
-      <div class="problem-grid">
-        <article class="card">
-          <span class="card-label">Donor Relationships</span>
-          <h3>People give once, then drift.</h3>
-          <p>Not because they stopped caring. Usually because no one built a clear stewardship rhythm after the gift.</p>
+      <div class="eyebrow">The Core Distinction</div>
+      <h2>Fundraising activity and advancement structure are not the same thing.</h2>
+      <p class="section-intro">Most organizations already have pieces in motion. The issue is whether those pieces are connected well enough for leadership to see what is working, what is missing, and what needs attention next.</p>
+      <div class="compare-box">
+        <div class="compare-col">
+          <h3>Pieces of Fundraising Activity</h3>
+          <p>Useful actions that can raise money but often depend on urgency, memory, personality, or habit.</p>
+          <ul class="compare-list">
+            <li>Events</li>
+            <li>Appeals</li>
+            <li>Sponsorships</li>
+            <li>Online giving</li>
+            <li>Board connections</li>
+            <li>Personal relationships</li>
+            <li>Past donor history</li>
+          </ul>
+        </div>
+        <div class="compare-col">
+          <h3>Advancement Structure</h3>
+          <p>The practical system that helps the organization find, develop, ask, steward, and track donor relationships.</p>
+          <ul class="compare-list">
+            <li>Donor ownership</li>
+            <li>Stewardship process</li>
+            <li>Cultivation plan</li>
+            <li>Usable records</li>
+            <li>Board roles</li>
+            <li>Lead measures</li>
+            <li>Annual rhythm</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cream" id="definitions">
+    <div class="container">
+      <div class="eyebrow">Language That Clarifies the Work</div>
+      <h2>Fundraising invites the gift. Development builds the relationship. Advancement organizes the system around both.</h2>
+      <div class="definition-grid">
+        <article class="definition">
+          <h3>Fundraising</h3>
+          <span class="verb">Invites the gift.</span>
+          <p>The act of inviting financial support through appeals, events, campaigns, sponsorships, recurring giving, major donor conversations, and online giving opportunities.</p>
+          <div class="tag-row">
+            <span class="tag">appeals</span>
+            <span class="tag">events</span>
+            <span class="tag">campaigns</span>
+            <span class="tag">giving pages</span>
+          </div>
         </article>
-        <article class="card">
-          <span class="card-label">Board Engagement</span>
-          <h3>The board wants to help, but the role is fuzzy.</h3>
-          <p>Most volunteers are willing to contribute when the asks are specific, useful, and matched to their actual relationships.</p>
+        <article class="definition">
+          <h3>Development</h3>
+          <span class="verb">Builds the relationship.</span>
+          <p>The relationship process around those moments: identifying people who may care, learning what connects them, communicating clearly, thanking well, and reporting impact.</p>
+          <div class="tag-row">
+            <span class="tag">prospects</span>
+            <span class="tag">cultivation</span>
+            <span class="tag">stewardship</span>
+            <span class="tag">impact reporting</span>
+          </div>
         </article>
-        <article class="card">
-          <span class="card-label">Funding Stability</span>
-          <h3>Events carry too much of the load.</h3>
-          <p>A gala can matter. It should not be the whole funding strategy. The event needs to feed a larger donor journey.</p>
+        <article class="definition">
+          <h3>Advancement</h3>
+          <span class="verb">Organizes the system.</span>
+          <p>The structure that connects fundraising, development, communication, donor records, board participation, stewardship, campaign timing, and leadership accountability.</p>
+          <div class="tag-row">
+            <span class="tag">records</span>
+            <span class="tag">board roles</span>
+            <span class="tag">lead measures</span>
+            <span class="tag">annual rhythm</span>
+          </div>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="cream" id="services">
-    <div class="container">
-      <div class="eyebrow">What We Build</div>
-      <h2>Practical advancement systems your staff and volunteers can actually run.</h2>
-      <p class="section-intro">WMP is not built around theory decks. The work is operating structure: language, rhythms, tools, ownership, and follow-up.</p>
-      <div class="service-grid">
-        <a class="card link-card" href="#assessment">
-          <span class="card-label">Assessment</span>
-          <h3>Advancement Readiness</h3>
-          <p>A written diagnosis of the current funding function and the highest-leverage next steps.</p>
-        </a>
-        <a class="card link-card" href="#stewardship">
-          <span class="card-label">Stewardship</span>
-          <h3>Donor Follow-Up System</h3>
-          <p>Thank-you language, impact reporting, donor segmentation, and post-gift communication cadence.</p>
-        </a>
-        <a class="card link-card" href="#board">
-          <span class="card-label">Board</span>
-          <h3>Board Fundraising Enablement</h3>
-          <p>Clear roles, scripts, introduction pathways, and low-friction ways for board members to help.</p>
-        </a>
-        <a class="card link-card" href="#campaigns">
-          <span class="card-label">Campaigns</span>
-          <h3>Appeals and Giving Pathways</h3>
-          <p>Campaign structure that connects the ask to the mission, the donor, and a credible next step.</p>
-        </a>
-        <a class="card link-card" href="#operations">
-          <span class="card-label">Operations</span>
-          <h3>CRM and Funding Rhythm</h3>
-          <p>Fields, lists, stages, dashboards, and follow-up routines so donor work does not live in someone’s head.</p>
-        </a>
-        <a class="card link-card" href="#grants">
-          <span class="card-label">Funding Mix</span>
-          <h3>Grant Readiness</h3>
-          <p>A practical look at whether the organization has the story, metrics, documents, and discipline to pursue grants well.</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="white" id="framework">
-    <div class="container split">
+  <section class="white" id="infrastructure">
+    <div class="container two-col">
       <div>
-        <div class="eyebrow">The WMP Lens</div>
-        <h2>Advancement is not one ask. It is the full relationship system around the mission.</h2>
+        <div class="eyebrow">Why Effort Needs Infrastructure</div>
+        <h2>Infrastructure does not mean bureaucracy. It means the system is clear enough to use.</h2>
       </div>
       <div>
-        <ul class="check-list">
-          <li><strong>Cultivation:</strong> helping the right people understand the mission before they are asked to fund it.</li>
-          <li><strong>Solicitation:</strong> making clear, appropriate asks tied to specific outcomes and real organizational needs.</li>
-          <li><strong>Stewardship:</strong> showing donors what happened because they gave, and why their continued involvement matters.</li>
-          <li><strong>Board Enablement:</strong> giving volunteers specific roles they can picture themselves doing well.</li>
-          <li><strong>Operating Rhythm:</strong> making sure donor work has owners, dates, tools, and follow-up.</li>
-        </ul>
+        <p>Most organizations are not struggling because people are unwilling to help. They are working with limited staff, busy volunteers, part-time attention, and board members who care but may not know how to participate.</p>
+        <p>When the structure is thin, fundraising depends too much on memory, urgency, personality, and habit. A staff member leaves and donor history becomes harder to understand. A board member rolls off and key relationships go quiet.</p>
+        <div class="card-grid two" style="margin-top: 28px;">
+          <article class="card">
+            <span class="label">Visible Activity</span>
+            <p>Events, appeals, sponsorships, giving pages, and public campaigns.</p>
+          </article>
+          <article class="card">
+            <span class="label">Supporting Infrastructure</span>
+            <p>Donor records, stewardship rhythm, board roles, lead measures, follow-up ownership, and annual calendar.</p>
+          </article>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="cream" id="audience">
+  <section class="navy" id="disciplines">
     <div class="container">
-      <div class="eyebrow">Who We Help</div>
-      <h2>Built for leaders who are carrying the mission and need the funding side to mature.</h2>
-      <div class="audience-grid">
-        <article class="card">
-          <span class="card-label">Schools</span>
-          <h3>Private and Christian Schools</h3>
-          <p>Heads of school, advancement leaders, and boards trying to fund the mission beyond tuition, events, and emergency asks.</p>
+      <div class="eyebrow">Three Disciplines of Advancement</div>
+      <h2>A healthy advancement system balances cultivation, solicitation, and stewardship.</h2>
+      <p class="section-intro">These are not separate programs. They are parts of the same relationship cycle.</p>
+      <div class="card-grid">
+        <article class="card discipline-card">
+          <div class="num">1</div>
+          <span class="label">Before the Ask</span>
+          <h3>Cultivation</h3>
+          <p>Identify, connect, invite, and learn. This builds the future donor base before the organization returns to the same people again.</p>
         </article>
-        <article class="card">
-          <span class="card-label">Ministries</span>
-          <h3>Churches and Ministries</h3>
-          <p>Pastors and ministry leaders building funding structure beyond the weekly offering or a handful of loyal supporters.</p>
+        <article class="card discipline-card">
+          <div class="num">2</div>
+          <span class="label">The Ask</span>
+          <h3>Solicitation</h3>
+          <p>Appeals, campaigns, events, sponsorships, recurring giving invitations, and major donor conversations. The need and opportunity must be clear.</p>
         </article>
-        <article class="card">
-          <span class="card-label">Nonprofits</span>
-          <h3>Small Nonprofits</h3>
-          <p>Executive directors and development staff who need better donor systems without adding unnecessary complexity.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="white" id="process">
-    <div class="container-narrow">
-      <div class="eyebrow">How the Assessment Works</div>
-      <h2>A direct path from fuzzy concern to written next steps.</h2>
-      <div class="process">
-        <article class="process-item">
-          <div class="process-num" aria-hidden="true"></div>
-          <div>
-            <h3>Structured conversation</h3>
-            <p>We review how your advancement function works today: donor records, events, appeals, board involvement, stewardship, and funding goals.</p>
-          </div>
-        </article>
-        <article class="process-item">
-          <div class="process-num" aria-hidden="true"></div>
-          <div>
-            <h3>Written assessment</h3>
-            <p>You receive a practical report that identifies what is working, what is missing, and what should be built first.</p>
-          </div>
-        </article>
-        <article class="process-item">
-          <div class="process-num" aria-hidden="true"></div>
-          <div>
-            <h3>Review call</h3>
-            <p>We walk through the findings, answer questions, and discuss whether deeper implementation support makes sense.</p>
-          </div>
+        <article class="card discipline-card">
+          <div class="num">3</div>
+          <span class="label">After the Gift</span>
+          <h3>Stewardship</h3>
+          <p>Thank, report impact, follow up, and keep donors connected. Stewardship turns a gift into the beginning of a healthier relationship.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="assessment-band" id="assessment">
+  <section class="cream" id="stewardship">
+    <div class="container">
+      <div class="eyebrow">Stewardship and Retention</div>
+      <h2>A first gift is not the relationship. It is the beginning of the relationship.</h2>
+      <p class="section-intro">Many organizations lose donors quietly because the relationship was never developed after the gift. A receipt or basic thank-you is not the same as stewardship.</p>
+      <div class="card-grid">
+        <article class="card">
+          <span class="label">Overall Retention</span>
+          <h3>42.9%</h3>
+          <p>FEP 2024 overall donor retention rate.</p>
+        </article>
+        <article class="card">
+          <span class="label">New Donor Retention</span>
+          <h3>19.4%</h3>
+          <p>The first-time donor relationship is fragile when follow-up is weak.</p>
+        </article>
+        <article class="card">
+          <span class="label">Repeat Donor Retention</span>
+          <h3>69.2%</h3>
+          <p>The second gift matters. Retention is much stronger once a donor gives again.</p>
+        </article>
+      </div>
+      <div class="pathway">
+        <div class="path-step"><strong>First Gift</strong><span>A donor responds to a need or invitation.</span></div>
+        <div class="path-step"><strong>Thank You</strong><span>The gift is acknowledged quickly and personally.</span></div>
+        <div class="path-step"><strong>Impact Update</strong><span>The donor sees what the gift helped make possible.</span></div>
+        <div class="path-step"><strong>Personal Call</strong><span>The relationship is treated as more than a transaction.</span></div>
+        <div class="path-step"><strong>Second Gift</strong><span>The next invitation has a stronger foundation.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="white" id="data">
+    <div class="container">
+      <div class="eyebrow">Donor Data and Lead Measures</div>
+      <h2>Donor data helps the organization remember. Lead measures show whether relationships are being cared for.</h2>
+      <div class="lead-lag">
+        <article class="card">
+          <span class="label">Donor Data Helps Answer</span>
+          <ul class="question-list">
+            <li>Who gave?</li>
+            <li>Who stopped giving?</li>
+            <li>Who increased their giving?</li>
+            <li>Who needs a follow-up?</li>
+            <li>Who knows them?</li>
+            <li>What should happen next?</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="label">Lead Measures Help Answer</span>
+          <ul class="question-list">
+            <li>Are donors being contacted?</li>
+            <li>Are first-time donors being thanked?</li>
+            <li>Are prospects being introduced?</li>
+            <li>Are board members opening doors?</li>
+            <li>Are follow-ups happening?</li>
+            <li>Are relationships moving forward?</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cream" id="board">
+    <div class="container two-col">
+      <div>
+        <div class="eyebrow">Board and Leadership Participation</div>
+        <h2>Board members do not all need the same role. They do need a clear one.</h2>
+        <p>The board does not need to become a team of professional fundraisers. The goal is to give board members appropriate, specific ways to contribute.</p>
+      </div>
+      <div class="card-grid" style="grid-template-columns: 1fr;">
+        <article class="card">
+          <span class="label">Personal Participation</span>
+          <h3>Support the mission personally.</h3>
+          <p>The amount will vary by person, but participation matters.</p>
+        </article>
+        <article class="card">
+          <span class="label">Relational Access</span>
+          <h3>Open doors the staff cannot open alone.</h3>
+          <p>Churches, businesses, civic groups, schools, alumni networks, parent groups, and extended family circles can all matter.</p>
+        </article>
+        <article class="card">
+          <span class="label">Accountability</span>
+          <h3>Keep advancement visible.</h3>
+          <p>The board should review cultivation, stewardship, donor data, activity, and follow-through, not just event totals.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="white" id="tools">
+    <div class="container">
+      <div class="eyebrow">Useful Tools, Not the Whole System</div>
+      <h2>Events, campaigns, and recurring giving all matter. None should carry the whole system alone.</h2>
+      <div class="card-grid">
+        <article class="card">
+          <span class="label">Events</span>
+          <h3>Create visibility, connection, generosity, and follow-up opportunities.</h3>
+          <p>The question is what role the event plays in the larger advancement plan: cultivation, solicitation, stewardship, or some mix of all three.</p>
+        </article>
+        <article class="card">
+          <span class="label">Campaigns</span>
+          <h3>Create a focused season to communicate a need and invite support.</h3>
+          <p>Campaigns should connect message, timing, donor segments, leadership participation, giving options, and follow-up.</p>
+        </article>
+        <article class="card">
+          <span class="label">Recurring Giving</span>
+          <h3>Creates a more predictable base of ongoing support.</h3>
+          <p>Recurring donors still need stewardship. Automatic giving should not mean automatic neglect.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cream" id="rhythm">
+    <div class="container">
+      <div class="eyebrow">Annual Rhythm</div>
+      <h2>A calendar shows what is scheduled. A rhythm helps leadership know what needs attention.</h2>
+      <p class="section-intro">Advancement needs a rhythm for the year, not just a list of event dates. The goal is to stop treating every funding need like a surprise.</p>
+      <div class="rhythm-wheel">
+        <div class="rhythm-step"><strong>Review</strong><span>Data, results, retention, gaps</span></div>
+        <div class="rhythm-step"><strong>Cultivate</strong><span>Build relationships before the ask</span></div>
+        <div class="rhythm-step"><strong>Steward</strong><span>Thank, report impact, connect</span></div>
+        <div class="rhythm-step"><strong>Prepare</strong><span>Lists, message, leadership</span></div>
+        <div class="rhythm-step"><strong>Ask</strong><span>Invite support clearly</span></div>
+        <div class="rhythm-step"><strong>Follow Up</strong><span>Thank, record, review</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="white" id="stuck">
+    <div class="container">
+      <div class="eyebrow">Where Organizations Usually Get Stuck</div>
+      <h2>The visible problem is not always the first problem to fix.</h2>
+      <p class="section-intro">A weak event may not need a better theme. It may need a better follow-up process. A passive board may not need another reminder to help with fundraising. It may need clearer roles and simpler ways to participate.</p>
+      <div class="stuck-grid">
+        <div class="stuck-item"><strong>Donor Retention</strong><span>Are first-time donors being stewarded?</span></div>
+        <div class="stuck-item"><strong>Event Follow-Up</strong><span>Are guests and sponsors moved into a relationship process?</span></div>
+        <div class="stuck-item"><strong>Board Clarity</strong><span>Do board members know how to participate?</span></div>
+        <div class="stuck-item"><strong>Donor Data</strong><span>Are records current, usable, and owned?</span></div>
+        <div class="stuck-item"><strong>Lead Measures</strong><span>Is leadership tracking activity before money arrives?</span></div>
+        <div class="stuck-item"><strong>Annual Rhythm</strong><span>Is advancement planned across the year?</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="navy" id="assessment">
     <div class="container assessment-grid">
       <div>
-        <div class="eyebrow">Start Here</div>
-        <h2>Get a clear read on your advancement function for $199.</h2>
-        <p class="section-intro">The assessment is designed for leaders who know funding needs to mature but are not sure what to fix first.</p>
-        <ul class="assessment-list">
-          <li>45-minute structured conversation</li>
-          <li>Review across cultivation, solicitation, stewardship, board engagement, and funding operations</li>
-          <li>Written assessment with prioritized recommendations</li>
-          <li>30-minute follow-up review</li>
-        </ul>
+        <div class="eyebrow">Start With a Clear Diagnosis</div>
+        <h2>The framework explains the system. The assessment applies it to your organization.</h2>
+        <p class="section-intro">The Waypoint Assessment reviews your current advancement system and identifies where the structure is clear, where it is weak, and where the organization may be relying too much on memory, urgency, events, or a few overextended people.</p>
+        <div class="card-grid" style="grid-template-columns: 1fr;">
+          <article class="card">
+            <span class="label">1. What is working?</span>
+            <p>What parts of the system are already clear or useful?</p>
+          </article>
+          <article class="card">
+            <span class="label">2. What is missing?</span>
+            <p>Where are relationships, records, roles, follow-up, or rhythms weak?</p>
+          </article>
+          <article class="card">
+            <span class="label">3. What should be addressed first?</span>
+            <p>Which gap is creating the most drag?</p>
+          </article>
+        </div>
       </div>
       <aside class="assessment-box">
-        <h3>Advancement Readiness Assessment</h3>
-        <div class="price-line"><span class="price">$199</span></div>
-        <p>Replace this placeholder with your GoHighLevel form, calendar, or payment embed.</p>
+        <h3>Waypoint Assessment</h3>
+        <div class="price">$199</div>
+        <p>Includes advancement system review, strongest and weakest areas, priority recommendations, and a 90-day next-step plan.</p>
         <div class="form-placeholder">
-          Paste GHL embed code here.<br />
-          Example: form, calendar booking, Stripe payment, or combined funnel step.
+          Paste GoHighLevel form, calendar, or payment embed here.
         </div>
         <div class="button-row">
-          <a class="button button-primary" href="mailto:tommy@waypointmissionpartners.com?subject=Advancement%20Readiness%20Assessment">Request the Assessment</a>
+          <a class="button button-primary" href="mailto:tommy@waypointmissionpartners.com?subject=Waypoint%20Assessment">Request the Assessment</a>
         </div>
+        <p class="small-note">Replace the email address with your final WMP inbox before publishing.</p>
       </aside>
-    </div>
-  </section>
-
-  <section class="cream" id="resources">
-    <div class="container">
-      <div class="eyebrow">Resource Library</div>
-      <h2>Useful answers for leaders trying to build a stronger funding system.</h2>
-      <p class="section-intro">These are starter pages. As the site grows, each should become its own SEO-focused article or guide.</p>
-      <div class="resource-grid">
-        <article class="card resource-card">
-          <span class="card-label">Advancement</span>
-          <h3>Fundraising vs Advancement</h3>
-          <p>Why the language matters, and why advancement gives leaders a better operating model than one-off fundraising.</p>
-        </article>
-        <article class="card resource-card">
-          <span class="card-label">Stewardship</span>
-          <h3>Why Donors Do Not Give Again</h3>
-          <p>The post-gift gap that causes donor relationships to fade, and what to build instead.</p>
-        </article>
-        <article class="card resource-card">
-          <span class="card-label">Board</span>
-          <h3>What Board Fundraising Should Look Like</h3>
-          <p>A practical view of board fundraising that does not turn volunteers into professional fundraisers.</p>
-        </article>
-      </div>
     </div>
   </section>
 
   <section class="white" id="faq">
     <div class="container-narrow">
-      <div class="eyebrow">FAQ</div>
-      <h2>Common questions before starting.</h2>
+      <div class="eyebrow">Common Questions</div>
+      <h2>Before you add another event, replace another tool, push the board harder, or launch another appeal, make sure you are solving the right problem.</h2>
       <details>
         <summary>Is this only for organizations with a development director?</summary>
-        <p>No. It is often most useful for organizations that do not yet have a formal advancement role, because the assessment clarifies what needs to exist before hiring or adding complexity.</p>
+        <p>No. It is often most useful for organizations without a formal advancement role because it clarifies what needs to exist before hiring, buying software, or adding more activity.</p>
       </details>
       <details>
         <summary>Is this a fundraising campaign?</summary>
-        <p>No. WMP can help with campaign structure, but the core work is building the advancement system that makes campaigns, stewardship, board engagement, and donor follow-up work together.</p>
+        <p>No. A campaign may become part of the work, but the core issue is whether the organization has the advancement structure to support donor relationships over time.</p>
       </details>
       <details>
-        <summary>Can this be shared with the board?</summary>
-        <p>Yes. The written assessment is designed to be board-readable. It gives leaders a practical way to talk about advancement without turning the conversation into blame or vague ambition.</p>
+        <summary>Can the assessment be shared with the board?</summary>
+        <p>Yes. The assessment is written to help leadership and board members talk clearly about what is working, what is missing, and what should come next.</p>
       </details>
       <details>
         <summary>What happens after the assessment?</summary>
-        <p>You can implement the recommendations yourself, or we can discuss a deeper engagement to help build the systems. If there is not a fit, we will say that plainly.</p>
+        <p>You can implement the recommendations yourself, or discuss planning and support with Waypoint Mission Partners. The assessment is designed to stand on its own either way.</p>
       </details>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="container footer-inner">
-    <div>
-      <div class="footer-brand">Waypoint Mission Partners</div>
-      <div class="footer-small">Advancement advisory for mission-led organizations.</div>
-    </div>
-    <div class="footer-small">Private schools. Churches. Nonprofits. Mission-led organizations.</div>
+  <div class="container-wide footer-inner">
+    <a class="footer-logo" href="#top" aria-label="Waypoint Mission Partners home">
+      <img src="waypoint-logo.jpg" alt="Waypoint Mission Partners" />
+    </a>
+    <p class="footer-small">Advancement strategy for nonprofits, private schools, churches, and mission-driven organizations. Assess. Plan. Support.</p>
   </div>
 </footer>
 </body>
