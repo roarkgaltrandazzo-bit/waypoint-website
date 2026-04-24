@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Waypoint Mission Partners | Advancement Framework</title>
-<meta name="description" content="Waypoint Mission Partners helps nonprofits, private schools, churches, and mission-driven organizations build clearer advancement systems for sustainable funding." />
+<title>Waypoint Mission Partners | Advancement Strategy</title>
+<meta name="description" content="Waypoint Mission Partners helps nonprofits, private schools, churches, and mission-driven organizations diagnose and strengthen the advancement system behind sustainable funding." />
 <meta name="robots" content="index, follow" />
-<meta property="og:title" content="Waypoint Mission Partners | Advancement Framework" />
-<meta property="og:description" content="Helping mission-driven organizations build advancement structure for sustainable funding." />
+<meta property="og:title" content="Waypoint Mission Partners | Advancement Strategy" />
+<meta property="og:description" content="Advancement strategy for nonprofits, private schools, churches, and mission-driven organizations." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.waypointmissionpartners.com/" />
-<meta property="og:image" content="https://www.waypointmissionpartners.com/Untitled design (18).png" />
+<meta property="og:image" content="https://www.waypointmissionpartners.com/Untitled%20design%20(18).png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --navy: #18365d;
-    --navy-deep: #0d223b;
+    --navy: #17365d;
+    --navy-deep: #0c223c;
     --navy-dark: #071827;
-    --navy-soft: #27496f;
+    --blue-soft: #27496f;
     --forest: #4b6a43;
     --forest-deep: #314d2d;
     --gold: #c99a45;
@@ -29,10 +29,10 @@
     --white: #ffffff;
     --ink: #171717;
     --ink-soft: #343434;
-    --ink-muted: #6b6b6b;
+    --ink-muted: #686868;
     --rule: #d9cfbd;
     --rule-soft: #eee4d3;
-    --shadow: 0 22px 60px rgba(13, 34, 59, 0.13);
+    --shadow: 0 22px 60px rgba(12, 34, 60, 0.13);
   }
 
   * {
@@ -227,7 +227,7 @@
     font-size: clamp(52px, 7vw, 92px);
     line-height: 0.94;
     font-weight: 600;
-    max-width: 900px;
+    max-width: 920px;
     margin-bottom: 24px;
   }
 
@@ -235,7 +235,7 @@
     font-size: clamp(34px, 4.35vw, 58px);
     line-height: 1.05;
     font-weight: 600;
-    max-width: 940px;
+    max-width: 960px;
     margin-bottom: 24px;
   }
 
@@ -264,7 +264,7 @@
     align-items: center;
     overflow: hidden;
     background:
-      linear-gradient(90deg, rgba(7, 24, 39, 0.86) 0%, rgba(13, 34, 59, 0.72) 48%, rgba(13, 34, 59, 0.54) 100%),
+      linear-gradient(90deg, rgba(7, 24, 39, 0.88) 0%, rgba(12, 34, 60, 0.78) 48%, rgba(12, 34, 60, 0.54) 100%),
       url('ChatGPT Image Apr 24, 2026, 02_30_58 PM.png') center center / cover no-repeat,
       linear-gradient(135deg, var(--navy-deep) 0%, var(--forest-deep) 100%);
     color: var(--paper);
@@ -288,7 +288,7 @@
   }
 
   .hero-content {
-    max-width: 820px;
+    max-width: 850px;
   }
 
   .hero-logo {
@@ -314,10 +314,17 @@
   }
 
   .hero-lede {
-    max-width: 720px;
+    max-width: 760px;
     font-size: 22px;
     line-height: 1.58;
     color: rgba(255, 250, 241, 0.9);
+  }
+
+  .hero-short-list {
+    margin: 22px 0 18px;
+    color: rgba(255, 250, 241, 0.9);
+    font-size: 18px;
+    font-weight: 600;
   }
 
   .hero-actions {
@@ -373,7 +380,7 @@
   }
 
   .button-secondary:hover {
-    background: rgba(13, 34, 59, 0.06);
+    background: rgba(12, 34, 60, 0.06);
   }
 
   .button-light {
@@ -412,7 +419,7 @@
   }
 
   .section-intro {
-    max-width: 800px;
+    max-width: 810px;
     font-size: 19px;
     margin-bottom: 42px;
   }
@@ -431,14 +438,26 @@
     background: var(--gold-soft);
   }
 
-  .intro-panel {
+  .two-col,
+  .intro-panel,
+  .assessment-grid {
     display: grid;
-    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-    gap: 58px;
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    gap: 64px;
     align-items: start;
   }
 
+  .assessment-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 0.62fr);
+    gap: 58px;
+  }
+
+  .copy-block p:last-child {
+    margin-bottom: 0;
+  }
+
   .callout {
+    margin-top: 30px;
     background: var(--navy-deep);
     color: rgba(255, 250, 241, 0.86);
     border-radius: 30px;
@@ -451,56 +470,28 @@
     font-size: 34px;
   }
 
-  .callout p:last-child {
-    margin-bottom: 0;
+  .pull-quote {
+    margin-top: 34px;
+    padding: 34px;
+    border-left: 6px solid var(--gold);
+    background: var(--cream);
+    color: var(--navy-deep);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(28px, 3vw, 42px);
+    line-height: 1.08;
+    font-weight: 600;
   }
 
-  .compare-box {
+  .definition-grid,
+  .card-grid,
+  .diagnostic-grid,
+  .help-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--rule-soft);
-    border: 1px solid var(--rule-soft);
-    border-radius: 28px;
-    overflow: hidden;
-    box-shadow: 0 14px 38px rgba(13, 34, 59, 0.06);
-  }
-
-  .compare-col {
-    background: var(--paper);
-    padding: 36px;
-  }
-
-  .compare-col:first-child {
-    background: #fbf3e7;
-  }
-
-  .compare-list {
-    list-style: none;
-    display: grid;
-    gap: 10px;
-    margin-top: 18px;
-  }
-
-  .compare-list li {
-    padding-left: 24px;
-    position: relative;
-  }
-
-  .compare-list li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 11px;
-    width: 9px;
-    height: 9px;
-    background: var(--gold);
-    border-radius: 50%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
   }
 
   .definition-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 1px;
     background: var(--rule-soft);
     border: 1px solid var(--rule-soft);
@@ -539,33 +530,12 @@
     background: rgba(255, 255, 255, 0.52);
   }
 
-  .two-col {
-    display: grid;
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-    gap: 64px;
-    align-items: start;
-  }
-
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-  }
-
-  .card-grid.two {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .card-grid.single {
-    grid-template-columns: 1fr;
-  }
-
   .card {
     background: var(--paper);
     border: 1px solid var(--rule-soft);
     border-radius: 24px;
     padding: 30px;
-    box-shadow: 0 12px 38px rgba(13, 34, 59, 0.06);
+    box-shadow: 0 12px 38px rgba(12, 34, 60, 0.06);
   }
 
   .white .card {
@@ -592,8 +562,8 @@
     color: var(--gold-soft);
   }
 
-  .card p {
-    font-size: 16px;
+  .card p:last-child,
+  .definition p:last-child {
     margin-bottom: 0;
   }
 
@@ -606,18 +576,21 @@
     margin-bottom: 20px;
   }
 
-  .plain-list {
+  .simple-list,
+  .offer-list {
     list-style: none;
     display: grid;
     gap: 14px;
   }
 
-  .plain-list li {
+  .simple-list li,
+  .offer-list li {
     position: relative;
     padding-left: 30px;
   }
 
-  .plain-list li::before {
+  .simple-list li::before,
+  .offer-list li::before {
     content: '';
     position: absolute;
     left: 0;
@@ -629,105 +602,40 @@
     box-shadow: 0 0 0 5px rgba(201, 154, 69, 0.16);
   }
 
-  .pathway {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 12px;
-    margin-top: 34px;
-  }
-
-  .path-step {
-    background: var(--paper);
-    border: 1px solid var(--rule-soft);
-    border-radius: 20px;
-    padding: 20px;
-    min-height: 132px;
-  }
-
-  .path-step strong {
-    display: block;
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 24px;
-    color: var(--navy-deep);
+  .tool-card h3 {
     margin-bottom: 8px;
   }
 
-  .question-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 22px;
-  }
-
-  .question-list {
-    list-style: none;
-    display: grid;
-    gap: 14px;
-    margin-top: 18px;
-  }
-
-  .question-list li {
-    border-bottom: 1px solid var(--rule-soft);
-    padding-bottom: 14px;
-  }
-
-  .rhythm-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 12px;
-    margin-top: 36px;
-  }
-
-  .rhythm-step {
-    background: var(--paper);
-    border: 1px solid var(--rule-soft);
-    border-radius: 999px;
-    min-height: 118px;
-    padding: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .rhythm-step strong {
+  .diagnostic-card strong {
     display: block;
+    margin-bottom: 8px;
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 24px;
     color: var(--navy-deep);
-    margin-bottom: 4px;
+    font-size: 25px;
+    line-height: 1.1;
   }
 
-  .rhythm-step span {
-    font-size: 13px;
-    color: var(--ink-muted);
+  .diagnostic-card span {
+    display: block;
+    color: var(--ink-soft);
   }
 
-  .stuck-grid {
+  .question-set {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
+    margin-top: 32px;
   }
 
-  .stuck-item {
-    padding: 24px;
+  .question-card {
+    background: rgba(255, 250, 241, 0.08);
+    border: 1px solid rgba(255, 250, 241, 0.14);
     border-radius: 22px;
-    background: var(--white);
-    border: 1px solid var(--rule-soft);
+    padding: 24px;
   }
 
-  .stuck-item strong {
-    display: block;
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    color: var(--navy-deep);
-    font-size: 23px;
-    margin-bottom: 6px;
-  }
-
-  .assessment-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(360px, 0.62fr);
-    gap: 58px;
-    align-items: start;
+  .question-card h3 {
+    font-size: 26px;
+    margin-bottom: 8px;
   }
 
   .assessment-box {
@@ -784,7 +692,7 @@
 
   details p {
     margin-top: 12px;
-    max-width: 760px;
+    max-width: 780px;
   }
 
   footer {
@@ -827,25 +735,15 @@
 
     .intro-panel,
     .two-col,
-    .assessment-grid,
-    .compare-box,
-    .question-grid {
+    .assessment-grid {
       grid-template-columns: 1fr;
     }
 
     .definition-grid,
     .card-grid,
-    .card-grid.two {
+    .diagnostic-grid,
+    .help-grid {
       grid-template-columns: 1fr;
-    }
-
-    .pathway,
-    .rhythm-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .stuck-grid {
-      grid-template-columns: 1fr 1fr;
     }
   }
 
@@ -885,6 +783,10 @@
       font-size: 19px;
     }
 
+    .hero-short-list {
+      font-size: 16px;
+    }
+
     section {
       padding: 64px 0;
     }
@@ -893,17 +795,15 @@
       width: 100%;
     }
 
-    .pathway,
-    .rhythm-grid,
-    .stuck-grid {
-      grid-template-columns: 1fr;
-    }
-
     .callout,
     .assessment-box,
     .card,
     .definition,
-    .compare-col {
+    .question-card {
+      padding: 28px;
+    }
+
+    .pull-quote {
       padding: 28px;
     }
 
@@ -925,16 +825,17 @@
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Waypoint Mission Partners",
-  "description": "Advancement strategy and systems for nonprofits, private schools, churches, and mission-driven organizations.",
+  "description": "Advancement strategy for nonprofits, private schools, churches, and mission-driven organizations.",
   "url": "https://www.waypointmissionpartners.com/",
   "areaServed": "United States",
   "serviceType": [
     "Advancement assessment",
-    "Donor stewardship system",
-    "Board fundraising enablement",
-    "Campaign planning",
-    "Donor data and lead measure design",
-    "Annual advancement rhythm planning"
+    "Cultivation planning",
+    "Solicitation strategy",
+    "Stewardship design",
+    "Board enablement",
+    "Donor data cleanup",
+    "Annual rhythm planning"
   ]
 }
 </script>
@@ -950,20 +851,18 @@
       </a>
 
       <nav class="desktop-nav" aria-label="Primary navigation">
-        <a href="#framework">Framework</a>
-        <a href="#definitions">Terms</a>
-        <a href="#disciplines">Disciplines</a>
-        <a href="#rhythm">Rhythm</a>
+        <a href="#clarifying-work">Clarifying the Work</a>
+        <a href="#disciplines">Three Disciplines</a>
+        <a href="#infrastructure">Infrastructure</a>
         <a href="#assessment" class="nav-cta">$199 Assessment</a>
       </nav>
 
       <details class="mobile-menu">
         <summary>Menu</summary>
         <nav class="mobile-nav-panel" aria-label="Mobile navigation">
-          <a href="#framework">Framework</a>
-          <a href="#definitions">Terms</a>
-          <a href="#disciplines">Disciplines</a>
-          <a href="#rhythm">Rhythm</a>
+          <a href="#clarifying-work">Clarifying the Work</a>
+          <a href="#disciplines">Three Disciplines</a>
+          <a href="#infrastructure">Infrastructure</a>
           <a href="#assessment">$199 Assessment</a>
         </nav>
       </details>
@@ -979,12 +878,15 @@
           <div class="hero-logo">
             <img src="Untitled design (18).png" alt="Waypoint Mission Partners" />
           </div>
-          <div class="eyebrow">Advancement Framework</div>
-          <h1>Funding feels unpredictable when the system behind it is unclear.</h1>
-          <p class="hero-lede">Waypoint Mission Partners helps nonprofits, private schools, churches, and mission-driven organizations build the advancement structure behind sustainable funding.</p>
+          <div class="eyebrow">Advancement strategy for nonprofits, private schools, and mission-driven organizations</div>
+          <h1>Funding feels unpredictable when the advancement system is unclear.</h1>
+          <p class="hero-lede">Most nonprofits, private schools, churches, and mission-driven organizations already have visible activity in motion.</p>
+          <p class="hero-short-list">Events. Appeals. Sponsorships. Giving pages. Board connections. Personal relationships. Past donor history.</p>
+          <p class="hero-lede">Those pieces can raise money. But they are not the advancement system.</p>
+          <p class="hero-lede">Waypoint Mission Partners helps leaders diagnose what is working, what is missing, and what should be addressed first across cultivation, solicitation, stewardship, donor records, board participation, lead measures, and annual rhythm.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#assessment">Start with the $199 Assessment</a>
-            <a class="button button-light" href="#framework">Explore the Framework</a>
+            <a class="button button-light" href="#clarifying-work">See How the Framework Works</a>
           </div>
           <div class="hero-note">Assess. Plan. Support.</div>
         </div>
@@ -992,43 +894,109 @@
     </div>
   </section>
 
-  <section class="white bordered" id="framework">
-    <div class="container-narrow">
-      <div class="eyebrow">The Core Idea</div>
-      <h2>Pieces of fundraising activity are not the same thing as an advancement system.</h2>
-      <p>Many organizations already have events, appeals, sponsorships, online giving, board connections, and personal relationships that bring in support. Those pieces can raise real money.</p>
-      <p>The harder question is whether those pieces are connected well enough for leadership to see what is working, what is missing, and what needs attention next. That is where advancement structure matters.</p>
+  <section class="white bordered" id="clarifying-work">
+    <div class="container">
+      <div class="eyebrow">How the Terms Fit</div>
+      <h2>Advancement is the system. Cultivation, solicitation, and stewardship are the work inside it.</h2>
+      <div class="two-col">
+        <div class="copy-block">
+          <p>People often use fundraising as shorthand for everything related to financial support. That shorthand creates confusion.</p>
+          <p>For Waypoint, fundraising describes visible funding activity: appeals, events, campaigns, sponsorships, giving pages, recurring gift invitations, and donor conversations.</p>
+          <p>Those activities matter, but they are not the advancement system. Most of them are tools used inside solicitation, or tools that can support cultivation, solicitation, stewardship, or some combination of the three.</p>
+        </div>
+        <div class="callout" style="margin-top: 0;">
+          <h3>The working framework</h3>
+          <ul class="simple-list">
+            <li><strong>Advancement system:</strong> the full structure that organizes the work.</li>
+            <li><strong>Cultivation:</strong> relationship-building before the ask.</li>
+            <li><strong>Solicitation:</strong> the direct invitation to give.</li>
+            <li><strong>Stewardship:</strong> care and follow-up after the gift.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-grid" style="margin-top: 40px;">
+        <article class="card">
+          <span class="label">Funding Activity</span>
+          <h3>Visible tools</h3>
+          <p>Events, appeals, campaigns, sponsorships, giving pages, recurring gift invitations, and donor conversations.</p>
+        </article>
+        <article class="card">
+          <span class="label">Core Disciplines</span>
+          <h3>The relationship cycle</h3>
+          <p>Cultivation before the ask, solicitation during the ask, and stewardship after the gift.</p>
+        </article>
+        <article class="card">
+          <span class="label">Advancement Infrastructure</span>
+          <h3>What holds it together</h3>
+          <p>Donor records, board participation, lead measures, follow-up ownership, stewardship rhythm, and annual rhythm.</p>
+        </article>
+      </div>
+      <p class="section-intro" style="margin-top: 36px; margin-bottom: 0;">When people say funding is unpredictable, they often mean the advancement system has gaps they have not yet named.</p>
     </div>
   </section>
 
-  <section class="cream" id="activity-structure">
+  <section class="cream" id="real-problem">
+    <div class="container-narrow">
+      <div class="eyebrow">Activity vs. Structure</div>
+      <h2>Visible activity and advancement structure are not the same thing.</h2>
+      <p>An event can raise money. An appeal can raise money. A sponsorship push can raise money. A donor conversation can lead to a gift.</p>
+      <p>But if cultivation is thin, solicitation carries too much weight. If stewardship is inconsistent, donors drift after the first gift. If records are weak, relationships depend on memory. If board roles are vague, good people stay passive.</p>
+      <p>That is not a motivation problem. It is an advancement system problem.</p>
+      <div class="pull-quote">Visible activity can raise money. A system helps leadership see what is actually working and what needs attention next.</div>
+    </div>
+  </section>
+
+  <section class="navy" id="disciplines">
     <div class="container">
-      <div class="compare-box">
-        <div class="compare-col">
-          <div class="eyebrow">Activity</div>
-          <h2>Pieces can raise money.</h2>
-          <p>Fundraising activity is visible. It creates movement, energy, and revenue. But when it is not connected to a larger system, the organization keeps rebuilding momentum from scratch.</p>
-          <ul class="compare-list">
-            <li>Events</li>
-            <li>Appeals</li>
-            <li>Sponsorships</li>
-            <li>Online giving</li>
-            <li>Board connections</li>
-            <li>Personal relationships</li>
-            <li>Past donor history</li>
-          </ul>
-        </div>
-        <div class="compare-col">
-          <div class="eyebrow">Structure</div>
-          <h2>Structure helps leaders see what needs attention.</h2>
-          <p>Advancement structure gives the organization a practical way to identify, cultivate, ask, steward, track, and review donor relationships over time.</p>
-          <ul class="compare-list">
-            <li>Donor ownership</li>
-            <li>Stewardship process</li>
-            <li>Cultivation plan</li>
-            <li>Usable records</li>
+      <div class="eyebrow">The Advancement System</div>
+      <h2>A healthy advancement system has three core disciplines. When one is weak, the whole system feels it.</h2>
+      <p class="section-intro">Cultivation, solicitation, and stewardship are not separate programs. They are parts of the same relationship cycle.</p>
+      <div class="card-grid">
+        <article class="card">
+          <div class="num">1</div>
+          <span class="label">Before the ask</span>
+          <h3>Cultivation</h3>
+          <p>Cultivation is how an organization identifies people who may care about its mission and builds a relationship with them before asking for anything.</p>
+          <p>It tends to get less attention because it does not produce immediate revenue. But without it, organizations keep returning to the same pool of donors and wonder why giving has flattened.</p>
+        </article>
+        <article class="card">
+          <div class="num">2</div>
+          <span class="label">The ask</span>
+          <h3>Solicitation</h3>
+          <p>Solicitation is the direct invitation to give. Appeals, campaigns, sponsorship requests, event asks, major donor conversations, and recurring gift invitations all belong here.</p>
+          <p>The problem is not usually that organizations are afraid to ask. It is that solicitation gets asked to carry the whole system on its own, without enough cultivation before it or stewardship after it.</p>
+        </article>
+        <article class="card">
+          <div class="num">3</div>
+          <span class="label">After the gift</span>
+          <h3>Stewardship</h3>
+          <p>Stewardship is how an organization cares for donors after they give. Thank-you calls, impact updates, personal notes, and ongoing communication all fit here.</p>
+          <p>A first gift is not the relationship. It is the beginning of one. Most organizations lose donors not because donors become upset, but because the relationship was never really developed after the initial transaction.</p>
+        </article>
+      </div>
+      <p class="section-intro" style="margin-top: 40px; margin-bottom: 0;">Cultivation builds the relationship. Solicitation invites the gift. Stewardship keeps the relationship healthy after the gift.</p>
+    </div>
+  </section>
+
+  <section class="white" id="infrastructure">
+    <div class="container intro-panel">
+      <div>
+        <div class="eyebrow">What Holds the System Together</div>
+        <h2>Infrastructure is what keeps the advancement system from depending on memory.</h2>
+      </div>
+      <div class="copy-block">
+        <p>Most organizations are not struggling because staff or volunteers are unwilling to help. They are working with limited capacity, part-time attention, and board members who want to contribute but are not sure how.</p>
+        <p>When the structure underneath the system is thin, a few things start to happen.</p>
+        <p>A development person changes roles, and the next person rebuilds from scratch. An executive director leaves, and donor history becomes hard to reconstruct. A board member rolls off, and key relationships go quiet with them.</p>
+        <p>Infrastructure does not need to be elaborate. It needs to be usable and owned.</p>
+        <div class="callout">
+          <h3>Supporting infrastructure</h3>
+          <ul class="simple-list">
+            <li>Donor records</li>
+            <li>Stewardship rhythm</li>
             <li>Board roles</li>
             <li>Lead measures</li>
+            <li>Follow-up ownership</li>
             <li>Annual rhythm</li>
           </ul>
         </div>
@@ -1036,228 +1004,54 @@
     </div>
   </section>
 
-  <section class="paper" id="definitions">
-    <div class="container">
-      <div class="eyebrow">Clarifying the Work</div>
-      <h2>Fundraising invites the gift. Development builds the relationship. Advancement organizes the system around both.</h2>
-      <p class="section-intro">When funding feels unpredictable, most leaders look first at fundraising. That matters, but it is only one part of a larger picture.</p>
-      <div class="definition-grid">
-        <article class="definition">
-          <h3>Fundraising</h3>
-          <span class="verb">Invites the gift.</span>
-          <p>The act of inviting financial support through appeals, events, campaigns, sponsorships, recurring giving, major donor conversations, and online giving opportunities.</p>
-          <div class="tag-row">
-            <span class="tag">appeals</span>
-            <span class="tag">events</span>
-            <span class="tag">campaigns</span>
-            <span class="tag">giving pages</span>
-          </div>
-        </article>
-        <article class="definition">
-          <h3>Development</h3>
-          <span class="verb">Builds the relationship.</span>
-          <p>The relationship process around those moments: identifying people who may care, learning what connects them, communicating clearly, thanking well, and reporting impact.</p>
-          <div class="tag-row">
-            <span class="tag">prospects</span>
-            <span class="tag">cultivation</span>
-            <span class="tag">stewardship</span>
-            <span class="tag">impact reporting</span>
-          </div>
-        </article>
-        <article class="definition">
-          <h3>Advancement</h3>
-          <span class="verb">Organizes the system.</span>
-          <p>The structure that connects fundraising, development, communication, donor records, board participation, stewardship, campaign timing, and leadership accountability.</p>
-          <div class="tag-row">
-            <span class="tag">records</span>
-            <span class="tag">board roles</span>
-            <span class="tag">lead measures</span>
-            <span class="tag">annual rhythm</span>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="white" id="infrastructure">
-    <div class="container intro-panel">
-      <div>
-        <div class="eyebrow">Why Effort Needs Infrastructure</div>
-        <h2>Infrastructure does not mean bureaucracy. It means the system is clear enough to use.</h2>
-      </div>
-      <div>
-        <p>Most organizations are not struggling because people are unwilling to help. They are working with limited staff, busy volunteers, part-time attention, and board members who care but may not know how to participate.</p>
-        <p>When the structure is thin, fundraising depends too much on memory, urgency, personality, and habit. A staff member leaves and donor history becomes harder to understand. A board member rolls off and key relationships go quiet.</p>
-        <div class="callout">
-          <h3>Effort raises support. Infrastructure helps sustain it.</h3>
-          <p>The goal is not to make the organization heavier. The goal is to make donor work visible, owned, and repeatable.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="navy" id="disciplines">
-    <div class="container">
-      <div class="eyebrow">Three Disciplines of Advancement</div>
-      <h2>A healthy advancement system balances cultivation, solicitation, and stewardship.</h2>
-      <p class="section-intro">These are not separate programs. They are parts of the same relationship cycle.</p>
-      <div class="card-grid">
-        <article class="card">
-          <div class="num">1</div>
-          <span class="label">Before the Ask</span>
-          <h3>Cultivation</h3>
-          <p>Identify, connect, invite, and learn. Cultivation builds the future donor base before the organization returns to the same people again.</p>
-        </article>
-        <article class="card">
-          <div class="num">2</div>
-          <span class="label">The Ask</span>
-          <h3>Solicitation</h3>
-          <p>Appeals, campaigns, events, sponsorships, recurring giving invitations, and major donor conversations. The need and opportunity must be clear.</p>
-        </article>
-        <article class="card">
-          <div class="num">3</div>
-          <span class="label">After the Gift</span>
-          <h3>Stewardship</h3>
-          <p>Thank, report impact, follow up, and keep donors connected. Stewardship turns a gift into the beginning of a healthier relationship.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="cream" id="stewardship">
-    <div class="container two-col">
-      <div>
-        <div class="eyebrow">Stewardship and Retention</div>
-        <h2>A first gift is not the relationship. It is the beginning of the relationship.</h2>
-      </div>
-      <div>
-        <p>That can be easy to miss because the gift often feels like the successful outcome. The appeal worked. The organization received support and moved on.</p>
-        <p>The donor may experience it differently. They gave once, received a receipt or a basic thank-you, and then heard little until the next appeal. That is where many organizations quietly lose donors.</p>
-        <p>Stewardship should not be treated as a courtesy item after fundraising is finished. It is part of the funding system.</p>
-      </div>
-    </div>
-    <div class="container">
-      <div class="pathway">
-        <div class="path-step"><strong>First Gift</strong><span>A donor responds to a need or invitation.</span></div>
-        <div class="path-step"><strong>Thank You</strong><span>The gift is acknowledged quickly and personally.</span></div>
-        <div class="path-step"><strong>Impact Update</strong><span>The donor sees what the gift helped make possible.</span></div>
-        <div class="path-step"><strong>Personal Call</strong><span>The relationship is treated as more than a transaction.</span></div>
-        <div class="path-step"><strong>Next Gift</strong><span>The next invitation has a stronger foundation.</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="white" id="data">
-    <div class="container">
-      <div class="eyebrow">Donor Data and Lead Measures</div>
-      <h2>Donor data helps the organization remember. Lead measures show whether relationships are being cared for.</h2>
-      <p class="section-intro">The tool matters less than whether the information is current, usable, and owned by someone. A simple system used consistently beats expensive software no one maintains.</p>
-      <div class="question-grid">
-        <article class="card">
-          <span class="label">Donor Data Helps Answer</span>
-          <ul class="question-list">
-            <li>Who gave?</li>
-            <li>Who stopped giving?</li>
-            <li>Who increased their giving?</li>
-            <li>Who needs a follow-up?</li>
-            <li>Who knows them?</li>
-            <li>What should happen next?</li>
-          </ul>
-        </article>
-        <article class="card">
-          <span class="label">Lead Measures Help Answer</span>
-          <ul class="question-list">
-            <li>Are donors being contacted?</li>
-            <li>Are first-time donors being thanked?</li>
-            <li>Are prospects being introduced?</li>
-            <li>Are board members opening doors?</li>
-            <li>Are follow-ups happening?</li>
-            <li>Are relationships moving forward?</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="cream" id="board">
-    <div class="container two-col">
-      <div>
-        <div class="eyebrow">Board and Leadership Participation</div>
-        <h2>Board members do not all need the same role. They do need a clear one.</h2>
-        <p>The board does not need to become a team of professional fundraisers. For most organizations, that expectation is unrealistic and often creates more anxiety than action.</p>
-      </div>
-      <div class="card-grid single">
-        <article class="card">
-          <span class="label">Personal Participation</span>
-          <h3>Support the mission personally.</h3>
-          <p>The amount will vary by person, but participation matters.</p>
-        </article>
-        <article class="card">
-          <span class="label">Relational Access</span>
-          <h3>Open doors the staff cannot open alone.</h3>
-          <p>Churches, businesses, civic groups, schools, alumni networks, parent groups, and extended family circles can all matter.</p>
-        </article>
-        <article class="card">
-          <span class="label">Accountability</span>
-          <h3>Keep advancement visible.</h3>
-          <p>The board should review cultivation, stewardship, donor data, activity, and follow-through, not just event totals.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="white" id="tools">
+  <section class="cream" id="tools">
     <div class="container">
       <div class="eyebrow">Useful Tools, Not the Whole System</div>
-      <h2>Events, campaigns, and recurring giving all matter. None should carry the whole system alone.</h2>
+      <h2>Events, appeals, campaigns, sponsorships, and recurring giving are tools inside the advancement system.</h2>
+      <p class="section-intro">These tools can serve cultivation, solicitation, stewardship, or some combination of the three. The important question is what role each one plays in the larger system, not how much money it brought in on its own.</p>
       <div class="card-grid">
-        <article class="card">
+        <article class="card tool-card">
           <span class="label">Events</span>
           <h3>Create visibility, connection, generosity, and follow-up opportunities.</h3>
-          <p>The question is what role the event plays in the larger advancement plan: cultivation, solicitation, stewardship, or some mix of all three.</p>
+          <p>Some events mostly serve solicitation. Some are cultivation. Some are stewardship. If the only measure is net revenue, leadership may miss what the event is actually doing for the system.</p>
         </article>
-        <article class="card">
+        <article class="card tool-card">
           <span class="label">Campaigns</span>
           <h3>Create a focused season to communicate a need and invite support.</h3>
-          <p>Campaigns should connect message, timing, donor segments, leadership participation, giving options, and follow-up.</p>
+          <p>A campaign should connect message, timing, donor segments, leadership participation, board involvement, and follow-up. Without those pieces, a campaign can still raise money but may not strengthen the system behind it.</p>
         </article>
-        <article class="card">
+        <article class="card tool-card">
           <span class="label">Recurring Giving</span>
-          <h3>Create a more predictable base of ongoing support.</h3>
-          <p>Recurring donors still need stewardship. Automatic giving should not mean automatic neglect.</p>
+          <h3>Creates a more predictable base of ongoing support.</h3>
+          <p>A donor who gives monthly makes one decision that can support the organization all year. Recurring donors still need stewardship. They should not be overlooked, even though the gift happens automatically.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="cream" id="rhythm">
+  <section class="white" id="gaps">
     <div class="container">
-      <div class="eyebrow">Annual Rhythm</div>
-      <h2>A calendar shows what is scheduled. A rhythm helps leadership know what needs attention.</h2>
-      <p class="section-intro">Advancement needs a rhythm for the year, not just a list of event dates. The goal is to stop treating every funding need like a surprise.</p>
-      <div class="rhythm-grid">
-        <div class="rhythm-step"><strong>Review</strong><span>Data, results, retention, gaps</span></div>
-        <div class="rhythm-step"><strong>Cultivate</strong><span>Build relationships before the ask</span></div>
-        <div class="rhythm-step"><strong>Steward</strong><span>Thank, report impact, connect</span></div>
-        <div class="rhythm-step"><strong>Prepare</strong><span>Lists, message, leadership</span></div>
-        <div class="rhythm-step"><strong>Ask</strong><span>Invite support clearly</span></div>
-        <div class="rhythm-step"><strong>Follow Up</strong><span>Thank, record, review</span></div>
+      <div class="eyebrow">Common Gaps</div>
+      <h2>The visible problem is usually not the first problem to fix.</h2>
+      <div class="two-col">
+        <div class="copy-block">
+          <p>Most leaders can name several things that are not working. The harder question is knowing which one to address first.</p>
+          <p>A struggling event may not need a better venue or theme. It may need a better follow-up process for guests and first-time donors.</p>
+          <p>A passive board may not need more encouragement to get involved. It may need clearer roles and simpler ways to participate.</p>
+        </div>
+        <div class="copy-block">
+          <p>A donor retention problem usually points to weak stewardship, not weak appeals.</p>
+          <p>A CRM problem is rarely about the software. It is usually about ownership and habits.</p>
+          <p>Starting in the wrong place does not just waste time. It can also lead to mistakes. It can make the underlying problem harder to see.</p>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <section class="white" id="stuck">
-    <div class="container">
-      <div class="eyebrow">Where Organizations Usually Get Stuck</div>
-      <h2>The visible problem is not always the first problem to fix.</h2>
-      <p class="section-intro">A weak event may not need a better theme. It may need a better follow-up process. A passive board may not need another reminder to help with fundraising. It may need clearer roles and simpler ways to participate.</p>
-      <div class="stuck-grid">
-        <div class="stuck-item"><strong>Donor Retention</strong><span>Are first-time donors being stewarded?</span></div>
-        <div class="stuck-item"><strong>Event Follow-Up</strong><span>Are guests and sponsors moved into a relationship process?</span></div>
-        <div class="stuck-item"><strong>Board Clarity</strong><span>Do board members know how to participate?</span></div>
-        <div class="stuck-item"><strong>Donor Data</strong><span>Are records current, usable, and owned?</span></div>
-        <div class="stuck-item"><strong>Lead Measures</strong><span>Is leadership tracking activity before money arrives?</span></div>
-        <div class="stuck-item"><strong>Annual Rhythm</strong><span>Is advancement planned across the year?</span></div>
+      <div class="diagnostic-grid" style="margin-top: 40px;">
+        <article class="card diagnostic-card"><strong>Donor Retention</strong><span>Are first-time donors being thanked and followed up with in a way that builds toward a second gift?</span></article>
+        <article class="card diagnostic-card"><strong>Event Follow-Up</strong><span>Are guests and sponsors being moved into a real relationship process, or does the event end and everyone moves on?</span></article>
+        <article class="card diagnostic-card"><strong>Board Participation</strong><span>Do board members have specific, actionable ways to help, or are they being asked to fundraise in the abstract?</span></article>
+        <article class="card diagnostic-card"><strong>Donor Data</strong><span>Are records current, assigned to someone, and usable when it matters?</span></article>
+        <article class="card diagnostic-card"><strong>Lead Measures</strong><span>Does leadership know whether the right advancement activity is happening before money arrives?</span></article>
+        <article class="card diagnostic-card"><strong>Annual Rhythm</strong><span>Is advancement planned across the full year, or does each ask feel like it came up too fast?</span></article>
       </div>
     </div>
   </section>
@@ -1266,57 +1060,96 @@
     <div class="container assessment-grid">
       <div>
         <div class="eyebrow">Start With a Clear Diagnosis</div>
-        <h2>The framework explains the system. The assessment applies it to your organization.</h2>
-        <p class="section-intro">The Waypoint Assessment reviews your current advancement system and identifies where the structure is clear, where it is weak, and where the organization may be relying too much on memory, urgency, events, or a few overextended people.</p>
-        <div class="card-grid single">
-          <article class="card">
-            <span class="label">1. What is working?</span>
-            <p>What parts of the system are already clear or useful?</p>
+        <h2>The framework explains the system. The Waypoint Assessment applies it to your organization.</h2>
+        <p class="section-intro">Before you hire, buy software, plan another event, launch another appeal, or push the board harder, make sure you are solving the right problem.</p>
+        <p>The Waypoint Assessment reviews your current advancement system and identifies where the structure is clear, where it is weak, and where your organization may be carrying more risk than it realizes.</p>
+        <p>It is not a framework presentation or a general report on nonprofit best practices. It is a diagnosis specific to your organization, designed to help leadership find the right starting point.</p>
+        <p>Not every organization needs the same first move.</p>
+        <p>A nonprofit with faithful donors and weak stewardship does not need the same starting point as a private school with alumni, grandparents, sponsors, and scattered donor records. An organization with a willing board and unclear roles does not need the same starting point as one with good data and inconsistent follow-up.</p>
+        <p>The assessment answers three questions.</p>
+        <div class="question-set">
+          <article class="question-card">
+            <h3>What is working?</h3>
+            <p>Which parts of the current system are already clear and useful?</p>
           </article>
-          <article class="card">
-            <span class="label">2. What is missing?</span>
+          <article class="question-card">
+            <h3>What is missing?</h3>
             <p>Where are relationships, records, roles, follow-up, or rhythms weak?</p>
           </article>
-          <article class="card">
-            <span class="label">3. What should be addressed first?</span>
-            <p>Which gap is creating the most drag?</p>
+          <article class="question-card">
+            <h3>What should be addressed first?</h3>
+            <p>Which gap is creating the most drag on the rest of the system?</p>
           </article>
         </div>
       </div>
       <aside class="assessment-box">
         <h3>Waypoint Assessment</h3>
         <div class="price">$199</div>
-        <p>Includes advancement system review, strongest and weakest areas, priority recommendations, and a 90-day next-step plan.</p>
+        <p>Includes:</p>
+        <ul class="offer-list">
+          <li>Advancement system review</li>
+          <li>Strongest and weakest areas identified</li>
+          <li>Priority recommendations</li>
+          <li>90-day next-step plan</li>
+        </ul>
         <div class="form-placeholder">
           Paste GoHighLevel form, calendar, or payment embed here.
         </div>
         <div class="hero-actions">
           <a class="button button-primary" href="mailto:tommy@waypointmissionpartners.com?subject=Waypoint%20Assessment">Request the Assessment</a>
         </div>
-        <p class="small-note">Replace the email address with your final WMP inbox before publishing.</p>
+        <p class="small-note">The assessment is written so leadership and board members can review it together and have a clearer conversation about advancement without blame or vague ambition.</p>
       </aside>
+    </div>
+  </section>
+
+  <section class="cream" id="how-waypoint-helps">
+    <div class="container">
+      <div class="eyebrow">Assess. Plan. Support.</div>
+      <h2>A stronger mission needs more than visible activity. It needs the advancement system to sustain it.</h2>
+      <div class="help-grid">
+        <article class="card">
+          <span class="label">Assess</span>
+          <h3>Understand the starting point.</h3>
+          <p>Understand what is working, what is missing, and what should be addressed first.</p>
+        </article>
+        <article class="card">
+          <span class="label">Plan</span>
+          <h3>Build a practical path.</h3>
+          <p>Build a practical path aligned with your donor base, board culture, staff capacity, giving history, and funding goals.</p>
+        </article>
+        <article class="card">
+          <span class="label">Support</span>
+          <h3>Strengthen the system over time.</h3>
+          <p>Strengthen the advancement system over time through stewardship design, board enablement, donor data cleanup, campaign support, and annual rhythm planning.</p>
+        </article>
+      </div>
     </div>
   </section>
 
   <section class="white" id="faq">
     <div class="container-narrow">
-      <div class="eyebrow">Common Questions</div>
-      <h2>Before you add another event, replace another tool, push the board harder, or launch another appeal, make sure you are solving the right problem.</h2>
+      <div class="eyebrow">FAQ</div>
+      <h2>Common questions before starting.</h2>
       <details>
-        <summary>Is this only for organizations with a development director?</summary>
-        <p>No. It is often most useful for organizations without a formal advancement role because it clarifies what needs to exist before hiring, buying software, or adding more activity.</p>
+        <summary>Is this only for organizations that already have a development director?</summary>
+        <p>No. It is often more useful when you do not have one. The assessment helps clarify what needs to be in place before you hire someone, buy software, or add more activity to a system that is not yet clear.</p>
       </details>
       <details>
-        <summary>Is this a fundraising campaign?</summary>
-        <p>No. A campaign may become part of the work, but the core issue is whether the organization has the advancement structure to support donor relationships over time.</p>
+        <summary>Is this a campaign service?</summary>
+        <p>No. A campaign may become part of the plan. But the assessment looks at the system underneath the campaign: cultivation, solicitation, stewardship, records, board roles, lead measures, follow-up, and annual rhythm.</p>
       </details>
       <details>
-        <summary>Can the assessment be shared with the board?</summary>
-        <p>Yes. The assessment is written to help leadership and board members talk clearly about what is working, what is missing, and what should come next.</p>
+        <summary>Can we share the assessment with our board?</summary>
+        <p>Yes. It is written so that leadership and board members can work through it together and have a productive conversation about advancement without turning it into blame or vague ambition.</p>
+      </details>
+      <details>
+        <summary>We already know we need help. Do we still need the assessment?</summary>
+        <p>The assessment still matters. Knowing that something is broken is not the same as knowing which thing to fix first. The assessment keeps the first move from being based on assumption.</p>
       </details>
       <details>
         <summary>What happens after the assessment?</summary>
-        <p>You can implement the recommendations yourself, or discuss planning and support with Waypoint Mission Partners. The assessment is designed to stand on its own either way.</p>
+        <p>You can use the plan on your own, or discuss support with Waypoint. That may include planning, implementation, stewardship design, board enablement, campaign support, donor data cleanup, or annual rhythm work.</p>
       </details>
     </div>
   </section>
@@ -1327,7 +1160,7 @@
     <a class="footer-logo" href="#top" aria-label="Waypoint Mission Partners home">
       <img src="Untitled design (18).png" alt="Waypoint Mission Partners" />
     </a>
-    <p class="footer-small">Advancement strategy for nonprofits, private schools, churches, and mission-driven organizations. Assess. Plan. Support.</p>
+    <p class="footer-small">Waypoint Mission Partners. Advancement strategy for nonprofits, private schools, churches, and mission-driven organizations. Assess. Plan. Support.</p>
   </div>
 </footer>
 </body>
