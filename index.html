@@ -4,21 +4,26 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Waypoint Mission Partners | Advancement Framework</title>
-<meta name="description" content="Waypoint Mission Partners helps nonprofits, private schools, churches, and mission-driven organizations build advancement structure for sustainable funding." />
+<meta name="description" content="Waypoint Mission Partners helps nonprofits, private schools, churches, and mission-driven organizations build clearer advancement systems for sustainable funding." />
 <meta name="robots" content="index, follow" />
+<meta property="og:title" content="Waypoint Mission Partners | Advancement Framework" />
+<meta property="og:description" content="Helping mission-driven organizations build advancement structure for sustainable funding." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.waypointmissionpartners.com/" />
+<meta property="og:image" content="https://www.waypointmissionpartners.com/waypoint-logo.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --navy: #19365a;
+    --navy: #18365d;
     --navy-deep: #0d223b;
-    --navy-dark: #081827;
-    --navy-soft: #27496c;
-    --forest: #496842;
-    --forest-deep: #334d2f;
+    --navy-dark: #071827;
+    --navy-soft: #27496f;
+    --forest: #4b6a43;
+    --forest-deep: #314d2d;
     --gold: #c99a45;
-    --gold-soft: #e0bd75;
+    --gold-soft: #e1bd75;
     --cream: #f7f0e4;
     --paper: #fffaf1;
     --white: #ffffff;
@@ -27,12 +32,18 @@
     --ink-muted: #6b6b6b;
     --rule: #d9cfbd;
     --rule-soft: #eee4d3;
-    --shadow: 0 22px 60px rgba(13, 34, 59, 0.12);
+    --shadow: 0 22px 60px rgba(13, 34, 59, 0.13);
   }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+  }
 
   body {
     font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -44,11 +55,31 @@
     text-rendering: optimizeLegibility;
   }
 
-  img { display: block; max-width: 100%; }
-  a { color: inherit; }
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  .skip-link {
+    position: absolute;
+    top: 12px;
+    left: -999px;
+    z-index: 1000;
+    background: var(--navy-deep);
+    color: var(--white);
+    padding: 10px 14px;
+  }
+
+  .skip-link:focus {
+    left: 12px;
+  }
 
   .container {
-    width: min(1160px, calc(100% - 48px));
+    width: min(1140px, calc(100% - 48px));
     margin: 0 auto;
   }
 
@@ -62,33 +93,23 @@
     margin: 0 auto;
   }
 
-  .skip-link {
-    position: absolute;
-    top: 12px;
-    left: -999px;
-    background: var(--navy-deep);
-    color: var(--white);
-    padding: 10px 14px;
-    z-index: 1000;
-  }
-
-  .skip-link:focus { left: 12px; }
-
   header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 50;
-    background: rgba(255, 250, 241, 0.96);
+    background: rgba(255, 250, 241, 0.94);
     backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--rule-soft);
+    border-bottom: 1px solid rgba(238, 228, 211, 0.76);
   }
 
   .header-inner {
-    min-height: 116px;
+    min-height: 112px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 32px;
+    gap: 28px;
   }
 
   .brand {
@@ -98,11 +119,11 @@
   }
 
   .brand img {
-    height: 96px;
+    height: 92px;
     width: auto;
   }
 
-  nav {
+  .desktop-nav {
     display: flex;
     align-items: center;
     gap: 24px;
@@ -111,11 +132,13 @@
     color: var(--navy-deep);
   }
 
-  nav a {
+  .desktop-nav a {
     text-decoration: none;
   }
 
-  nav a:hover { color: var(--forest-deep); }
+  .desktop-nav a:hover {
+    color: var(--forest-deep);
+  }
 
   .nav-cta {
     padding: 12px 18px;
@@ -127,6 +150,52 @@
   .nav-cta:hover {
     color: var(--white);
     background: var(--forest-deep);
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .mobile-menu summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 10px 14px;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--navy-deep);
+  }
+
+  .mobile-menu summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mobile-menu[open] summary {
+    background: var(--navy-deep);
+    color: var(--white);
+    border-color: var(--navy-deep);
+  }
+
+  .mobile-nav-panel {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: grid;
+    gap: 1px;
+    background: var(--rule-soft);
+    border-bottom: 1px solid var(--rule-soft);
+  }
+
+  .mobile-nav-panel a {
+    background: var(--paper);
+    padding: 16px 24px;
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--navy-deep);
   }
 
   .eyebrow {
@@ -155,82 +224,117 @@
   }
 
   h1 {
-    font-size: clamp(48px, 6.8vw, 88px);
+    font-size: clamp(52px, 7vw, 92px);
     line-height: 0.94;
     font-weight: 600;
-    max-width: 880px;
-    margin-bottom: 26px;
+    max-width: 900px;
+    margin-bottom: 24px;
   }
 
   h2 {
-    font-size: clamp(34px, 4.2vw, 56px);
+    font-size: clamp(34px, 4.35vw, 58px);
     line-height: 1.05;
     font-weight: 600;
-    max-width: 930px;
+    max-width: 940px;
     margin-bottom: 24px;
   }
 
   h3 {
-    font-size: 28px;
+    font-size: 29px;
     line-height: 1.12;
     font-weight: 600;
     margin-bottom: 12px;
   }
 
   h4 {
-    font-size: 21px;
-    line-height: 1.15;
+    font-size: 22px;
+    line-height: 1.18;
+    font-weight: 600;
     margin-bottom: 8px;
   }
 
-  p { margin-bottom: 18px; }
+  p {
+    margin-bottom: 18px;
+  }
 
   .hero {
     position: relative;
-    overflow: hidden;
-    padding: 84px 0 78px;
-    background:
-      radial-gradient(circle at 88% 8%, rgba(201, 154, 69, 0.2), transparent 32%),
-      linear-gradient(135deg, #fffaf1 0%, #f5eddf 100%);
-  }
-
-  .hero-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.72fr);
-    gap: 64px;
-    align-items: center;
-  }
-
-  .hero-logo-card {
+    min-height: 92vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 34px;
-    margin-bottom: 34px;
-    background: rgba(255, 255, 255, 0.58);
-    border: 1px solid var(--rule-soft);
-    border-radius: 28px;
-    box-shadow: 0 14px 44px rgba(13, 34, 59, 0.08);
+    overflow: hidden;
+    background:
+      linear-gradient(90deg, rgba(7, 24, 39, 0.86) 0%, rgba(13, 34, 59, 0.72) 48%, rgba(13, 34, 59, 0.54) 100%),
+      url('hero-banner.jpg') center center / cover no-repeat,
+      linear-gradient(135deg, var(--navy-deep) 0%, var(--forest-deep) 100%);
+    color: var(--paper);
   }
 
-  .hero-logo-card img {
-    width: min(520px, 100%);
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 18% 22%, rgba(201, 154, 69, 0.18), transparent 25%),
+      radial-gradient(circle at 86% 78%, rgba(255, 255, 255, 0.08), transparent 28%);
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 190px 0 92px;
+  }
+
+  .hero-content {
+    max-width: 820px;
+  }
+
+  .hero-logo {
+    margin-bottom: 32px;
+  }
+
+  .hero-logo img {
+    width: min(520px, 92%);
     height: auto;
+    filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.24));
+  }
+
+  .hero .eyebrow {
+    color: var(--gold-soft);
+  }
+
+  .hero .eyebrow::before {
+    background: var(--gold-soft);
+  }
+
+  .hero h1 {
+    color: var(--white);
   }
 
   .hero-lede {
     max-width: 720px;
-    font-size: 21px;
-    line-height: 1.55;
-    color: var(--ink-soft);
+    font-size: 22px;
+    line-height: 1.58;
+    color: rgba(255, 250, 241, 0.9);
   }
 
-  .button-row {
+  .hero-actions {
     display: flex;
     flex-wrap: wrap;
     gap: 14px;
     margin-top: 32px;
     align-items: center;
+  }
+
+  .hero-note {
+    margin-top: 24px;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: rgba(255, 250, 241, 0.74);
   }
 
   .button {
@@ -249,163 +353,150 @@
     transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
   }
 
-  .button:hover { transform: translateY(-1px); }
-  .button-primary { background: var(--gold); color: var(--navy-deep); }
-  .button-primary:hover { background: var(--gold-soft); }
-  .button-secondary { border-color: var(--navy-deep); color: var(--navy-deep); background: transparent; }
-  .button-secondary:hover { background: rgba(13, 34, 59, 0.06); }
-  .button-light { background: var(--paper); color: var(--navy-deep); }
-  .button-light:hover { background: var(--white); }
-
-  .diagnosis-card {
-    background: var(--navy-deep);
-    color: rgba(255, 250, 241, 0.82);
-    border-radius: 30px;
-    padding: 36px;
-    box-shadow: var(--shadow);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  .button:hover {
+    transform: translateY(-1px);
   }
 
-  .diagnosis-card h3 {
-    color: var(--white);
-    font-size: 34px;
+  .button-primary {
+    background: var(--gold);
+    color: var(--navy-deep);
   }
 
-  .price {
-    margin: 18px 0 10px;
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 82px;
-    line-height: 0.9;
-    color: var(--gold-soft);
-    font-weight: 700;
-  }
-
-  .small-note {
-    font-size: 14px;
-    color: rgba(255, 250, 241, 0.72);
-  }
-
-  .mini-list {
-    list-style: none;
-    display: grid;
-    gap: 10px;
-    margin: 22px 0 4px;
-  }
-
-  .mini-list li {
-    position: relative;
-    padding-left: 24px;
-  }
-
-  .mini-list li::before {
-    content: '';
-    position: absolute;
-    left: 2px;
-    top: 10px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
+  .button-primary:hover {
     background: var(--gold-soft);
   }
 
-  .metric-strip {
+  .button-secondary {
+    border-color: var(--navy-deep);
+    color: var(--navy-deep);
+    background: transparent;
+  }
+
+  .button-secondary:hover {
+    background: rgba(13, 34, 59, 0.06);
+  }
+
+  .button-light {
+    background: rgba(255, 250, 241, 0.95);
+    color: var(--navy-deep);
+  }
+
+  .button-light:hover {
+    background: var(--white);
+  }
+
+  section {
+    padding: 88px 0;
+  }
+
+  .cream {
+    background: var(--cream);
+  }
+
+  .paper {
+    background: var(--paper);
+  }
+
+  .white {
+    background: var(--white);
+  }
+
+  .navy {
     background: var(--navy-deep);
-    color: var(--paper);
-    padding: 28px 0;
+    color: rgba(255, 250, 241, 0.82);
   }
 
-  .metrics {
-    display: grid;
-    grid-template-columns: 1.2fr 0.9fr 0.9fr 0.9fr;
-    gap: 1px;
-    background: rgba(255, 255, 255, 0.16);
-    border: 1px solid rgba(255, 255, 255, 0.16);
+  .bordered {
+    border-top: 1px solid var(--rule-soft);
+    border-bottom: 1px solid var(--rule-soft);
   }
-
-  .metric {
-    background: var(--navy-deep);
-    padding: 24px;
-  }
-
-  .metric strong {
-    display: block;
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 40px;
-    line-height: 1;
-    color: var(--gold-soft);
-    margin-bottom: 6px;
-  }
-
-  .metric span {
-    display: block;
-    font-size: 14px;
-    color: rgba(255, 250, 241, 0.76);
-  }
-
-  section { padding: 86px 0; }
-
-  .cream { background: var(--cream); }
-  .white { background: var(--white); }
-  .navy { background: var(--navy-deep); color: rgba(255, 250, 241, 0.8); }
-  .bordered { border-top: 1px solid var(--rule-soft); border-bottom: 1px solid var(--rule-soft); }
 
   .section-intro {
-    max-width: 780px;
+    max-width: 800px;
     font-size: 19px;
     margin-bottom: 42px;
   }
 
   .navy h2,
   .navy h3,
-  .navy h4 { color: var(--white); }
+  .navy h4 {
+    color: var(--white);
+  }
 
-  .navy .eyebrow { color: var(--gold-soft); }
-  .navy .eyebrow::before { background: var(--gold-soft); }
+  .navy .eyebrow {
+    color: var(--gold-soft);
+  }
 
-  .two-col {
+  .navy .eyebrow::before {
+    background: var(--gold-soft);
+  }
+
+  .intro-panel {
     display: grid;
     grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-    gap: 64px;
+    gap: 58px;
     align-items: start;
   }
 
-  .card-grid {
+  .callout {
+    background: var(--navy-deep);
+    color: rgba(255, 250, 241, 0.86);
+    border-radius: 30px;
+    padding: 36px;
+    box-shadow: var(--shadow);
+  }
+
+  .callout h3 {
+    color: var(--white);
+    font-size: 34px;
+  }
+
+  .callout p:last-child {
+    margin-bottom: 0;
+  }
+
+  .compare-box {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-  }
-
-  .card-grid.two { grid-template-columns: repeat(2, 1fr); }
-
-  .card {
-    background: var(--paper);
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--rule-soft);
     border: 1px solid var(--rule-soft);
-    border-radius: 24px;
-    padding: 30px;
-    box-shadow: 0 12px 38px rgba(13, 34, 59, 0.06);
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 14px 38px rgba(13, 34, 59, 0.06);
   }
 
-  .white .card { background: var(--white); }
-
-  .navy .card {
-    background: rgba(255, 250, 241, 0.08);
-    border-color: rgba(255, 250, 241, 0.14);
-    color: rgba(255, 250, 241, 0.8);
+  .compare-col {
+    background: var(--paper);
+    padding: 36px;
   }
 
-  .label {
-    display: inline-block;
-    margin-bottom: 14px;
-    color: var(--forest-deep);
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
+  .compare-col:first-child {
+    background: #fbf3e7;
   }
 
-  .navy .label { color: var(--gold-soft); }
+  .compare-list {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+    margin-top: 18px;
+  }
 
-  .card p { font-size: 16px; margin-bottom: 0; }
+  .compare-list li {
+    padding-left: 24px;
+    position: relative;
+  }
+
+  .compare-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 9px;
+    height: 9px;
+    background: var(--gold);
+    border-radius: 50%;
+  }
 
   .definition-grid {
     display: grid;
@@ -413,15 +504,13 @@
     gap: 1px;
     background: var(--rule-soft);
     border: 1px solid var(--rule-soft);
+    border-radius: 28px;
+    overflow: hidden;
   }
 
   .definition {
     background: var(--paper);
-    padding: 34px;
-  }
-
-  .definition h3 {
-    margin-bottom: 8px;
+    padding: 36px;
   }
 
   .definition .verb {
@@ -447,60 +536,97 @@
     color: var(--ink-muted);
     font-size: 13px;
     font-weight: 700;
-    background: rgba(255, 255, 255, 0.48);
+    background: rgba(255, 255, 255, 0.52);
   }
 
-  .compare-box {
+  .two-col {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--rule-soft);
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 64px;
+    align-items: start;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  .card-grid.two {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-grid.single {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    background: var(--paper);
     border: 1px solid var(--rule-soft);
-    border-radius: 26px;
-    overflow: hidden;
+    border-radius: 24px;
+    padding: 30px;
     box-shadow: 0 12px 38px rgba(13, 34, 59, 0.06);
   }
 
-  .compare-col {
-    background: var(--paper);
-    padding: 34px;
+  .white .card {
+    background: var(--white);
   }
 
-  .compare-list {
-    list-style: none;
-    display: grid;
-    gap: 10px;
-    margin-top: 18px;
+  .navy .card {
+    background: rgba(255, 250, 241, 0.08);
+    border-color: rgba(255, 250, 241, 0.14);
+    color: rgba(255, 250, 241, 0.82);
   }
 
-  .compare-list li {
-    padding-left: 22px;
-    position: relative;
+  .label {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: var(--forest-deep);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
   }
 
-  .compare-list li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 11px;
-    width: 9px;
-    height: 9px;
-    background: var(--gold);
-    border-radius: 50%;
+  .navy .label {
+    color: var(--gold-soft);
   }
 
-  .discipline-card {
-    position: relative;
-    min-height: 330px;
+  .card p {
+    font-size: 16px;
+    margin-bottom: 0;
   }
 
   .num {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 74px;
+    font-size: 78px;
     line-height: 0.85;
     color: var(--gold);
-    opacity: 0.72;
+    opacity: 0.74;
     margin-bottom: 20px;
+  }
+
+  .plain-list {
+    list-style: none;
+    display: grid;
+    gap: 14px;
+  }
+
+  .plain-list li {
+    position: relative;
+    padding-left: 30px;
+  }
+
+  .plain-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 9px;
+    height: 9px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px rgba(201, 154, 69, 0.16);
   }
 
   .pathway {
@@ -515,7 +641,7 @@
     border: 1px solid var(--rule-soft);
     border-radius: 20px;
     padding: 20px;
-    min-height: 130px;
+    min-height: 132px;
   }
 
   .path-step strong {
@@ -526,7 +652,7 @@
     margin-bottom: 8px;
   }
 
-  .lead-lag {
+  .question-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 22px;
@@ -544,7 +670,7 @@
     padding-bottom: 14px;
   }
 
-  .rhythm-wheel {
+  .rhythm-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 12px;
@@ -555,7 +681,7 @@
     background: var(--paper);
     border: 1px solid var(--rule-soft);
     border-radius: 999px;
-    min-height: 116px;
+    min-height: 118px;
     padding: 18px;
     display: flex;
     flex-direction: column;
@@ -583,8 +709,8 @@
   }
 
   .stuck-item {
-    padding: 22px;
-    border-radius: 20px;
+    padding: 24px;
+    border-radius: 22px;
     background: var(--white);
     border: 1px solid var(--rule-soft);
   }
@@ -593,7 +719,7 @@
     display: block;
     font-family: 'Cormorant Garamond', Georgia, serif;
     color: var(--navy-deep);
-    font-size: 22px;
+    font-size: 23px;
     margin-bottom: 6px;
   }
 
@@ -612,7 +738,21 @@
     box-shadow: var(--shadow);
   }
 
-  .assessment-box .price { margin-top: 12px; }
+  .price {
+    margin: 14px 0 12px;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 82px;
+    line-height: 0.9;
+    color: var(--gold-soft);
+    font-weight: 700;
+  }
+
+  .small-note {
+    margin-top: 14px;
+    margin-bottom: 0;
+    font-size: 14px;
+    color: rgba(255, 250, 241, 0.7);
+  }
 
   .form-placeholder {
     margin-top: 20px;
@@ -620,7 +760,7 @@
     border-radius: 18px;
     border: 1px dashed rgba(255, 250, 241, 0.34);
     background: rgba(255, 255, 255, 0.04);
-    color: rgba(255, 250, 241, 0.7);
+    color: rgba(255, 250, 241, 0.72);
     font-size: 15px;
   }
 
@@ -638,8 +778,14 @@
     color: var(--navy-deep);
   }
 
-  summary::-webkit-details-marker { display: none; }
-  details p { margin-top: 12px; max-width: 760px; }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  details p {
+    margin-top: 12px;
+    max-width: 760px;
+  }
 
   footer {
     background: var(--navy-dark);
@@ -656,7 +802,7 @@
   }
 
   .footer-logo img {
-    height: 86px;
+    height: 88px;
     width: auto;
     filter: brightness(1.12);
   }
@@ -666,41 +812,112 @@
     max-width: 520px;
   }
 
-  @media (max-width: 1020px) {
-    nav { display: none; }
-    .hero-grid,
+  @media (max-width: 1080px) {
+    .desktop-nav {
+      display: none;
+    }
+
+    .mobile-menu {
+      display: block;
+    }
+
+    .hero {
+      min-height: 860px;
+    }
+
+    .intro-panel,
     .two-col,
-    .assessment-grid { grid-template-columns: 1fr; }
-    .metrics,
-    .card-grid,
-    .card-grid.two,
-    .definition-grid,
+    .assessment-grid,
     .compare-box,
-    .lead-lag { grid-template-columns: 1fr; }
+    .question-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .definition-grid,
+    .card-grid,
+    .card-grid.two {
+      grid-template-columns: 1fr;
+    }
+
     .pathway,
-    .rhythm-wheel { grid-template-columns: repeat(2, 1fr); }
-    .stuck-grid { grid-template-columns: 1fr 1fr; }
+    .rhythm-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stuck-grid {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   @media (max-width: 680px) {
     .container,
     .container-wide,
-    .container-narrow { width: min(100% - 32px, 1160px); }
-    header { position: relative; }
-    .header-inner { min-height: 96px; }
-    .brand img { height: 78px; }
-    .hero { padding: 58px 0; }
-    .hero-logo-card { padding: 20px; }
-    section { padding: 62px 0; }
-    .button { width: 100%; }
+    .container-narrow {
+      width: min(100% - 32px, 1140px);
+    }
+
+    header {
+      position: absolute;
+      background: rgba(255, 250, 241, 0.96);
+    }
+
+    .header-inner {
+      min-height: 92px;
+    }
+
+    .brand img {
+      height: 74px;
+    }
+
+    .hero {
+      min-height: auto;
+    }
+
+    .hero-inner {
+      padding: 140px 0 70px;
+    }
+
+    .hero-logo img {
+      width: min(350px, 92%);
+    }
+
+    .hero-lede {
+      font-size: 19px;
+    }
+
+    section {
+      padding: 64px 0;
+    }
+
+    .button {
+      width: 100%;
+    }
+
     .pathway,
-    .rhythm-wheel,
-    .stuck-grid { grid-template-columns: 1fr; }
-    .diagnosis-card,
-    .assessment-box { padding: 28px; }
-    .price { font-size: 68px; }
-    .footer-inner { align-items: flex-start; }
-    .footer-logo img { height: 72px; }
+    .rhythm-grid,
+    .stuck-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .callout,
+    .assessment-box,
+    .card,
+    .definition,
+    .compare-col {
+      padding: 28px;
+    }
+
+    .price {
+      font-size: 68px;
+    }
+
+    .footer-inner {
+      align-items: flex-start;
+    }
+
+    .footer-logo img {
+      height: 74px;
+    }
   }
 </style>
 <script type="application/ld+json">
@@ -716,91 +933,81 @@
     "Donor stewardship system",
     "Board fundraising enablement",
     "Campaign planning",
-    "Donor data and lead measure design"
+    "Donor data and lead measure design",
+    "Annual advancement rhythm planning"
   ]
 }
 </script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
+
 <header>
   <div class="container-wide">
     <div class="header-inner">
       <a class="brand" href="#top" aria-label="Waypoint Mission Partners home">
         <img src="waypoint-logo.jpg" alt="Waypoint Mission Partners" />
       </a>
-      <nav aria-label="Primary navigation">
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
         <a href="#framework">Framework</a>
+        <a href="#definitions">Terms</a>
         <a href="#disciplines">Disciplines</a>
-        <a href="#infrastructure">Infrastructure</a>
-        <a href="#rhythm">Annual Rhythm</a>
+        <a href="#rhythm">Rhythm</a>
         <a href="#assessment" class="nav-cta">$199 Assessment</a>
       </nav>
+
+      <details class="mobile-menu">
+        <summary>Menu</summary>
+        <nav class="mobile-nav-panel" aria-label="Mobile navigation">
+          <a href="#framework">Framework</a>
+          <a href="#definitions">Terms</a>
+          <a href="#disciplines">Disciplines</a>
+          <a href="#rhythm">Rhythm</a>
+          <a href="#assessment">$199 Assessment</a>
+        </nav>
+      </details>
     </div>
   </div>
 </header>
 
 <main id="main">
   <section class="hero" id="top">
-    <div class="container hero-grid">
-      <div>
-        <div class="hero-logo-card">
-          <img src="waypoint-logo.jpg" alt="Waypoint Mission Partners" />
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-logo">
+            <img src="waypoint-logo.jpg" alt="Waypoint Mission Partners" />
+          </div>
+          <div class="eyebrow">Advancement Framework</div>
+          <h1>Funding feels unpredictable when the system behind it is unclear.</h1>
+          <p class="hero-lede">Waypoint Mission Partners helps nonprofits, private schools, churches, and mission-driven organizations build the advancement structure behind sustainable funding.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#assessment">Start with the $199 Assessment</a>
+            <a class="button button-light" href="#framework">Explore the Framework</a>
+          </div>
+          <div class="hero-note">Assess. Plan. Support.</div>
         </div>
-        <div class="eyebrow">Advancement Framework</div>
-        <h1>A stronger mission needs more than fundraising activity.</h1>
-        <p class="hero-lede">Waypoint Mission Partners helps nonprofits, private schools, churches, and mission-driven organizations build clearer advancement systems for sustainable funding.</p>
-        <div class="button-row">
-          <a class="button button-primary" href="#assessment">Start with the $199 Assessment</a>
-          <a class="button button-secondary" href="#framework">Explore the Framework</a>
-        </div>
-      </div>
-      <aside class="diagnosis-card">
-        <h3>Funding feels unpredictable when the system underneath it is unclear.</h3>
-        <p>Events, appeals, sponsorships, online giving, board connections, and personal relationships can all raise money. But pieces of activity are not the same as advancement structure.</p>
-        <ul class="mini-list">
-          <li>Donor ownership</li>
-          <li>Stewardship process</li>
-          <li>Cultivation plan</li>
-          <li>Usable records</li>
-          <li>Board roles</li>
-          <li>Lead measures</li>
-          <li>Annual rhythm</li>
-        </ul>
-      </aside>
-    </div>
-  </section>
-
-  <section class="metric-strip" aria-label="Sector funding data">
-    <div class="container-wide metrics">
-      <div class="metric">
-        <strong>$592.5B</strong>
-        <span>U.S. charitable giving in 2024, according to Giving USA.</span>
-      </div>
-      <div class="metric">
-        <strong>3.5%</strong>
-        <span>Giving dollars rose while donor health weakened.</span>
-      </div>
-      <div class="metric">
-        <strong>4.5%</strong>
-        <span>Donor counts dropped in FEP 2024 reporting.</span>
-      </div>
-      <div class="metric">
-        <strong>2.6%</strong>
-        <span>Retention fell, which is easy to miss when dollars alone are reviewed.</span>
       </div>
     </div>
   </section>
 
   <section class="white bordered" id="framework">
+    <div class="container-narrow">
+      <div class="eyebrow">The Core Idea</div>
+      <h2>Pieces of fundraising activity are not the same thing as an advancement system.</h2>
+      <p>Many organizations already have events, appeals, sponsorships, online giving, board connections, and personal relationships that bring in support. Those pieces can raise real money.</p>
+      <p>The harder question is whether those pieces are connected well enough for leadership to see what is working, what is missing, and what needs attention next. That is where advancement structure matters.</p>
+    </div>
+  </section>
+
+  <section class="cream" id="activity-structure">
     <div class="container">
-      <div class="eyebrow">The Core Distinction</div>
-      <h2>Fundraising activity and advancement structure are not the same thing.</h2>
-      <p class="section-intro">Most organizations already have pieces in motion. The issue is whether those pieces are connected well enough for leadership to see what is working, what is missing, and what needs attention next.</p>
       <div class="compare-box">
         <div class="compare-col">
-          <h3>Pieces of Fundraising Activity</h3>
-          <p>Useful actions that can raise money but often depend on urgency, memory, personality, or habit.</p>
+          <div class="eyebrow">Activity</div>
+          <h2>Pieces can raise money.</h2>
+          <p>Fundraising activity is visible. It creates movement, energy, and revenue. But when it is not connected to a larger system, the organization keeps rebuilding momentum from scratch.</p>
           <ul class="compare-list">
             <li>Events</li>
             <li>Appeals</li>
@@ -812,8 +1019,9 @@
           </ul>
         </div>
         <div class="compare-col">
-          <h3>Advancement Structure</h3>
-          <p>The practical system that helps the organization find, develop, ask, steward, and track donor relationships.</p>
+          <div class="eyebrow">Structure</div>
+          <h2>Structure helps leaders see what needs attention.</h2>
+          <p>Advancement structure gives the organization a practical way to identify, cultivate, ask, steward, track, and review donor relationships over time.</p>
           <ul class="compare-list">
             <li>Donor ownership</li>
             <li>Stewardship process</li>
@@ -828,10 +1036,11 @@
     </div>
   </section>
 
-  <section class="cream" id="definitions">
+  <section class="paper" id="definitions">
     <div class="container">
-      <div class="eyebrow">Language That Clarifies the Work</div>
+      <div class="eyebrow">Clarifying the Work</div>
       <h2>Fundraising invites the gift. Development builds the relationship. Advancement organizes the system around both.</h2>
+      <p class="section-intro">When funding feels unpredictable, most leaders look first at fundraising. That matters, but it is only one part of a larger picture.</p>
       <div class="definition-grid">
         <article class="definition">
           <h3>Fundraising</h3>
@@ -871,7 +1080,7 @@
   </section>
 
   <section class="white" id="infrastructure">
-    <div class="container two-col">
+    <div class="container intro-panel">
       <div>
         <div class="eyebrow">Why Effort Needs Infrastructure</div>
         <h2>Infrastructure does not mean bureaucracy. It means the system is clear enough to use.</h2>
@@ -879,15 +1088,9 @@
       <div>
         <p>Most organizations are not struggling because people are unwilling to help. They are working with limited staff, busy volunteers, part-time attention, and board members who care but may not know how to participate.</p>
         <p>When the structure is thin, fundraising depends too much on memory, urgency, personality, and habit. A staff member leaves and donor history becomes harder to understand. A board member rolls off and key relationships go quiet.</p>
-        <div class="card-grid two" style="margin-top: 28px;">
-          <article class="card">
-            <span class="label">Visible Activity</span>
-            <p>Events, appeals, sponsorships, giving pages, and public campaigns.</p>
-          </article>
-          <article class="card">
-            <span class="label">Supporting Infrastructure</span>
-            <p>Donor records, stewardship rhythm, board roles, lead measures, follow-up ownership, and annual calendar.</p>
-          </article>
+        <div class="callout">
+          <h3>Effort raises support. Infrastructure helps sustain it.</h3>
+          <p>The goal is not to make the organization heavier. The goal is to make donor work visible, owned, and repeatable.</p>
         </div>
       </div>
     </div>
@@ -899,19 +1102,19 @@
       <h2>A healthy advancement system balances cultivation, solicitation, and stewardship.</h2>
       <p class="section-intro">These are not separate programs. They are parts of the same relationship cycle.</p>
       <div class="card-grid">
-        <article class="card discipline-card">
+        <article class="card">
           <div class="num">1</div>
           <span class="label">Before the Ask</span>
           <h3>Cultivation</h3>
-          <p>Identify, connect, invite, and learn. This builds the future donor base before the organization returns to the same people again.</p>
+          <p>Identify, connect, invite, and learn. Cultivation builds the future donor base before the organization returns to the same people again.</p>
         </article>
-        <article class="card discipline-card">
+        <article class="card">
           <div class="num">2</div>
           <span class="label">The Ask</span>
           <h3>Solicitation</h3>
           <p>Appeals, campaigns, events, sponsorships, recurring giving invitations, and major donor conversations. The need and opportunity must be clear.</p>
         </article>
-        <article class="card discipline-card">
+        <article class="card">
           <div class="num">3</div>
           <span class="label">After the Gift</span>
           <h3>Stewardship</h3>
@@ -922,33 +1125,24 @@
   </section>
 
   <section class="cream" id="stewardship">
-    <div class="container">
-      <div class="eyebrow">Stewardship and Retention</div>
-      <h2>A first gift is not the relationship. It is the beginning of the relationship.</h2>
-      <p class="section-intro">Many organizations lose donors quietly because the relationship was never developed after the gift. A receipt or basic thank-you is not the same as stewardship.</p>
-      <div class="card-grid">
-        <article class="card">
-          <span class="label">Overall Retention</span>
-          <h3>42.9%</h3>
-          <p>FEP 2024 overall donor retention rate.</p>
-        </article>
-        <article class="card">
-          <span class="label">New Donor Retention</span>
-          <h3>19.4%</h3>
-          <p>The first-time donor relationship is fragile when follow-up is weak.</p>
-        </article>
-        <article class="card">
-          <span class="label">Repeat Donor Retention</span>
-          <h3>69.2%</h3>
-          <p>The second gift matters. Retention is much stronger once a donor gives again.</p>
-        </article>
+    <div class="container two-col">
+      <div>
+        <div class="eyebrow">Stewardship and Retention</div>
+        <h2>A first gift is not the relationship. It is the beginning of the relationship.</h2>
       </div>
+      <div>
+        <p>That can be easy to miss because the gift often feels like the successful outcome. The appeal worked. The organization received support and moved on.</p>
+        <p>The donor may experience it differently. They gave once, received a receipt or a basic thank-you, and then heard little until the next appeal. That is where many organizations quietly lose donors.</p>
+        <p>Stewardship should not be treated as a courtesy item after fundraising is finished. It is part of the funding system.</p>
+      </div>
+    </div>
+    <div class="container">
       <div class="pathway">
         <div class="path-step"><strong>First Gift</strong><span>A donor responds to a need or invitation.</span></div>
         <div class="path-step"><strong>Thank You</strong><span>The gift is acknowledged quickly and personally.</span></div>
         <div class="path-step"><strong>Impact Update</strong><span>The donor sees what the gift helped make possible.</span></div>
         <div class="path-step"><strong>Personal Call</strong><span>The relationship is treated as more than a transaction.</span></div>
-        <div class="path-step"><strong>Second Gift</strong><span>The next invitation has a stronger foundation.</span></div>
+        <div class="path-step"><strong>Next Gift</strong><span>The next invitation has a stronger foundation.</span></div>
       </div>
     </div>
   </section>
@@ -957,7 +1151,8 @@
     <div class="container">
       <div class="eyebrow">Donor Data and Lead Measures</div>
       <h2>Donor data helps the organization remember. Lead measures show whether relationships are being cared for.</h2>
-      <div class="lead-lag">
+      <p class="section-intro">The tool matters less than whether the information is current, usable, and owned by someone. A simple system used consistently beats expensive software no one maintains.</p>
+      <div class="question-grid">
         <article class="card">
           <span class="label">Donor Data Helps Answer</span>
           <ul class="question-list">
@@ -989,9 +1184,9 @@
       <div>
         <div class="eyebrow">Board and Leadership Participation</div>
         <h2>Board members do not all need the same role. They do need a clear one.</h2>
-        <p>The board does not need to become a team of professional fundraisers. The goal is to give board members appropriate, specific ways to contribute.</p>
+        <p>The board does not need to become a team of professional fundraisers. For most organizations, that expectation is unrealistic and often creates more anxiety than action.</p>
       </div>
-      <div class="card-grid" style="grid-template-columns: 1fr;">
+      <div class="card-grid single">
         <article class="card">
           <span class="label">Personal Participation</span>
           <h3>Support the mission personally.</h3>
@@ -1028,7 +1223,7 @@
         </article>
         <article class="card">
           <span class="label">Recurring Giving</span>
-          <h3>Creates a more predictable base of ongoing support.</h3>
+          <h3>Create a more predictable base of ongoing support.</h3>
           <p>Recurring donors still need stewardship. Automatic giving should not mean automatic neglect.</p>
         </article>
       </div>
@@ -1040,7 +1235,7 @@
       <div class="eyebrow">Annual Rhythm</div>
       <h2>A calendar shows what is scheduled. A rhythm helps leadership know what needs attention.</h2>
       <p class="section-intro">Advancement needs a rhythm for the year, not just a list of event dates. The goal is to stop treating every funding need like a surprise.</p>
-      <div class="rhythm-wheel">
+      <div class="rhythm-grid">
         <div class="rhythm-step"><strong>Review</strong><span>Data, results, retention, gaps</span></div>
         <div class="rhythm-step"><strong>Cultivate</strong><span>Build relationships before the ask</span></div>
         <div class="rhythm-step"><strong>Steward</strong><span>Thank, report impact, connect</span></div>
@@ -1073,7 +1268,7 @@
         <div class="eyebrow">Start With a Clear Diagnosis</div>
         <h2>The framework explains the system. The assessment applies it to your organization.</h2>
         <p class="section-intro">The Waypoint Assessment reviews your current advancement system and identifies where the structure is clear, where it is weak, and where the organization may be relying too much on memory, urgency, events, or a few overextended people.</p>
-        <div class="card-grid" style="grid-template-columns: 1fr;">
+        <div class="card-grid single">
           <article class="card">
             <span class="label">1. What is working?</span>
             <p>What parts of the system are already clear or useful?</p>
@@ -1095,7 +1290,7 @@
         <div class="form-placeholder">
           Paste GoHighLevel form, calendar, or payment embed here.
         </div>
-        <div class="button-row">
+        <div class="hero-actions">
           <a class="button button-primary" href="mailto:tommy@waypointmissionpartners.com?subject=Waypoint%20Assessment">Request the Assessment</a>
         </div>
         <p class="small-note">Replace the email address with your final WMP inbox before publishing.</p>
