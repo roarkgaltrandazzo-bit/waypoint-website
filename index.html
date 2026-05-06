@@ -272,10 +272,20 @@
       align-items: center;
       overflow: hidden;
       background:
-        radial-gradient(circle at 78% 22%, rgba(201, 154, 69, 0.2), transparent 22%),
-        radial-gradient(circle at 18% 76%, rgba(255, 255, 255, 0.08), transparent 26%),
-        linear-gradient(120deg, rgba(7, 24, 39, 0.98) 0%, rgba(12, 34, 60, 0.94) 58%, rgba(49, 77, 45, 0.9) 100%);
+        linear-gradient(90deg, rgba(7, 24, 39, 0.94) 0%, rgba(12, 34, 60, 0.86) 52%, rgba(12, 34, 60, 0.58) 100%),
+        url("ChatGPT Image Apr 24, 2026, 02_30_58 PM.png") center center / cover no-repeat,
+        linear-gradient(120deg, var(--navy-deep) 0%, var(--forest) 100%);
       color: var(--paper);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 20% 22%, rgba(201, 154, 69, 0.18), transparent 24%),
+        radial-gradient(circle at 84% 76%, rgba(255, 255, 255, 0.08), transparent 28%);
     }
 
     .hero-inner {
@@ -330,6 +340,7 @@
       margin-top: 22px;
       color: rgba(255, 250, 241, 0.76);
       font-size: 15px;
+      max-width: 720px;
     }
 
     .button {
@@ -566,23 +577,8 @@
       color: var(--white);
     }
 
-    .email-fallback {
-      margin-top: 18px;
-      padding: 18px;
-      border-radius: 18px;
-      border: 1px solid rgba(255, 250, 241, 0.16);
-      background: rgba(255, 255, 255, 0.04);
-      color: rgba(255, 250, 241, 0.78);
-      font-size: 15px;
-    }
-
-    .email-fallback a {
-      color: var(--gold-soft);
-      font-weight: 800;
-    }
-
     .small-note {
-      margin-top: 14px;
+      margin-top: 16px;
       margin-bottom: 0;
       font-size: 14px;
       color: rgba(255, 250, 241, 0.72);
@@ -740,7 +736,7 @@
       "url": "https://www.waypointmissionpartners.com/",
       "areaServed": "United States",
       "serviceType": [
-        "Free initial consultation",
+        "Free fundraising system review",
         "Fundraising systems review",
         "Donor stewardship design",
         "Board fundraising enablement",
@@ -764,18 +760,18 @@
 
         <nav class="desktop-nav" aria-label="Primary navigation">
           <a href="#symptoms">Problems</a>
-          <a href="#who-we-help">Who We Help</a>
           <a href="#how-we-help">How We Help</a>
-          <a href="#consultation" class="nav-cta">Free Initial Call</a>
+          <a href="#who-we-help">Who We Help</a>
+          <a href="#consultation" class="nav-cta">Free System Review</a>
         </nav>
 
         <details class="mobile-menu">
           <summary>Menu</summary>
           <nav class="mobile-nav-panel" aria-label="Mobile navigation">
             <a href="#symptoms">Problems</a>
-            <a href="#who-we-help">Who We Help</a>
             <a href="#how-we-help">How We Help</a>
-            <a href="#consultation">Free Initial Call</a>
+            <a href="#who-we-help">Who We Help</a>
+            <a href="#consultation">Free System Review</a>
           </nav>
         </details>
       </div>
@@ -793,19 +789,23 @@
 
             <div class="eyebrow">Fundraising and advancement strategy</div>
 
-            <h1>Your fundraising should not depend on one person, one event, or one big push.</h1>
+            <h1>Build a fundraising system that doesn’t depend on one person.</h1>
 
             <p class="hero-lede">
-              Waypoint helps nonprofits, private schools, churches, and mission-driven organizations find the gaps in their fundraising system, then build a practical plan for donor follow-up, board participation, campaigns, sponsorships, and stewardship.
+              Waypoint helps nonprofits, private schools, churches, and mission-driven organizations turn scattered fundraising activity into a clearer advancement system.
+            </p>
+
+            <p class="hero-lede">
+              That means better donor follow-up, clearer board participation, stronger campaign rhythm, cleaner sponsorship follow-through, and stewardship that doesn’t rely on memory.
             </p>
 
             <div class="hero-actions">
-              <a class="button button-primary" href="#consultation">Book a Free Initial Call</a>
-              <a class="button button-light" href="#symptoms">See What We Look For</a>
+              <a class="button button-primary" href="#consultation">Book a Free System Review</a>
+              <a class="button button-light" href="#how-we-help">See What We Fix</a>
             </div>
 
             <div class="hero-note">
-              Start with a clear conversation. Leave with a better sense of what to fix first.
+              Start with a practical conversation. You’ll leave with a clearer view of what’s creating drag and what should be fixed first.
             </div>
           </div>
         </div>
@@ -816,68 +816,173 @@
       <div class="container">
         <div class="eyebrow">Where fundraising usually breaks</div>
 
-        <h2>Most organizations do not lack effort. They lack structure.</h2>
+        <h2>Your fundraising may be working harder than the system behind it.</h2>
 
         <p class="section-intro">
-          Events are happening. Appeals are going out. Sponsors are being asked. Board members know fundraising matters. But if the pieces do not connect, leadership ends up rebuilding momentum every year.
+          Most organizations are already doing a lot. They have events, appeals, sponsorship asks, giving pages, board relationships, and loyal supporters.
+        </p>
+
+        <p class="section-intro">
+          The problem is that those pieces often sit in separate lanes. When the follow-up is thin, the records are scattered, and the board role is unclear, every campaign starts to feel heavier than it should.
         </p>
 
         <div class="symptom-grid">
           <article class="symptom-card">
             <span class="label">Donor Follow-Up</span>
-            <h3>Gifts come in, then relationships go quiet.</h3>
-            <p>Thank-yous happen, but stewardship does not become a rhythm. Donors hear from the organization when another ask is coming.</p>
+            <h3>Donor follow-up is inconsistent.</h3>
+            <p>Gifts come in, thank-yous go out, and then the relationship gets quiet until the next ask. That pattern trains donors to expect transactions instead of partnership.</p>
           </article>
 
           <article class="symptom-card">
             <span class="label">Board Participation</span>
-            <h3>Good board members stay passive.</h3>
-            <p>They care about the mission, but their role in fundraising is vague. The ask sounds like "go find money" instead of a clear way to help.</p>
+            <h3>Board members aren’t sure how to help.</h3>
+            <p>Most board members don’t need vague pressure to “go raise money.” They need specific roles they can actually carry: make introductions, thank donors, attend visits, share the story, and open doors.</p>
           </article>
 
           <article class="symptom-card">
-            <span class="label">Events and Campaigns</span>
-            <h3>Each push starts from zero.</h3>
-            <p>The gala, appeal, golf outing, annual fund, or sponsorship program raises money, but the follow-through does not build the next relationship.</p>
+            <span class="label">Campaign Rhythm</span>
+            <h3>Each campaign starts from zero.</h3>
+            <p>The gala, annual fund, sponsorship push, and year-end appeal may all raise money, but they don’t build on each other unless someone connects the calendar, message, list, and follow-up.</p>
           </article>
 
           <article class="symptom-card">
             <span class="label">Records and Ownership</span>
             <h3>Donor history lives in too many places.</h3>
-            <p>Some of it is in software. Some of it is in email. Some of it is in one person's head. That makes follow-up fragile.</p>
+            <p>Some of it is in the CRM. Some of it is in email. Some of it is in a spreadsheet. Some of it is in someone’s head. That makes the next step harder than it needs to be.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="cream" id="who-we-help">
+    <section class="paper bordered" id="how-we-help">
+      <div class="container">
+        <div class="eyebrow">How We Help</div>
+
+        <h2>Waypoint fixes the system underneath the fundraising activity.</h2>
+
+        <p class="section-intro">
+          The goal isn’t to add more noise to the calendar. It’s to help leadership see what’s already happening, what’s disconnected, and what needs a simple rhythm behind it.
+        </p>
+
+        <div class="help-grid">
+          <article class="help-card">
+            <span class="label">Donor and Sponsor Follow-Up</span>
+            <h3>Make stewardship repeatable.</h3>
+            <p>We help build a stewardship rhythm that moves people from one-time support toward ongoing relationship. Donors shouldn’t hear from you only when another ask is coming.</p>
+          </article>
+
+          <article class="help-card">
+            <span class="label">Board Clarity</span>
+            <h3>Give board members useful roles.</h3>
+            <p>Some people can open doors. Some can thank donors. Some can join visits. Some can help carry the story. Clear roles get better participation than vague pressure.</p>
+          </article>
+
+          <article class="help-card">
+            <span class="label">Campaign and Event Rhythm</span>
+            <h3>Connect the pieces.</h3>
+            <p>We help connect appeals, galas, sponsorships, giving days, and year-end campaigns so each effort supports the next one instead of starting from scratch.</p>
+          </article>
+
+          <article class="help-card">
+            <span class="label">Relationship Records</span>
+            <h3>Make ownership clear.</h3>
+            <p>We help clarify who owns each relationship, what happened last, what was promised, and what should happen next. A donor relationship shouldn’t disappear because one person left or got busy.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cream" id="practice">
+      <div class="container-narrow">
+        <div class="eyebrow">What This Looks Like</div>
+
+        <h2>This usually starts with activity that isn’t connected.</h2>
+
+        <p>
+          A school, church, or nonprofit may already have plenty going on: an annual appeal, a gala, a golf outing, a sponsorship program, a giving page, and a group of faithful donors who step up year after year.
+        </p>
+
+        <p>
+          The issue is that those pieces often live in separate lanes. One person owns the event. Someone else sends the appeal. Board members are willing to help, but they don’t know what useful help looks like. Donors get thanked, but there isn’t a real stewardship rhythm after the gift.
+        </p>
+
+        <p>
+          Waypoint helps leadership connect the pieces: the calendar, the donor list, the board roles, the follow-up, the message, and the next ask.
+        </p>
+
+        <div class="pull-quote">
+          The goal is a system where fundraising activity starts to compound instead of resetting every season.
+        </div>
+      </div>
+    </section>
+
+    <section class="white bordered" id="who-we-help">
       <div class="container">
         <div class="eyebrow">Who We Help</div>
 
-        <h2>Built for mission-driven organizations that need practical advancement structure, not more noise.</h2>
-
-        <p class="section-intro">
-          The language changes by organization type, but the pattern is often the same. Leaders are trying to raise support while also running the mission.
-        </p>
+        <h2>Built for organizations with a real mission and too much fundraising living in people’s heads.</h2>
 
         <div class="audience-grid">
           <article class="audience-card">
             <span class="label">Nonprofits</span>
-            <h3>Make donor relationships less reactive.</h3>
-            <p>Clarify donor follow-up, campaign rhythm, board roles, and the basic systems that keep relationships from slipping.</p>
+            <h3>Organize the advancement system.</h3>
+            <p>You may have committed donors, a stretched staff, and a board that wants to help but needs clearer structure. We help organize the advancement system so relationships, campaigns, and follow-up don’t depend on urgency.</p>
           </article>
 
           <article class="audience-card">
             <span class="label">Private Schools</span>
             <h3>Connect giving to community trust.</h3>
-            <p>Build clearer annual giving, sponsorship, alumni, parent, and event follow-through without turning the school into a sales machine.</p>
+            <p>Schools often have strong community ties, but giving can get scattered across events, annual fund pushes, sponsorships, parent relationships, alumni, and special campaigns. We help connect those pieces into a clearer annual rhythm.</p>
           </article>
 
           <article class="audience-card">
             <span class="label">Churches and Faith-Based Organizations</span>
-            <h3>Respect the mission while strengthening the system.</h3>
-            <p>Give leaders a healthier structure for generosity, stewardship, communication, special campaigns, and donor care.</p>
+            <h3>Build structure around stewardship.</h3>
+            <p>Generosity, stewardship, and mission communication need care. We help build practical structure around donor care, special campaigns, board or elder participation, and follow-up without turning the work into a sales machine.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="paper" id="framework">
+      <div class="container">
+        <div class="eyebrow">The Waypoint Framework</div>
+
+        <h2>Advancement is the system. Fundraising is the visible activity inside it.</h2>
+
+        <p class="section-intro">
+          Fundraising usually gets the attention because it’s visible. The event happens. The appeal goes out. The sponsorship ask gets made.
+        </p>
+
+        <p class="section-intro">
+          Advancement is broader. It’s the system that connects cultivation, solicitation, stewardship, communication, records, board participation, and leadership rhythm.
+        </p>
+
+        <div class="card-grid">
+          <article class="card">
+            <div class="num">1</div>
+            <span class="label">Before the Ask</span>
+            <h3>Cultivation</h3>
+            <p>This is the relationship-building before the ask. It’s how people come to understand the mission, trust the leadership, and see where their support could matter.</p>
+          </article>
+
+          <article class="card">
+            <div class="num">2</div>
+            <span class="label">The Ask</span>
+            <h3>Solicitation</h3>
+            <p>This is the ask itself. Appeals, campaigns, events, sponsorships, recurring giving, and major donor conversations all live here.</p>
+          </article>
+
+          <article class="card">
+            <div class="num">3</div>
+            <span class="label">After the Gift</span>
+            <h3>Stewardship</h3>
+            <p>This is what happens after the gift. It includes gratitude, reporting, follow-up, relationship care, and the discipline of showing donors what their support helped make possible.</p>
+          </article>
+        </div>
+
+        <div class="pull-quote">
+          When one part is weak, another part gets overworked. If cultivation is thin, solicitation has to carry too much weight. If stewardship is weak, the next ask gets harder.
         </div>
       </div>
     </section>
@@ -885,44 +990,41 @@
     <section class="navy" id="consultation">
       <div class="container consultation-grid">
         <div>
-          <div class="eyebrow">Free Initial Consultation</div>
+          <div class="eyebrow">Free Fundraising System Review</div>
 
-          <h2>Start with a conversation before you commit to a project.</h2>
+          <h2>Start with a free Fundraising System Review.</h2>
 
           <p>
-            Use the initial call to explain what is happening inside your fundraising or advancement effort. We will ask direct questions, look for the likely system gaps, and help you decide whether Waypoint is the right fit.
+            This is a practical first conversation, not a pitch deck.
           </p>
 
           <p>
-            This is not a pitch deck or a paid diagnostic. It is a practical first conversation to sort out what feels stuck and whether there is a clear next step.
+            We’ll talk through what’s happening now, where fundraising feels too dependent on a person or event, and which parts of the advancement system are creating drag.
           </p>
 
           <div class="callout">
-            <h3>What the call should clarify</h3>
+            <h3>You should leave with a clearer view of:</h3>
+
             <ul class="offer-list">
-              <li>Where funding feels unpredictable or too dependent on urgency</li>
-              <li>Which fundraising activities are working but not connected</li>
-              <li>Where donor follow-up, board roles, or records are creating drag</li>
-              <li>Whether you need strategy, implementation support, or a focused project</li>
+              <li>Where donor or sponsor follow-up is breaking down</li>
+              <li>Where board participation is unclear</li>
+              <li>Whether campaigns and events are connected or competing</li>
+              <li>What information is missing from your donor records</li>
+              <li>What should probably be fixed first</li>
             </ul>
           </div>
         </div>
 
-        <aside class="consultation-box" aria-label="Book a free initial consultation">
-          <h3>Book a free initial call</h3>
+        <aside class="consultation-box" aria-label="Book a free fundraising system review">
+          <h3>Book a free System Review</h3>
 
           <p>
-            Send a short note with enough context to make the first conversation useful. Include your organization, role, what feels stuck, and a few times that work for you.
+            Send a short note with your organization, role, what feels stuck, and a few times that work for a call.
           </p>
 
-          <a class="button button-primary" href="mailto:roarkgaltrandazzo@gmail.com?subject=Waypoint%20Initial%20Consultation&body=I%20would%20like%20to%20book%20a%20free%20initial%20consultation%20with%20Waypoint%20Mission%20Partners.%0A%0AName:%0AOrganization:%0ARole:%0AWhat%20feels%20stuck:%0APreferred%20times%20for%20a%20call:">
-            Email to Book the Call
+          <a class="button button-primary" href="mailto:roarkgaltrandazzo@gmail.com?subject=Waypoint%20Fundraising%20System%20Review&body=I%20would%20like%20to%20book%20a%20free%20Fundraising%20System%20Review.%0A%0AName:%0AOrganization:%0ARole:%0AWhat%20feels%20stuck:%0APreferred%20times%20for%20a%20call:">
+            Email to Book the Review
           </a>
-
-          <div class="email-fallback">
-            Direct email:
-            <a href="mailto:roarkgaltrandazzo@gmail.com">roarkgaltrandazzo@gmail.com</a>
-          </div>
 
           <p class="small-note">
             No external calendar, payment page, or third-party form is embedded on this site.
@@ -931,133 +1033,29 @@
       </div>
     </section>
 
-    <section class="paper" id="framework">
-      <div class="container">
-        <div class="eyebrow">The Basic Framework</div>
-
-        <h2>Advancement is the system. Fundraising is the visible activity inside it.</h2>
-
-        <p class="section-intro">
-          The goal is not to make fundraising sound more complicated. The goal is to make the moving pieces visible enough for leadership to improve them.
-        </p>
-
-        <div class="card-grid">
-          <article class="card">
-            <div class="num">1</div>
-            <span class="label">Before the Ask</span>
-            <h3>Cultivation</h3>
-            <p>How the organization identifies people who may care, builds trust, communicates clearly, and prepares relationships before asking for support.</p>
-          </article>
-
-          <article class="card">
-            <div class="num">2</div>
-            <span class="label">The Ask</span>
-            <h3>Solicitation</h3>
-            <p>The direct invitation to give through appeals, campaigns, sponsorships, events, recurring gifts, major donor conversations, and other funding moments.</p>
-          </article>
-
-          <article class="card">
-            <div class="num">3</div>
-            <span class="label">After the Gift</span>
-            <h3>Stewardship</h3>
-            <p>The follow-up, care, reporting, gratitude, and relationship rhythm that helps donors stay connected after the transaction.</p>
-          </article>
-        </div>
-
-        <div class="pull-quote">
-          When one part is weak, another part gets overworked. That is why another event or appeal rarely fixes the underlying problem by itself.
-        </div>
-      </div>
-    </section>
-
-    <section class="white bordered" id="how-we-help">
-      <div class="container">
-        <div class="eyebrow">How We Help</div>
-
-        <h2>Waypoint helps leaders turn scattered fundraising activity into a clearer operating rhythm.</h2>
-
-        <p class="section-intro">
-          The work usually sits in a few practical places. We help name the gaps, create the right tools, and support the people responsible for using them.
-        </p>
-
-        <div class="help-grid">
-          <article class="help-card">
-            <span class="label">Donor and Sponsor Follow-Up</span>
-            <h3>Make stewardship repeatable.</h3>
-            <p>Build a follow-up rhythm after gifts, events, campaigns, and sponsorship asks so relationships do not depend on memory.</p>
-          </article>
-
-          <article class="help-card">
-            <span class="label">Board Enablement</span>
-            <h3>Give board members usable roles.</h3>
-            <p>Move beyond vague fundraising pressure and define specific ways board members can open doors, thank donors, invite support, and carry the mission.</p>
-          </article>
-
-          <article class="help-card">
-            <span class="label">Campaign and Event Flow</span>
-            <h3>Connect the before and after.</h3>
-            <p>Use events, campaigns, and sponsorships as part of a larger relationship cycle instead of one-off pushes.</p>
-          </article>
-
-          <article class="help-card">
-            <span class="label">Records and Accountability</span>
-            <h3>Make the next step visible.</h3>
-            <p>Clarify who owns each relationship, what was promised, what happened last, and what should happen next.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="cream" id="process">
-      <div class="container">
-        <div class="eyebrow">Simple Process</div>
-
-        <h2>Start small enough to be useful. Build only what the organization can actually run.</h2>
-
-        <div class="process-grid">
-          <article class="process-card">
-            <div class="num">1</div>
-            <h3>Talk through what is happening.</h3>
-            <p>The free initial call helps identify whether the issue is donor follow-up, board clarity, campaign rhythm, data, sponsorship, or something else.</p>
-          </article>
-
-          <article class="process-card">
-            <div class="num">2</div>
-            <h3>Name the likely system gaps.</h3>
-            <p>We separate symptoms from causes so leadership does not overreact with another tactic before understanding the structure underneath.</p>
-          </article>
-
-          <article class="process-card">
-            <div class="num">3</div>
-            <h3>Decide the right next step.</h3>
-            <p>That may be a focused project, a systems review, campaign support, board enablement, sponsorship structure, or ongoing advisory support.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <section class="white" id="why-waypoint">
       <div class="container two-col">
         <div>
           <div class="eyebrow">Why Waypoint</div>
-          <h2>Not campaign hype. Not generic fundraising advice. Practical structure for the people carrying the mission.</h2>
+          <h2>Practical advancement structure for the people carrying the fundraising load.</h2>
         </div>
 
         <div>
           <p>
-            Waypoint was built for organizations where fundraising is real, personal, and often under-resourced. The issue is rarely that people do not care. The issue is that donor relationships, board participation, sponsorships, campaigns, stewardship, and records are not organized clearly enough to sustain momentum.
+            Waypoint was built for organizations where fundraising is personal, under-resourced, and too often dependent on the same few people.
           </p>
 
           <p>
-            We help leaders see the system underneath the activity, then build practical tools and rhythms that staff, board members, and volunteers can actually use.
+            The problem usually isn’t effort. It’s that donor relationships, board participation, campaigns, sponsorships, stewardship, and records aren’t organized clearly enough to sustain momentum.
           </p>
 
-          <ul class="simple-list">
-            <li>Plainspoken strategy that leadership can understand</li>
-            <li>Board-ready framing without blame or theater</li>
-            <li>Tools built around the organization's real capacity</li>
-            <li>A bias toward stewardship, clarity, and repeatable follow-through</li>
-          </ul>
+          <p>
+            We help leaders see the system underneath the activity, then build tools and rhythms that staff, board members, and volunteers can actually use.
+          </p>
+
+          <p>
+            That work usually includes clearer calendars, cleaner relationship ownership, better stewardship rhythm, more specific board roles, and a practical plan for what to fix first.
+          </p>
         </div>
       </div>
     </section>
@@ -1069,28 +1067,33 @@
         <h2>Common questions before the first call.</h2>
 
         <details>
-          <summary>Is the initial consultation really free?</summary>
-          <p>Yes. The first call is a no-cost conversation to understand what is happening and whether Waypoint is a fit. If there is a clear next step, we will explain it plainly.</p>
+          <summary>Is the Fundraising System Review really free?</summary>
+          <p>Yes. The first conversation is free. The point is to understand what’s happening, identify the likely system gaps, and decide whether there’s a useful next step.</p>
         </details>
 
         <details>
           <summary>Who should be on the call?</summary>
-          <p>Usually the executive director, head of school, pastor, advancement director, development leader, board chair, or a board member responsible for fundraising or advancement. One or two decision-makers is enough for the first conversation.</p>
+          <p>Usually the executive director, head of school, pastor, advancement leader, board chair, or whoever owns fundraising and donor relationships. One or two decision-makers is enough for the first conversation.</p>
         </details>
 
         <details>
-          <summary>Do we need a development director or CRM already in place?</summary>
-          <p>No. Some organizations have staff and software. Others have a spreadsheet, a board list, and one overloaded leader. The first call helps clarify what structure would actually be useful at your current stage.</p>
+          <summary>Do we need a development director or CRM?</summary>
+          <p>No. Some organizations have staff and software. Others have spreadsheets, board lists, and one overloaded leader. The system matters more than the tool.</p>
         </details>
 
         <details>
-          <summary>Is this only for faith-based organizations?</summary>
-          <p>No. Waypoint works with nonprofits, private schools, churches, and other mission-driven organizations. The advice should respect the culture of the organization, but the underlying advancement gaps often look similar.</p>
+          <summary>How long does an engagement take?</summary>
+          <p>It depends on the problem. Some organizations need a focused project. Others need deeper systems work or ongoing advisory support. The first call helps define the right scope.</p>
         </details>
 
         <details>
-          <summary>What happens after the first call?</summary>
-          <p>If there is fit, we may recommend a focused project, a deeper systems review, campaign support, board enablement, sponsorship structure, stewardship planning, or ongoing advisory support. If there is not fit, we will say so.</p>
+          <summary>What does this usually cost?</summary>
+          <p>Pricing depends on scope. A focused project costs less than a deeper systems engagement or ongoing advisory support. The first call helps sort out which lane makes sense before anyone talks about a proposal.</p>
+        </details>
+
+        <details>
+          <summary>Is this only for churches or faith-based groups?</summary>
+          <p>No. Waypoint is built for mission-driven organizations, including nonprofits, private schools, churches, and faith-based organizations.</p>
         </details>
       </div>
     </section>
@@ -1099,13 +1102,13 @@
       <div class="container-narrow">
         <div class="eyebrow">Start Here</div>
 
-        <h2>Want to know what is actually blocking your fundraising?</h2>
+        <h2>Want to know what’s creating drag in your fundraising?</h2>
 
         <p class="section-intro">
-          Start with a free initial call. Bring the messy version. That is usually the most useful place to begin.
+          Start with a free Fundraising System Review. You don’t need to have the problem neatly packaged before the call.
         </p>
 
-        <a class="button button-primary" href="#consultation">Book a Free Initial Call</a>
+        <a class="button button-primary" href="#consultation">Book a Free System Review</a>
       </div>
     </section>
   </main>
@@ -1123,8 +1126,9 @@
       </div>
 
       <p class="footer-small">
-        Contact:
-        <a href="mailto:roarkgaltrandazzo@gmail.com">roarkgaltrandazzo@gmail.com</a>
+        <a class="button button-primary" href="mailto:roarkgaltrandazzo@gmail.com?subject=Waypoint%20Fundraising%20System%20Review&body=I%20would%20like%20to%20book%20a%20free%20Fundraising%20System%20Review.%0A%0AName:%0AOrganization:%0ARole:%0AWhat%20feels%20stuck:%0APreferred%20times%20for%20a%20call:">
+          Email to Book the Review
+        </a>
       </p>
     </div>
   </footer>
