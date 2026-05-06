@@ -55,7 +55,7 @@
       color: var(--ink-soft);
       background: var(--paper);
       font-size: 17px;
-      line-height: 1.62;
+      line-height: 1.58;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
@@ -108,11 +108,11 @@
     }
 
     .header-inner {
-      min-height: 96px;
+      min-height: 92px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 28px;
+      gap: 26px;
       padding: 0;
     }
 
@@ -124,7 +124,7 @@
     }
 
     .brand img {
-      height: 94px;
+      height: 91px;
       width: auto;
       max-width: none;
     }
@@ -132,7 +132,7 @@
     .desktop-nav {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 20px;
       font-size: 14px;
       font-weight: 700;
       color: var(--navy-deep);
@@ -140,6 +140,7 @@
 
     .desktop-nav a {
       text-decoration: none;
+      white-space: nowrap;
     }
 
     .desktop-nav a:hover {
@@ -214,41 +215,41 @@
     }
 
     h1 {
-      font-size: clamp(56px, 8vw, 104px);
-      line-height: 0.92;
+      font-size: clamp(58px, 8vw, 108px);
+      line-height: 0.91;
       font-weight: 600;
-      max-width: 930px;
+      max-width: 940px;
       margin-bottom: 22px;
     }
 
     h2 {
-      font-size: clamp(34px, 4.2vw, 58px);
+      font-size: clamp(34px, 4vw, 56px);
       line-height: 1.06;
       font-weight: 600;
-      max-width: 1000px;
-      margin-bottom: 24px;
+      max-width: 980px;
+      margin-bottom: 22px;
     }
 
     h3 {
-      font-size: 28px;
+      font-size: 27px;
       line-height: 1.15;
       font-weight: 600;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     p {
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     section {
-      padding: 76px 0;
+      padding: 70px 0;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
       font-size: 12px;
       font-weight: 800;
       text-transform: uppercase;
@@ -264,9 +265,9 @@
     }
 
     .section-intro {
-      max-width: 880px;
+      max-width: 820px;
       font-size: 19px;
-      margin-bottom: 34px;
+      margin-bottom: 30px;
     }
 
     .button {
@@ -307,16 +308,6 @@
       background: var(--white);
     }
 
-    .button-outline {
-      border-color: var(--navy-deep);
-      color: var(--navy-deep);
-      background: transparent;
-    }
-
-    .button-outline:hover {
-      background: rgba(12, 34, 60, 0.06);
-    }
-
     .white {
       background: var(--white);
     }
@@ -354,12 +345,12 @@
 
     .hero {
       position: relative;
-      min-height: 650px;
+      min-height: 620px;
       display: flex;
       align-items: center;
       overflow: hidden;
       background:
-        linear-gradient(90deg, rgba(7, 24, 39, 0.96) 0%, rgba(12, 34, 60, 0.92) 51%, rgba(12, 34, 60, 0.58) 100%),
+        linear-gradient(90deg, rgba(7, 24, 39, 0.96) 0%, rgba(12, 34, 60, 0.92) 52%, rgba(12, 34, 60, 0.58) 100%),
         url("/ChatGPT%20Image%20Apr%2024%2C%202026%2C%2002_30_58%20PM.png") center right / cover no-repeat,
         linear-gradient(120deg, var(--navy-deep) 0%, var(--forest) 100%);
       color: var(--paper);
@@ -379,11 +370,11 @@
       position: relative;
       z-index: 2;
       width: 100%;
-      padding: 76px 0;
+      padding: 64px 0;
     }
 
     .hero-content {
-      max-width: 940px;
+      max-width: 920px;
     }
 
     .hero .eyebrow {
@@ -399,19 +390,28 @@
     }
 
     .hero-subheadline {
-      max-width: 820px;
+      max-width: 800px;
       font-size: 25px;
-      line-height: 1.36;
+      line-height: 1.34;
       color: rgba(255, 250, 241, 0.95);
       font-weight: 600;
       margin-bottom: 18px;
     }
 
     .hero-lede {
-      max-width: 820px;
-      font-size: 20px;
-      line-height: 1.56;
+      max-width: 800px;
+      font-size: 19px;
+      line-height: 1.55;
       color: rgba(255, 250, 241, 0.9);
+    }
+
+    .hero-trust {
+      max-width: 780px;
+      margin-top: 18px;
+      padding-left: 18px;
+      border-left: 4px solid var(--gold);
+      color: rgba(255, 250, 241, 0.94);
+      font-weight: 700;
     }
 
     .hero-actions {
@@ -423,14 +423,59 @@
     }
 
     .hero-note {
-      margin-top: 18px;
+      margin-top: 16px;
       color: rgba(255, 250, 241, 0.78);
       font-size: 15px;
-      max-width: 760px;
+      max-width: 720px;
+    }
+
+    .proof-strip {
+      background: var(--cream);
+      padding: 26px 0;
+      border-bottom: 1px solid var(--rule-soft);
+    }
+
+    .proof-inner {
+      display: grid;
+      grid-template-columns: 1.1fr 1.5fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .proof-line {
+      margin: 0;
+      color: var(--navy-deep);
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    .proof-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .proof-point {
+      background: rgba(255, 250, 241, 0.7);
+      border: 1px solid var(--rule-soft);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .proof-point strong {
+      display: block;
+      color: var(--navy-deep);
+      margin-bottom: 4px;
+    }
+
+    .proof-point span {
+      display: block;
+      color: var(--ink-muted);
+      font-size: 14px;
+      line-height: 1.35;
     }
 
     .support-grid,
-    .partner-grid,
     .asset-grid,
     .testimonial-grid,
     .sector-grid,
@@ -440,13 +485,7 @@
       gap: 22px;
     }
 
-    .asset-grid,
-    .partner-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
     .support-card,
-    .partner-card,
     .asset-card,
     .testimonial-card,
     .sector-card,
@@ -454,12 +493,11 @@
       background: var(--paper);
       border: 1px solid var(--rule-soft);
       border-radius: var(--radius);
-      padding: 30px;
+      padding: 28px;
       box-shadow: var(--shadow-soft);
     }
 
     .white .support-card,
-    .white .partner-card,
     .white .asset-card,
     .white .testimonial-card,
     .white .sector-card,
@@ -469,34 +507,42 @@
 
     .support-card {
       position: relative;
-      overflow: hidden;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      min-height: 190px;
+      text-align: left;
+      font-family: inherit;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }
 
-    .support-card:hover {
+    .support-card:hover,
+    .support-card.active {
       transform: translateY(-3px);
       box-shadow: var(--shadow);
+      border-color: rgba(201, 154, 69, 0.7);
     }
 
-    .support-card::after {
+    .support-card.active::after {
       content: "";
       position: absolute;
-      left: 30px;
-      right: 30px;
+      left: 28px;
+      right: 28px;
       bottom: 0;
       height: 4px;
       background: var(--gold);
-      opacity: 0;
-      transition: opacity 0.2s ease;
+      border-radius: 999px 999px 0 0;
     }
 
-    .support-card:hover::after {
-      opacity: 1;
+    .support-card p,
+    .asset-card p,
+    .sector-card p,
+    .framework-card p {
+      margin-bottom: 0;
     }
 
     .label {
       display: inline-block;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       color: var(--forest);
       font-size: 12px;
       font-weight: 800;
@@ -504,71 +550,85 @@
       text-transform: uppercase;
     }
 
-    .card-link {
-      display: inline-flex;
-      margin-top: 12px;
-      font-weight: 800;
-      color: var(--navy-deep);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(12, 34, 60, 0.25);
-    }
-
-    .card-link:hover {
-      color: var(--forest);
-      border-bottom-color: var(--forest);
-    }
-
-    .two-col,
-    .approach-grid,
-    .conversation-grid {
+    .support-detail {
+      margin-top: 26px;
+      background: var(--navy-deep);
+      color: rgba(255, 250, 241, 0.86);
+      border-radius: var(--radius-lg);
+      padding: 34px;
       display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-      gap: 58px;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px;
       align-items: start;
+      box-shadow: var(--shadow);
     }
 
-    .conversation-grid {
-      grid-template-columns: minmax(0, 0.9fr) minmax(360px, 0.65fr);
+    .support-detail h3 {
+      color: var(--white);
+      font-size: 34px;
     }
 
-    .process-strip {
+    .support-detail p {
+      margin-bottom: 14px;
+    }
+
+    .mini-list {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 12px;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .mini-list li {
+      position: relative;
+      padding-left: 24px;
+    }
+
+    .mini-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--gold);
+    }
+
+    .three-phase {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
       margin-top: 34px;
     }
 
-    .process-step {
-      background: rgba(12, 34, 60, 0.06);
+    .phase-card {
+      background: var(--paper);
       border: 1px solid var(--rule-soft);
-      border-radius: 18px;
-      padding: 18px;
-      color: var(--navy-deep);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: var(--shadow-soft);
     }
 
-    .process-number {
+    .phase-number {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 30px;
-      height: 30px;
+      width: 34px;
+      height: 34px;
       border-radius: 999px;
       background: var(--gold);
       color: var(--navy-deep);
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 900;
-      margin-bottom: 10px;
+      margin-bottom: 14px;
     }
 
-    .process-step p {
-      font-size: 14px;
-      line-height: 1.35;
-      margin-bottom: 0;
-      font-weight: 700;
+    .asset-grid {
+      grid-template-columns: repeat(3, 1fr);
     }
 
     .asset-card {
-      min-height: 260px;
+      min-height: 230px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -580,10 +640,6 @@
       background: var(--white);
       border: 1px solid var(--rule-soft);
       padding: 16px;
-    }
-
-    .paper .asset-preview {
-      background: var(--paper);
     }
 
     .preview-line {
@@ -626,11 +682,17 @@
       background: var(--gold-soft);
     }
 
+    .board-layout {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 46px;
+      align-items: center;
+    }
+
     .board-roles {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 14px;
-      margin-top: 28px;
     }
 
     .board-role {
@@ -642,12 +704,16 @@
       color: rgba(255, 250, 241, 0.92);
     }
 
+    .testimonial-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
     .testimonial-card blockquote {
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 23px;
-      line-height: 1.28;
+      font-size: 25px;
+      line-height: 1.22;
       color: var(--navy-deep);
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
     .testimonial-person {
@@ -662,18 +728,83 @@
       margin-bottom: 0;
     }
 
-    .framework-card {
-      position: relative;
+    .testimonial-card details {
+      border: 0;
+      padding: 12px 0 0;
     }
 
-    .framework-card::before {
-      content: "";
+    .testimonial-card summary {
+      font-family: "Inter Tight", sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--forest);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .testimonial-card details p {
+      font-size: 15px;
+      margin-top: 12px;
+      color: var(--ink-muted);
+    }
+
+    .framework-wrap {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 46px;
+      align-items: center;
+    }
+
+    .framework-loop {
+      background: var(--paper);
+      border: 1px solid var(--rule-soft);
+      border-radius: var(--radius-lg);
+      padding: 34px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .loop-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .loop-item {
+      background: var(--white);
+      border: 1px solid var(--rule-soft);
+      border-radius: 20px;
+      padding: 18px;
+      text-align: center;
+    }
+
+    .loop-item strong {
       display: block;
-      width: 42px;
-      height: 4px;
-      border-radius: 999px;
-      background: var(--gold);
-      margin-bottom: 18px;
+      color: var(--navy-deep);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 25px;
+      margin-bottom: 6px;
+    }
+
+    .loop-item span {
+      display: block;
+      font-size: 13px;
+      color: var(--ink-muted);
+      line-height: 1.3;
+    }
+
+    .loop-arrow {
+      color: var(--gold);
+      font-weight: 900;
+      font-size: 24px;
+    }
+
+    .approach-grid,
+    .conversation-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(360px, 0.65fr);
+      gap: 58px;
+      align-items: start;
     }
 
     .approach-card {
@@ -723,7 +854,7 @@
     }
 
     .approach-summary p {
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .approach-summary p:last-child {
@@ -749,10 +880,25 @@
       font-weight: 700;
     }
 
+    .conversation-box,
+    .callout {
+      background: rgba(255, 250, 241, 0.08);
+      border: 1px solid rgba(255, 250, 241, 0.16);
+      border-radius: var(--radius-lg);
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .conversation-box h3,
+    .callout h3 {
+      color: var(--white);
+    }
+
     .offer-list {
       list-style: none;
       display: grid;
       gap: 14px;
+      margin-top: 14px;
     }
 
     .offer-list li {
@@ -772,33 +918,6 @@
       box-shadow: 0 0 0 5px rgba(201, 154, 69, 0.16);
     }
 
-    .callout {
-      margin-top: 28px;
-      background: rgba(255, 250, 241, 0.08);
-      color: rgba(255, 250, 241, 0.86);
-      border: 1px solid rgba(255, 250, 241, 0.16);
-      border-radius: var(--radius-lg);
-      padding: 34px;
-      box-shadow: var(--shadow);
-    }
-
-    .callout h3 {
-      color: var(--white);
-      font-size: 34px;
-    }
-
-    .conversation-box {
-      background: rgba(255, 250, 241, 0.08);
-      border: 1px solid rgba(255, 250, 241, 0.16);
-      border-radius: var(--radius-lg);
-      padding: 34px;
-      box-shadow: var(--shadow);
-    }
-
-    .conversation-box h3 {
-      color: var(--white);
-    }
-
     .small-note {
       margin-top: 16px;
       margin-bottom: 0;
@@ -808,7 +927,7 @@
 
     details {
       border-bottom: 1px solid var(--rule-soft);
-      padding: 24px 0;
+      padding: 22px 0;
     }
 
     summary {
@@ -864,16 +983,16 @@
 
     @media (max-width: 1180px) {
       .desktop-nav {
-        gap: 16px;
+        gap: 14px;
         font-size: 13px;
       }
 
       .brand img {
-        height: 86px;
+        height: 84px;
       }
 
       .header-inner {
-        min-height: 90px;
+        min-height: 86px;
       }
     }
 
@@ -886,36 +1005,34 @@
         display: block;
       }
 
-      .header-inner {
-        min-height: 90px;
-      }
-
-      .brand img {
-        height: 86px;
-      }
-
       .hero {
         min-height: auto;
       }
 
-      .two-col,
-      .approach-grid,
-      .conversation-grid {
-        grid-template-columns: 1fr;
-      }
-
+      .proof-inner,
+      .proof-points,
       .support-grid,
-      .partner-grid,
       .asset-grid,
       .testimonial-grid,
       .sector-grid,
       .framework-grid,
-      .board-roles {
+      .three-phase,
+      .board-layout,
+      .board-roles,
+      .framework-wrap,
+      .approach-grid,
+      .conversation-grid,
+      .support-detail {
         grid-template-columns: 1fr;
       }
 
-      .process-strip {
-        grid-template-columns: repeat(3, 1fr);
+      .loop-row {
+        grid-template-columns: 1fr;
+      }
+
+      .loop-arrow {
+        transform: rotate(90deg);
+        justify-self: center;
       }
 
       .sticky-cta {
@@ -931,11 +1048,11 @@
       }
 
       .header-inner {
-        min-height: 80px;
+        min-height: 76px;
       }
 
       .brand img {
-        height: 76px;
+        height: 72px;
       }
 
       .hero {
@@ -958,7 +1075,7 @@
       }
 
       section {
-        padding: 56px 0;
+        padding: 54px 0;
       }
 
       .button {
@@ -966,22 +1083,21 @@
       }
 
       .support-card,
-      .partner-card,
       .asset-card,
       .testimonial-card,
       .sector-card,
       .framework-card,
       .approach-card,
       .conversation-box,
-      .callout {
-        padding: 26px;
+      .callout,
+      .support-detail,
+      .phase-card,
+      .proof-point,
+      .framework-loop {
+        padding: 24px;
       }
 
       .approach-profile {
-        grid-template-columns: 1fr;
-      }
-
-      .process-strip {
         grid-template-columns: 1fr;
       }
 
@@ -1038,7 +1154,7 @@
 
         <nav class="desktop-nav" aria-label="Primary navigation">
           <a href="#support">Support</a>
-          <a href="#partnership">Partnership</a>
+          <a href="#partnership">How It Works</a>
           <a href="#assets">What You Receive</a>
           <a href="#board">Board Advancement</a>
           <a href="#conversation" class="nav-cta">Talk With Waypoint</a>
@@ -1048,7 +1164,7 @@
           <summary>Menu</summary>
           <nav class="mobile-nav-panel" aria-label="Mobile navigation">
             <a href="#support">Support</a>
-            <a href="#partnership">Partnership</a>
+            <a href="#partnership">How It Works</a>
             <a href="#assets">What You Receive</a>
             <a href="#board">Board Advancement</a>
             <a href="#conversation">Talk With Waypoint</a>
@@ -1072,10 +1188,10 @@
             </p>
 
             <p class="hero-lede">
-              We help plan campaigns, prepare donor and sponsor communication, support stewardship, equip board members, create impact reports, and set up the tracking needed to keep funding work moving.
+              Campaigns, donor communication, stewardship, board support, impact reports, sponsorships, and tracking. Planned, prepared, and easier to manage.
             </p>
 
-            <p class="hero-lede">
+            <p class="hero-trust">
               Your people keep the trust. Waypoint gives them the plan, tools, messaging, and support to use it well.
             </p>
 
@@ -1092,110 +1208,129 @@
       </div>
     </section>
 
+    <section class="proof-strip" aria-label="Credibility markers">
+      <div class="container proof-inner">
+        <p class="proof-line">
+          Built for organizations that need practical support behind funding.
+        </p>
+
+        <div class="proof-points">
+          <div class="proof-point">
+            <strong>Board-tested tools</strong>
+            <span>Built with leaders responsible for advancement and follow-up.</span>
+          </div>
+
+          <div class="proof-point">
+            <strong>School-based advancement work</strong>
+            <span>Shaped by real planning, stewardship, sponsorship, and event follow-up.</span>
+          </div>
+
+          <div class="proof-point">
+            <strong>Revenue discipline</strong>
+            <span>Fortune 500 and private-market experience applied to mission-driven funding.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="white bordered" id="support">
       <div class="container">
         <div class="eyebrow">Find Your Starting Point</div>
 
-        <h2>Where do you need more advancement support?</h2>
+        <h2>Where could your funding work use more support?</h2>
 
         <p class="section-intro">
-          Some organizations need help preparing for a campaign. Others need better stewardship, clearer board participation, stronger sponsor follow-up, or a cleaner way to track what happens next.
+          Choose the area that feels most relevant. The details below will adjust to show how Waypoint helps.
         </p>
 
-        <div class="support-grid">
-          <article class="support-card">
+        <div class="support-grid" role="tablist" aria-label="Advancement support areas">
+          <button class="support-card active" type="button" data-support="campaigns" role="tab" aria-selected="true">
             <span class="label">Campaigns and Appeals</span>
-            <h3>Prepare the ask with more confidence.</h3>
-            <p>For annual funds, giving days, year-end campaigns, special initiatives, and event-related asks that need clearer messaging, timing, board support, and follow-up.</p>
-            <a class="card-link" href="#conversation">Talk through campaign support</a>
-          </article>
+            <h3>Prepare the ask.</h3>
+            <p>Messaging, timing, board support, and follow-up.</p>
+          </button>
 
-          <article class="support-card">
+          <button class="support-card" type="button" data-support="board" role="tab" aria-selected="false">
             <span class="label">Board Participation</span>
-            <h3>Give board members useful ways to help.</h3>
-            <p>For organizations with willing board members who need clearer expectations, better tools, and a practical structure for participation.</p>
-            <a class="card-link" href="#board">See board advancement support</a>
-          </article>
+            <h3>Give the board a role.</h3>
+            <p>Clear assignments, simple tools, and useful ways to help.</p>
+          </button>
 
-          <article class="support-card">
+          <button class="support-card" type="button" data-support="stewardship" role="tab" aria-selected="false">
             <span class="label">Stewardship</span>
-            <h3>Keep communication moving after the gift.</h3>
-            <p>For organizations that thank donors but need a stronger rhythm for impact updates, personal follow-up, sponsor reporting, and continued communication.</p>
-            <a class="card-link" href="#assets">See stewardship assets</a>
-          </article>
+            <h3>Keep communication moving.</h3>
+            <p>Thank-yous, donor updates, sponsor reporting, and follow-through.</p>
+          </button>
 
-          <article class="support-card">
+          <button class="support-card" type="button" data-support="sponsorships" role="tab" aria-selected="false">
             <span class="label">Sponsorships</span>
-            <h3>Make sponsorship work last beyond the event.</h3>
-            <p>For events or annual sponsor programs that need better outreach, fulfillment, renewal tracking, thank-yous, visibility, and follow-up.</p>
-            <a class="card-link" href="#conversation">Talk through sponsorship support</a>
-          </article>
+            <h3>Support beyond the event.</h3>
+            <p>Outreach, fulfillment, renewal tracking, and follow-up.</p>
+          </button>
 
-          <article class="support-card">
+          <button class="support-card" type="button" data-support="impact" role="tab" aria-selected="false">
             <span class="label">Impact Reporting</span>
-            <h3>Show supporters what their giving made possible.</h3>
-            <p>For organizations that need better donor updates, impact reports, beneficiary stories, sponsor recaps, and communication after campaigns or events.</p>
-            <a class="card-link" href="#assets">See reporting support</a>
-          </article>
+            <h3>Show what giving made possible.</h3>
+            <p>Stories, updates, reports, recaps, and donor communication.</p>
+          </button>
 
-          <article class="support-card">
-            <span class="label">Tracking and Accountability</span>
-            <h3>Make next steps easier to see.</h3>
-            <p>For leaders who need visibility into open follow-up, board assignments, sponsor commitments, campaign activity, and stewardship promises.</p>
-            <a class="card-link" href="#conversation">Talk through tracking support</a>
-          </article>
+          <button class="support-card" type="button" data-support="tracking" role="tab" aria-selected="false">
+            <span class="label">Tracking</span>
+            <h3>See the next step.</h3>
+            <p>Owners, commitments, board activity, and open follow-up.</p>
+          </button>
+        </div>
+
+        <div class="support-detail" id="supportDetail">
+          <div>
+            <span class="label">Campaigns and Appeals</span>
+            <h3>Prepare the ask before it goes public.</h3>
+            <p>
+              Appeals, giving days, events, and special campaigns need more than a launch date. They need message clarity, board support, follow-up, and stewardship planned before the ask goes out.
+            </p>
+          </div>
+
+          <div>
+            <h3>Waypoint helps with:</h3>
+            <ul class="mini-list" id="supportList">
+              <li>Campaign message structure</li>
+              <li>Appeal language and solicitation materials</li>
+              <li>Board talking points</li>
+              <li>Follow-up and stewardship planning</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="cream bordered" id="partnership">
       <div class="container">
-        <div class="eyebrow">Advancement Partnership</div>
+        <div class="eyebrow">How It Works</div>
 
         <h2>Your people know the mission. Waypoint supports the funding work around them.</h2>
 
         <p class="section-intro">
-          Waypoint works alongside leadership, staff, board members, and volunteers to strengthen the advancement work that supports funding.
+          Waypoint does not replace your staff, board, or donor connections. We help build the structure, materials, and rhythm around them.
         </p>
 
-        <p class="section-intro">
-          We help build the plan, create the materials, define board roles, support campaigns, prepare stewardship, track next steps, and equip the people who already have trust with donors, sponsors, families, alumni, and community supporters.
-        </p>
+        <div class="three-phase">
+          <article class="phase-card">
+            <span class="phase-number">1</span>
+            <h3>Listen</h3>
+            <p>We learn your people, calendar, campaigns, board structure, stewardship practices, and current process.</p>
+          </article>
 
-        <p class="section-intro">
-          Waypoint does not replace your staff, board, or donor connections. We support the system around them.
-        </p>
+          <article class="phase-card">
+            <span class="phase-number">2</span>
+            <h3>Build</h3>
+            <p>We create the plan, materials, board roles, stewardship rhythm, and tracking tools.</p>
+          </article>
 
-        <div class="process-strip" aria-label="Waypoint advancement partnership process">
-          <div class="process-step">
-            <span class="process-number">1</span>
-            <p>Listen and learn</p>
-          </div>
-
-          <div class="process-step">
-            <span class="process-number">2</span>
-            <p>Build the plan</p>
-          </div>
-
-          <div class="process-step">
-            <span class="process-number">3</span>
-            <p>Create the materials</p>
-          </div>
-
-          <div class="process-step">
-            <span class="process-number">4</span>
-            <p>Equip the people</p>
-          </div>
-
-          <div class="process-step">
-            <span class="process-number">5</span>
-            <p>Track the work</p>
-          </div>
-
-          <div class="process-step">
-            <span class="process-number">6</span>
-            <p>Support the rhythm</p>
-          </div>
+          <article class="phase-card">
+            <span class="phase-number">3</span>
+            <h3>Support</h3>
+            <p>We help your team execute, follow up, adjust, and keep the funding work moving.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -1215,7 +1350,7 @@
             <div>
               <span class="label">Calendar</span>
               <h3>Advancement calendar</h3>
-              <p>A working calendar for campaigns, appeals, sponsorships, stewardship, board touchpoints, reporting, and follow-up.</p>
+              <p>Campaigns, appeals, sponsorships, stewardship, board touchpoints, reporting, and follow-up.</p>
             </div>
             <div class="asset-preview" aria-hidden="true">
               <span class="preview-line gold medium"></span>
@@ -1227,8 +1362,8 @@
           <article class="asset-card">
             <div>
               <span class="label">Campaigns</span>
-              <h3>Campaign and appeal materials</h3>
-              <p>Messaging, appeal copy, solicitation language, board talking points, sponsor outreach, and follow-up templates.</p>
+              <h3>Campaign materials</h3>
+              <p>Messaging, appeal copy, solicitation language, talking points, outreach, and follow-up.</p>
             </div>
             <div class="asset-preview" aria-hidden="true">
               <span class="preview-line gold short"></span>
@@ -1240,8 +1375,8 @@
           <article class="asset-card">
             <div>
               <span class="label">Impact</span>
-              <h3>Impact reports and donor updates</h3>
-              <p>Simple reporting pieces that show supporters what their giving helped make possible.</p>
+              <h3>Impact reports</h3>
+              <p>Supporter-facing updates that show what giving helped make possible.</p>
             </div>
             <div class="asset-preview" aria-hidden="true">
               <span class="preview-line gold"></span>
@@ -1253,8 +1388,8 @@
           <article class="asset-card">
             <div>
               <span class="label">Board</span>
-              <h3>Board advancement guide</h3>
-              <p>Role definitions, advancement chair structure, committee support, relationship champion guidance, and board participation tools.</p>
+              <h3>Board guide</h3>
+              <p>Advancement chair structure, committee support, participation tools, and role clarity.</p>
             </div>
             <div class="asset-preview" aria-hidden="true">
               <span class="preview-line gold medium"></span>
@@ -1267,7 +1402,7 @@
             <div>
               <span class="label">Stewardship</span>
               <h3>Stewardship plan</h3>
-              <p>A written rhythm for thank-yous, updates, personal notes, donor care, sponsor reporting, and post-event communication.</p>
+              <p>Thank-yous, updates, personal notes, sponsor reporting, and post-event communication.</p>
             </div>
             <div class="asset-preview" aria-hidden="true">
               <span class="preview-line gold short"></span>
@@ -1280,7 +1415,7 @@
             <div>
               <span class="label">Tracking</span>
               <h3>Tracking dashboard</h3>
-              <p>A simple way to see next steps, owners, follow-up status, campaign activity, and stewardship commitments.</p>
+              <p>Next steps, owners, follow-up status, campaign activity, and stewardship commitments.</p>
             </div>
             <div class="asset-preview" aria-hidden="true">
               <span class="preview-line gold"></span>
@@ -1293,22 +1428,20 @@
     </section>
 
     <section class="board-feature" id="board">
-      <div class="container">
-        <div class="eyebrow">Board Advancement</div>
+      <div class="container board-layout">
+        <div>
+          <div class="eyebrow">Board Advancement</div>
 
-        <h2>A stronger funding function needs more than staff effort.</h2>
+          <h2>Your board can help more when the role is clear.</h2>
 
-        <p class="section-intro">
-          Board members often want to help, but they need clearer expectations, better tools, and a practical structure for participation.
-        </p>
+          <p class="section-intro">
+            Board members do not need vague fundraising pressure. They need clear expectations, prepared language, and simple ways to participate.
+          </p>
 
-        <p class="section-intro">
-          Waypoint helps define the board’s advancement role, including the advancement chair, committee rhythm, relationship champion assignments, thank-you participation, sponsor introductions, campaign support, and reporting cadence.
-        </p>
-
-        <p class="section-intro">
-          The goal is not to turn every board member into a solicitor. The goal is to give each person a useful role in strengthening the funding behind the mission.
-        </p>
+          <p class="section-intro">
+            Waypoint helps define the advancement chair role, committee rhythm, relationship champion assignments, thank-you participation, sponsor introductions, campaign support, and reporting cadence.
+          </p>
+        </div>
 
         <div class="board-roles">
           <div class="board-role">Advancement Chair</div>
@@ -1328,70 +1461,83 @@
         <h2>What leaders say after working through the process.</h2>
 
         <p class="section-intro">
-          These comments come from leaders who used Waypoint’s process to clarify board participation, stewardship, donor follow-up, and advancement planning.
+          Short excerpts are shown below. Full quotes are available in each card.
         </p>
 
         <div class="testimonial-grid">
           <article class="testimonial-card">
             <blockquote>
-              “Waypoint gave our board the language, structure, and process we needed to participate in fundraising with more confidence. Instead of leaving advancement to one person or waiting for the next event, we had a clearer way to understand our role, talk about the mission, and help move donor conversations forward.”
+              “Our board had clearer language, structure, and process.”
             </blockquote>
             <p class="testimonial-person">Mike S</p>
             <p class="testimonial-title">Board President</p>
+            <details>
+              <summary>Read full quote</summary>
+              <p>Waypoint gave our board the language, structure, and process we needed to participate in fundraising with more confidence. Instead of leaving advancement to one person or waiting for the next event, we had a clearer way to understand our role, talk about the mission, and help move donor conversations forward.</p>
+            </details>
           </article>
 
           <article class="testimonial-card">
             <blockquote>
-              “The value was in turning good intentions into an actual system. We already had people who cared about the school. Waypoint helped us organize the work, clarify next steps, track follow-up, and keep momentum going after the event was over. That made fundraising feel much less scattered and much more sustainable.”
+              “Fundraising felt less scattered and more sustainable.”
             </blockquote>
             <p class="testimonial-person">Paul S</p>
             <p class="testimonial-title">Board Treasurer</p>
+            <details>
+              <summary>Read full quote</summary>
+              <p>The value was in turning good intentions into an actual system. We already had people who cared about the school. Waypoint helped us organize the work, clarify next steps, track follow-up, and keep momentum going after the event was over. That made fundraising feel much less scattered and much more sustainable.</p>
+            </details>
           </article>
 
           <article class="testimonial-card">
             <blockquote>
-              “Waypoint helped us see advancement as more than event planning. We needed a better rhythm for donor communication, stewardship, board participation, and follow-up. Their process gave us a practical framework we could use without adding unnecessary complexity to an already busy school environment.”
+              “The process gave us a practical framework we could use.”
             </blockquote>
             <p class="testimonial-person">Sarina R</p>
             <p class="testimonial-title">School Principal</p>
+            <details>
+              <summary>Read full quote</summary>
+              <p>Waypoint helped us see advancement as more than event planning. We needed a better rhythm for donor communication, stewardship, board participation, and follow-up. Their process gave us a practical framework we could use without adding unnecessary complexity to an already busy school environment.</p>
+            </details>
           </article>
         </div>
       </div>
     </section>
 
     <section class="white bordered" id="framework">
-      <div class="container">
-        <div class="eyebrow">Advancement Framework</div>
+      <div class="container framework-wrap">
+        <div>
+          <div class="eyebrow">Advancement Framework</div>
 
-        <h2>Advancement connects cultivation, solicitation, and stewardship.</h2>
+          <h2>Advancement connects the work before, during, and after the ask.</h2>
 
-        <p class="section-intro">
-          Funding is not only the ask. It depends on what happens before, during, and after the ask.
-        </p>
-
-        <div class="framework-grid">
-          <article class="framework-card">
-            <span class="label">Before the Ask</span>
-            <h3>Cultivation</h3>
-            <p>Communication, introductions, sponsor awareness, mission storytelling, and trust-building before the ask.</p>
-          </article>
-
-          <article class="framework-card">
-            <span class="label">The Ask</span>
-            <h3>Solicitation</h3>
-            <p>Appeals, sponsorship requests, campaign conversations, event asks, annual giving, and major gift invitations.</p>
-          </article>
-
-          <article class="framework-card">
-            <span class="label">After the Gift</span>
-            <h3>Stewardship</h3>
-            <p>Thank-yous, updates, impact reports, personal follow-up, and continued care after the gift.</p>
-          </article>
+          <p class="section-intro">
+            Funding is not only the ask. It depends on how supporters are cultivated, how the ask is made, and how people are stewarded after they give.
+          </p>
         </div>
 
-        <p class="section-intro" style="margin-top: 34px; margin-bottom: 0;">
-          Waypoint helps those pieces work together across the year.
-        </p>
+        <div class="framework-loop" aria-label="Cultivation, solicitation, and stewardship framework">
+          <div class="loop-row">
+            <div class="loop-item">
+              <strong>Cultivation</strong>
+              <span>Communication, introductions, mission storytelling</span>
+            </div>
+
+            <div class="loop-arrow">→</div>
+
+            <div class="loop-item">
+              <strong>Solicitation</strong>
+              <span>Appeals, sponsorship asks, campaigns</span>
+            </div>
+
+            <div class="loop-arrow">→</div>
+
+            <div class="loop-item">
+              <strong>Stewardship</strong>
+              <span>Thank-yous, updates, reporting, continued care</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1409,19 +1555,19 @@
           <article class="sector-card">
             <span class="label">Nonprofits</span>
             <h3>Nonprofits</h3>
-            <p>For nonprofits that need more structure around donor communication, campaign support, stewardship, board participation, sponsorships, and follow-up.</p>
+            <p>Donor communication, campaign support, stewardship, board participation, sponsorships, and follow-up.</p>
           </article>
 
           <article class="sector-card">
             <span class="label">Private Schools</span>
             <h3>Private schools</h3>
-            <p>For private schools that need a clearer advancement rhythm across annual giving, events, sponsorships, parent communication, alumni, grandparents, and community supporters.</p>
+            <p>Annual giving, events, sponsorships, parent communication, alumni, grandparents, and community supporters.</p>
           </article>
 
           <article class="sector-card">
             <span class="label">Mission-Driven Organizations</span>
             <h3>Mission-driven organizations</h3>
-            <p>For mission-driven organizations that need practical support turning funding activity into a clearer annual plan with usable materials, assigned follow-up, and stronger stewardship.</p>
+            <p>Funding activity turned into a clearer annual plan with usable materials, assigned follow-up, and stronger stewardship.</p>
           </article>
         </div>
 
@@ -1440,7 +1586,7 @@
 
     <section class="white bordered" id="approach">
       <div class="container approach-grid">
-        <div class="approach-copy">
+        <div>
           <div class="eyebrow">The Waypoint Approach</div>
 
           <h2>Commercial operating discipline, adapted for mission-driven funding.</h2>
@@ -1564,16 +1710,6 @@
         </details>
 
         <details>
-          <summary>Who should be part of the first conversation?</summary>
-          <p>Usually the executive director, head of school, advancement leader, development director, board president, board treasurer, advancement chair, or whoever is closest to the funding work.</p>
-        </details>
-
-        <details>
-          <summary>Is this only for schools?</summary>
-          <p>No. Waypoint works with nonprofits, private schools, and mission-driven organizations that need stronger support around funding, campaigns, stewardship, board participation, sponsorships, and follow-up.</p>
-        </details>
-
-        <details>
           <summary>How is Waypoint different from a general nonprofit consultant?</summary>
           <p>Waypoint focuses on the advancement function behind funding. We support the planning, materials, board structure, stewardship, campaign rhythm, sponsor follow-up, and tracking that help funding work move across the year.</p>
         </details>
@@ -1624,5 +1760,109 @@
       </p>
     </div>
   </footer>
+
+  <script>
+    const supportContent = {
+      campaigns: {
+        label: "Campaigns and Appeals",
+        title: "Prepare the ask before it goes public.",
+        copy: "Appeals, giving days, events, and special campaigns need more than a launch date. They need message clarity, board support, follow-up, and stewardship planned before the ask goes out.",
+        items: [
+          "Campaign message structure",
+          "Appeal language and solicitation materials",
+          "Board talking points",
+          "Follow-up and stewardship planning"
+        ]
+      },
+      board: {
+        label: "Board Participation",
+        title: "Give the board a useful role in funding.",
+        copy: "Board members often care deeply about the mission but need clearer expectations, prepared language, and practical ways to participate without being pushed into awkward solicitation.",
+        items: [
+          "Advancement chair structure",
+          "Board role definitions",
+          "Thank-you and introduction assignments",
+          "Reporting cadence and accountability"
+        ]
+      },
+      stewardship: {
+        label: "Stewardship",
+        title: "Keep communication moving after the gift.",
+        copy: "A thank-you matters, but stewardship needs more than one acknowledgment. Supporters need updates, impact, reporting, and continued care after they give.",
+        items: [
+          "Stewardship calendar",
+          "Thank-you and update language",
+          "Sponsor and donor reporting",
+          "Post-event communication rhythm"
+        ]
+      },
+      sponsorships: {
+        label: "Sponsorships",
+        title: "Make sponsorship work last beyond the event.",
+        copy: "Sponsorships lose value when fulfillment, follow-up, reporting, and renewal timing are not tracked clearly enough.",
+        items: [
+          "Sponsor outreach language",
+          "Benefit and fulfillment tracking",
+          "Renewal timing",
+          "Sponsor recap and thank-you materials"
+        ]
+      },
+      impact: {
+        label: "Impact Reporting",
+        title: "Show supporters what their giving made possible.",
+        copy: "Impact reporting helps supporters see the connection between their gift and the mission. It also gives leaders better material for stewardship, campaigns, and board communication.",
+        items: [
+          "Impact report structure",
+          "Donor update language",
+          "Story collection prompts",
+          "Board and sponsor recap materials"
+        ]
+      },
+      tracking: {
+        label: "Tracking and Accountability",
+        title: "Make next steps easier to see.",
+        copy: "Funding work becomes harder to manage when next steps live in inboxes, memory, or disconnected spreadsheets. Leaders need a simple view of what is active, overdue, assigned, and complete.",
+        items: [
+          "Follow-up tracker",
+          "Owner assignments",
+          "Board participation tracking",
+          "Campaign and stewardship dashboard"
+        ]
+      }
+    };
+
+    const cards = document.querySelectorAll(".support-card");
+    const detail = document.getElementById("supportDetail");
+
+    cards.forEach((card) => {
+      card.addEventListener("click", () => {
+        const key = card.getAttribute("data-support");
+        const content = supportContent[key];
+
+        cards.forEach((item) => {
+          item.classList.remove("active");
+          item.setAttribute("aria-selected", "false");
+        });
+
+        card.classList.add("active");
+        card.setAttribute("aria-selected", "true");
+
+        detail.innerHTML = `
+          <div>
+            <span class="label">${content.label}</span>
+            <h3>${content.title}</h3>
+            <p>${content.copy}</p>
+          </div>
+
+          <div>
+            <h3>Waypoint helps with:</h3>
+            <ul class="mini-list">
+              ${content.items.map((item) => `<li>${item}</li>`).join("")}
+            </ul>
+          </div>
+        `;
+      });
+    });
+  </script>
 </body>
 </html>
