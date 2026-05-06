@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Waypoint Mission Partners | The Funding Behind Your Mission</title>
-  <meta name="description" content="Waypoint Mission Partners helps nonprofits, private schools, and mission-driven organizations build clearer advancement systems for donor follow-up, stewardship, board participation, sponsorships, campaign timing, and solicitation planning." />
+  <meta name="description" content="Waypoint Mission Partners is a full-service advancement partner for nonprofits, private schools, and mission-driven organizations. We help plan, build, equip, and support the funding work behind the mission." />
   <meta name="robots" content="index, follow" />
 
   <meta property="og:title" content="Waypoint Mission Partners | The Funding Behind Your Mission" />
-  <meta property="og:description" content="Advancement systems for nonprofits, private schools, and mission-driven organizations." />
+  <meta property="og:description" content="Full-service advancement support for nonprofits, private schools, and mission-driven organizations." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.waypointmissionpartners.com/" />
   <meta property="og:image" content="https://www.waypointmissionpartners.com/Untitled%20design%20%2818%29.png" />
@@ -91,7 +91,7 @@
     }
 
     .container-narrow {
-      width: min(880px, calc(100% - 48px));
+      width: min(900px, calc(100% - 48px));
       margin: 0 auto;
     }
 
@@ -103,11 +103,12 @@
     }
 
     .header-inner {
-      min-height: 132px;
+      min-height: 104px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 28px;
+      padding: 2px 0;
     }
 
     .brand {
@@ -117,9 +118,21 @@
       flex-shrink: 0;
     }
 
-    .brand img {
-      height: 126px;
-      width: auto;
+    .brand-logo-frame {
+      width: 430px;
+      height: 98px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .brand-logo-frame img {
+      width: 500px;
+      height: auto;
+      max-width: none;
+      transform: scale(1.22);
+      transform-origin: left center;
     }
 
     .desktop-nav {
@@ -207,18 +220,18 @@
     }
 
     h1 {
-      font-size: clamp(46px, 6vw, 76px);
+      font-size: clamp(46px, 6vw, 78px);
       line-height: 0.99;
       font-weight: 600;
-      max-width: 840px;
+      max-width: 900px;
       margin-bottom: 24px;
     }
 
     h2 {
-      font-size: clamp(34px, 4.2vw, 54px);
+      font-size: clamp(34px, 4.2vw, 56px);
       line-height: 1.06;
       font-weight: 600;
-      max-width: 980px;
+      max-width: 1000px;
       margin-bottom: 24px;
     }
 
@@ -257,7 +270,7 @@
     }
 
     .section-intro {
-      max-width: 840px;
+      max-width: 860px;
       font-size: 19px;
       margin-bottom: 34px;
     }
@@ -269,7 +282,7 @@
       align-items: center;
       overflow: hidden;
       background:
-        linear-gradient(90deg, rgba(7, 24, 39, 0.96) 0%, rgba(12, 34, 60, 0.91) 50%, rgba(12, 34, 60, 0.5) 100%),
+        linear-gradient(90deg, rgba(7, 24, 39, 0.96) 0%, rgba(12, 34, 60, 0.91) 52%, rgba(12, 34, 60, 0.52) 100%),
         url("/ChatGPT%20Image%20Apr%2024%2C%202026%2C%2002_30_58%20PM.png") center right / cover no-repeat,
         linear-gradient(120deg, var(--navy-deep) 0%, var(--forest) 100%);
       color: var(--paper);
@@ -293,7 +306,7 @@
     }
 
     .hero-content {
-      max-width: 860px;
+      max-width: 920px;
     }
 
     .hero .eyebrow {
@@ -309,7 +322,7 @@
     }
 
     .hero-lede {
-      max-width: 780px;
+      max-width: 820px;
       font-size: 21px;
       line-height: 1.56;
       color: rgba(255, 250, 241, 0.92);
@@ -327,7 +340,7 @@
       margin-top: 18px;
       color: rgba(255, 250, 241, 0.78);
       font-size: 15px;
-      max-width: 700px;
+      max-width: 760px;
     }
 
     .button {
@@ -404,6 +417,7 @@
     }
 
     .two-col,
+    .partnership-grid,
     .consultation-grid,
     .approach-grid {
       display: grid;
@@ -418,7 +432,8 @@
 
     .problem-grid,
     .framework-grid,
-    .build-grid,
+    .partner-grid,
+    .asset-grid,
     .sector-grid,
     .testimonial-grid {
       display: grid;
@@ -427,13 +442,15 @@
     }
 
     .problem-grid,
-    .build-grid {
+    .partner-grid,
+    .asset-grid {
       grid-template-columns: repeat(2, 1fr);
     }
 
     .problem-card,
     .framework-card,
-    .build-card,
+    .partner-card,
+    .asset-card,
     .sector-card,
     .testimonial-card {
       background: var(--paper);
@@ -445,7 +462,8 @@
 
     .white .problem-card,
     .white .framework-card,
-    .white .build-card,
+    .white .partner-card,
+    .white .asset-card,
     .white .sector-card,
     .white .testimonial-card {
       background: var(--white);
@@ -467,7 +485,8 @@
 
     .problem-card p:last-child,
     .framework-card p:last-child,
-    .build-card p:last-child,
+    .partner-card p:last-child,
+    .asset-card p:last-child,
     .sector-card p:last-child,
     .testimonial-card p:last-child {
       margin-bottom: 0;
@@ -688,11 +707,17 @@
       }
 
       .header-inner {
-        min-height: 118px;
+        min-height: 96px;
       }
 
-      .brand img {
-        height: 112px;
+      .brand-logo-frame {
+        width: 340px;
+        height: 90px;
+      }
+
+      .brand-logo-frame img {
+        width: 410px;
+        transform: scale(1.18);
       }
 
       .hero {
@@ -700,6 +725,7 @@
       }
 
       .two-col,
+      .partnership-grid,
       .consultation-grid,
       .approach-grid {
         grid-template-columns: 1fr;
@@ -707,7 +733,8 @@
 
       .problem-grid,
       .framework-grid,
-      .build-grid,
+      .partner-grid,
+      .asset-grid,
       .sector-grid,
       .testimonial-grid {
         grid-template-columns: 1fr;
@@ -722,11 +749,17 @@
       }
 
       .header-inner {
-        min-height: 96px;
+        min-height: 82px;
       }
 
-      .brand img {
-        height: 90px;
+      .brand-logo-frame {
+        width: 260px;
+        height: 76px;
+      }
+
+      .brand-logo-frame img {
+        width: 318px;
+        transform: scale(1.14);
       }
 
       .hero {
@@ -754,7 +787,8 @@
 
       .problem-card,
       .framework-card,
-      .build-card,
+      .partner-card,
+      .asset-card,
       .sector-card,
       .testimonial-card,
       .approach-card,
@@ -782,7 +816,7 @@
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "Waypoint Mission Partners",
-      "description": "Advancement systems for nonprofits, private schools, and mission-driven organizations.",
+      "description": "Full-service advancement support for nonprofits, private schools, and mission-driven organizations.",
       "url": "https://www.waypointmissionpartners.com/",
       "founder": {
         "@type": "Person",
@@ -796,12 +830,13 @@
       },
       "areaServed": "United States",
       "serviceType": [
-        "Advancement review",
+        "Advancement partnership",
+        "Campaign support",
+        "Board advancement structure",
         "Donor stewardship planning",
-        "Board advancement roles",
-        "Solicitation planning",
-        "Sponsorship follow-up planning",
-        "Donor and sponsor ownership mapping"
+        "Impact reporting",
+        "Sponsorship follow-up",
+        "Tracking and accountability"
       ]
     }
   </script>
@@ -814,25 +849,27 @@
     <div class="container-wide">
       <div class="header-inner">
         <a class="brand" href="#top" aria-label="Waypoint Mission Partners home">
-          <img src="/Untitled%20design%20%2818%29.png" alt="Waypoint Mission Partners" />
+          <span class="brand-logo-frame">
+            <img src="/Untitled%20design%20%2818%29.png" alt="Waypoint Mission Partners" />
+          </span>
         </a>
 
         <nav class="desktop-nav" aria-label="Primary navigation">
-          <a href="#funding-problem">Funding Problem</a>
-          <a href="#framework">Advancement Framework</a>
-          <a href="#build">What We Build</a>
+          <a href="#partnership">Partnership</a>
+          <a href="#framework">Framework</a>
+          <a href="#assets">What You Receive</a>
           <a href="#who-we-help">Who We Serve</a>
-          <a href="#review" class="nav-cta">Free Review</a>
+          <a href="#conversation" class="nav-cta">Start the Conversation</a>
         </nav>
 
         <details class="mobile-menu">
           <summary>Menu</summary>
           <nav class="mobile-nav-panel" aria-label="Mobile navigation">
-            <a href="#funding-problem">Funding Problem</a>
-            <a href="#framework">Advancement Framework</a>
-            <a href="#build">What We Build</a>
+            <a href="#partnership">Partnership</a>
+            <a href="#framework">Framework</a>
+            <a href="#assets">What You Receive</a>
             <a href="#who-we-help">Who We Serve</a>
-            <a href="#review">Free Review</a>
+            <a href="#conversation">Start the Conversation</a>
           </nav>
         </details>
       </div>
@@ -846,23 +883,27 @@
           <div class="hero-content">
             <div class="eyebrow">The funding behind your mission</div>
 
-            <h1>Generous supporters still need a clear advancement system.</h1>
+            <h1>A full-service advancement partner for the funding work your mission depends on.</h1>
 
             <p class="hero-lede">
-              Waypoint helps nonprofits, private schools, and mission-driven organizations make funding easier to manage through clearer donor follow-up, stewardship, board participation, sponsorship tracking, campaign timing, and solicitation planning.
+              Waypoint partners with nonprofits, private schools, and mission-driven organizations to strengthen the funding function behind the mission.
             </p>
 
             <p class="hero-lede">
-              The goal is to give leaders a better way to manage the funding work so they can spend more time focused on the mission.
+              We help plan campaigns, build donor and sponsor communication, support stewardship, equip board members, create solicitation materials, develop impact reports, clarify accountability, and keep the annual advancement rhythm moving.
+            </p>
+
+            <p class="hero-lede">
+              Your people keep the relationships. Waypoint gives them the structure, tools, messaging, and support to use those relationships well.
             </p>
 
             <div class="hero-actions">
-              <a class="button button-primary" href="#review">Book a Free Advancement Review</a>
-              <a class="button button-light" href="#build">See What We Build</a>
+              <a class="button button-primary" href="#conversation">Schedule an Introductory Conversation</a>
+              <a class="button button-light" href="#partnership">See What Waypoint Supports</a>
             </div>
 
             <div class="hero-note">
-              In 45 minutes, we’ll look at how your funding work is handled now and where clearer structure would help.
+              We’ll talk through your current funding efforts and where outside advancement support would help.
             </div>
           </div>
         </div>
@@ -873,157 +914,219 @@
       <div class="container">
         <div class="eyebrow">The Funding Problem</div>
 
-        <h2>Funding gets harder when the work behind it is scattered.</h2>
+        <h2>Funding work gets harder when it depends on memory, urgency, and a few overloaded people.</h2>
 
         <p class="section-intro">
-          A donor gives and gets thanked, but the next meaningful touchpoint is unclear. A board member wants to help, but the role has not been defined. An event raises money, but sponsor and donor follow-up does not always carry into the next campaign.
+          Many organizations have generous supporters, committed board members, meaningful events, and real community goodwill. The challenge is turning all of that into a steady advancement rhythm.
         </p>
 
         <p class="section-intro">
-          Waypoint helps connect the work behind funding so cultivation, solicitation, and stewardship support each other.
+          A campaign ends, but donor follow-up is inconsistent. A sponsor says yes, but renewal tracking is loose. A board member wants to help, but the role is vague. A donor gives, but impact reporting comes too late or not at all.
+        </p>
+
+        <p class="section-intro">
+          Waypoint helps put structure around the funding work so leaders can see what is happening, who owns the next step, and what needs support.
         </p>
 
         <div class="problem-grid">
           <article class="problem-card">
-            <span class="label">Donor Follow-Up</span>
-            <h3>Follow-up happens inconsistently.</h3>
-            <p>A donor gives, receives a thank-you, and may not hear much until the next appeal or event. Stewardship needs a rhythm beyond the first acknowledgment.</p>
+            <span class="label">Follow-Up</span>
+            <h3>Donor and sponsor follow-up gets missed.</h3>
+            <p>Supporters hear from the organization during the ask, but the next meaningful touchpoint is not always assigned, tracked, or prepared.</p>
           </article>
 
           <article class="problem-card">
             <span class="label">Board Participation</span>
-            <h3>Board members need specific roles.</h3>
-            <p>Most board members are more useful when the ask is clear. Introduce someone, thank someone, attend a donor conversation, support a sponsor, or share a specific story.</p>
+            <h3>Board members need clearer advancement roles.</h3>
+            <p>Board members are often willing to help, but vague fundraising expectations do not give them enough structure to act with confidence.</p>
           </article>
 
           <article class="problem-card">
-            <span class="label">Campaign Timing</span>
-            <h3>Events and appeals need to connect.</h3>
-            <p>A gala, annual fund, sponsorship push, and year-end appeal can all work separately and still miss the larger opportunity. The donor list, message, follow-up, and next ask need to connect.</p>
+            <span class="label">Campaign Support</span>
+            <h3>Campaigns need more than a launch date.</h3>
+            <p>Appeals, events, giving days, sponsorships, and special campaigns need messaging, timing, follow-up, board support, and stewardship built around them.</p>
           </article>
 
           <article class="problem-card">
-            <span class="label">Records and Ownership</span>
-            <h3>Donor and sponsor information needs ownership.</h3>
-            <p>Some information is in the CRM. Some is in email. Some is in spreadsheets. Some is known only by one staff member or volunteer. That makes the next step harder to see and easier to miss.</p>
+            <span class="label">Tracking</span>
+            <h3>Leaders need a clearer view of what is happening.</h3>
+            <p>Funding work improves when open next steps, owner assignments, board activity, sponsor commitments, and stewardship promises are visible.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="cream bordered" id="framework">
+    <section class="cream bordered" id="partnership">
+      <div class="container">
+        <div class="eyebrow">Advancement Partnership</div>
+
+        <h2>Waypoint helps carry the advancement function, without replacing your people.</h2>
+
+        <p class="section-intro">
+          Waypoint works alongside leadership, staff, board members, and volunteers to strengthen the funding side of the organization.
+        </p>
+
+        <p class="section-intro">
+          We help build the plan, create the materials, define the roles, support campaigns, prepare stewardship, track next steps, and equip the people who already have trust with donors, sponsors, families, alumni, and community supporters.
+        </p>
+
+        <p class="section-intro">
+          Waypoint does not replace your development director, board, or donor relationships. We support the system around them.
+        </p>
+
+        <div class="partner-grid">
+          <article class="partner-card">
+            <span class="label">Planning</span>
+            <h3>Planning and calendar</h3>
+            <p>Annual advancement rhythm, campaign timing, solicitation windows, stewardship moments, board touchpoints, and sponsor follow-up.</p>
+          </article>
+
+          <article class="partner-card">
+            <span class="label">Campaigns</span>
+            <h3>Campaign support</h3>
+            <p>Appeal structure, messaging, solicitation language, board talking points, sponsor materials, follow-up templates, and campaign planning support.</p>
+          </article>
+
+          <article class="partner-card">
+            <span class="label">Stewardship</span>
+            <h3>Stewardship and impact</h3>
+            <p>Thank-you language, donor updates, impact reports, story collection, sponsor reporting, and communication after gifts and events.</p>
+          </article>
+
+          <article class="partner-card">
+            <span class="label">Board Advancement</span>
+            <h3>Board advancement structure</h3>
+            <p>Board advancement chair structure, committee roles, relationship champion assignments, thank-you participation, sponsor introductions, and board reporting rhythm.</p>
+          </article>
+
+          <article class="partner-card">
+            <span class="label">Accountability</span>
+            <h3>Tracking and accountability</h3>
+            <p>Simple tools to track donor communication, sponsor follow-up, open next steps, board participation, campaign activity, and stewardship commitments.</p>
+          </article>
+
+          <article class="partner-card">
+            <span class="label">Reusable Tools</span>
+            <h3>Reusable assets</h3>
+            <p>Calendars, templates, reports, messaging, role guides, and planning tools the organization keeps and can repurpose.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="white bordered" id="framework">
       <div class="container">
         <div class="eyebrow">Advancement Framework</div>
 
-        <h2>Advancement is a system, not a single fundraising push.</h2>
+        <h2>Advancement connects cultivation, solicitation, and stewardship.</h2>
 
         <p class="section-intro">
-          A healthy advancement system connects three kinds of work: cultivation, solicitation, and stewardship.
+          Funding is not only the ask. It depends on what happens before, during, and after the ask.
         </p>
 
         <div class="framework-grid">
           <article class="framework-card">
             <span class="label">Before the Ask</span>
             <h3>Cultivation</h3>
-            <p>Cultivation is the work before the ask. It includes donor communication, sponsor awareness, board introductions, mission storytelling, and the trust-building that prepares people to give.</p>
+            <p>Cultivation prepares people to give through communication, trust-building, introductions, sponsor awareness, and mission storytelling.</p>
           </article>
 
           <article class="framework-card">
             <span class="label">The Ask</span>
             <h3>Solicitation</h3>
-            <p>Solicitation is the ask itself. It includes annual appeals, event asks, sponsorship requests, giving days, campaign conversations, and major gift invitations.</p>
+            <p>Solicitation is the ask itself: appeals, sponsorship requests, campaign conversations, event asks, annual giving, and major gift invitations.</p>
           </article>
 
           <article class="framework-card">
             <span class="label">After the Gift</span>
             <h3>Stewardship</h3>
-            <p>Stewardship is what happens after the gift. It includes thank-yous, impact updates, reporting, personal follow-up, board appreciation calls, and communication that shows donors their gift was noticed and used well.</p>
+            <p>Stewardship is what happens after the gift: thank-yous, updates, impact reports, personal follow-up, and continued care.</p>
           </article>
         </div>
 
         <p class="section-intro" style="margin-top: 34px; margin-bottom: 0;">
-          When those three pieces are disconnected, funding depends too much on urgency, memory, and the next event. Waypoint helps connect the pieces so the funding work has a rhythm.
+          Waypoint helps organizations connect those three parts across the year so funding is supported by a working advancement rhythm.
         </p>
       </div>
     </section>
 
-    <section class="white bordered" id="build">
+    <section class="paper bordered" id="assets">
       <div class="container">
-        <div class="eyebrow">What We Build</div>
+        <div class="eyebrow">What Your Organization Receives</div>
 
-        <h2>The pieces that make funding easier to manage.</h2>
+        <h2>Materials and tools your organization keeps.</h2>
 
         <p class="section-intro">
-          Waypoint helps nonprofits, private schools, and mission-driven organizations build the operating pieces behind advancement: the calendar, stewardship rhythm, board roles, sponsor follow-up, solicitation planning, and donor records that keep funding work from depending on memory or urgency.
+          Waypoint partnerships produce practical assets that support the funding work during the engagement and remain useful after the engagement.
         </p>
 
-        <div class="build-grid">
-          <article class="build-card">
-            <span class="label">Advancement Calendar</span>
+        <div class="asset-grid">
+          <article class="asset-card">
+            <span class="label">Calendar</span>
             <h3>Advancement calendar</h3>
-            <p>Appeals, events, sponsorship activity, stewardship, board touchpoints, and solicitation timing in one working rhythm.</p>
+            <p>A working calendar for campaigns, appeals, sponsorships, stewardship, board touchpoints, reporting, and follow-up.</p>
           </article>
 
-          <article class="build-card">
+          <article class="asset-card">
+            <span class="label">Campaigns</span>
+            <h3>Campaign and appeal materials</h3>
+            <p>Messaging, appeal copy, solicitation language, board talking points, sponsor outreach, and follow-up templates.</p>
+          </article>
+
+          <article class="asset-card">
+            <span class="label">Impact</span>
+            <h3>Impact reports and donor updates</h3>
+            <p>Simple reporting pieces that show supporters what their giving helped make possible.</p>
+          </article>
+
+          <article class="asset-card">
+            <span class="label">Board</span>
+            <h3>Board advancement guide</h3>
+            <p>Role definitions, advancement chair structure, committee support, relationship champion guidance, and board participation tools.</p>
+          </article>
+
+          <article class="asset-card">
             <span class="label">Stewardship</span>
-            <h3>Stewardship and follow-up plan</h3>
-            <p>A written plan for thank-yous, impact updates, donor communication, sponsor follow-up, and post-event next steps.</p>
+            <h3>Stewardship plan</h3>
+            <p>A written rhythm for thank-yous, updates, personal notes, donor care, sponsor reporting, and post-event communication.</p>
           </article>
 
-          <article class="build-card">
-            <span class="label">Board Roles</span>
-            <h3>Board advancement roles</h3>
-            <p>Specific ways board members can help through introductions, thank-yous, donor visits, sponsor support, and mission communication.</p>
-          </article>
-
-          <article class="build-card">
-            <span class="label">Ownership Map</span>
-            <h3>Donor and sponsor ownership map</h3>
-            <p>A clear view of key supporters, giving history, recent contact, promised follow-up, and who owns the next step.</p>
-          </article>
-
-          <article class="build-card">
-            <span class="label">Campaign Rhythm</span>
-            <h3>Campaign connection map</h3>
-            <p>A practical view of how annual giving, events, sponsorships, year-end appeals, and stewardship connect across the year.</p>
-          </article>
-
-          <article class="build-card">
-            <span class="label">System Review</span>
-            <h3>Advancement system review</h3>
-            <p>A review of what is working, what is missing, and what should be addressed first.</p>
+          <article class="asset-card">
+            <span class="label">Tracking</span>
+            <h3>Tracking dashboard</h3>
+            <p>A simple way to see next steps, owners, follow-up status, campaign activity, and stewardship commitments.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="paper" id="who-we-help">
+    <section class="white bordered" id="who-we-help">
       <div class="container">
         <div class="eyebrow">Who We Serve</div>
 
-        <h2>For organizations where funding depends on trust, timing, and follow-through.</h2>
+        <h2>For organizations where funding depends on trust, timing, board involvement, and follow-through.</h2>
 
         <p class="section-intro">
-          Waypoint is most useful when an organization already has donors, events, board involvement, sponsorships, campaigns, or a giving program, but the system behind that work needs clearer ownership and consistency.
+          Waypoint is built for organizations that depend on donors, sponsors, campaigns, events, board participation, and consistent communication to fund the mission.
         </p>
 
         <div class="sector-grid">
           <article class="sector-card">
             <span class="label">Nonprofits</span>
             <h3>Nonprofits</h3>
-            <p>Waypoint helps nonprofits organize donor communication, campaign follow-up, board participation, stewardship, sponsorships, and the internal process behind funding activity.</p>
+            <p>For nonprofits that need more structure around donor communication, campaign support, stewardship, board participation, sponsorships, and follow-up.</p>
           </article>
 
           <article class="sector-card">
             <span class="label">Private Schools</span>
             <h3>Private schools</h3>
-            <p>Waypoint helps private schools connect annual giving, events, sponsorships, parent communication, alumni, grandparents, and community supporters into a clearer advancement rhythm.</p>
+            <p>For private schools that need a clearer advancement rhythm across annual giving, events, sponsorships, parent communication, alumni, grandparents, and community supporters.</p>
           </article>
 
           <article class="sector-card">
             <span class="label">Mission-Driven Organizations</span>
             <h3>Mission-driven organizations</h3>
-            <p>Waypoint helps mission-driven organizations bring more structure to funding work that depends on supporters, sponsors, campaigns, board participation, and consistent follow-up.</p>
+            <p>For mission-driven organizations that need practical support turning funding activity into a clearer annual plan with usable materials, assigned follow-up, and stronger stewardship.</p>
           </article>
         </div>
 
@@ -1034,12 +1137,13 @@
           <span class="role-pill">Development Directors</span>
           <span class="role-pill">Board Presidents</span>
           <span class="role-pill">Board Treasurers</span>
-          <span class="role-pill">Fundraising Committee Members</span>
+          <span class="role-pill">Advancement Chairs</span>
+          <span class="role-pill">Fundraising Committees</span>
         </div>
       </div>
     </section>
 
-    <section class="white bordered" id="testimonials">
+    <section class="cream bordered" id="testimonials">
       <div class="container">
         <div class="eyebrow">Testimonials</div>
 
@@ -1082,22 +1186,22 @@
         <div class="approach-copy">
           <div class="eyebrow">The Waypoint Approach</div>
 
-          <h2>Commercial systems discipline, applied to advancement.</h2>
+          <h2>Commercial operating discipline, adapted for mission-driven funding.</h2>
 
           <p>
-            Waypoint brings a practical operating lens to advancement work.
+            Waypoint brings practical operating experience to advancement work.
           </p>
 
           <p>
-            Tom Randazzo has worked in sales, business development, strategic accounts, sponsorships, customer communication, and revenue operations across Fortune 500, private equity-backed, family-owned, and privately held companies. That background matters because funding work depends on many of the same operating habits: clear ownership, timely follow-up, clean records, useful reporting, and disciplined next steps.
+            Tom Randazzo has worked across sales, business development, strategic accounts, sponsorships, customer communication, and revenue operations in Fortune 500, private equity-backed, family-owned, and privately held companies. That background matters because funding work depends on many of the same habits: clear ownership, timely follow-up, useful materials, accurate records, and a plan people can execute.
           </p>
 
           <p>
-            Waypoint applies that experience to nonprofits and private schools without treating donors like prospects or board members like salespeople.
+            Waypoint applies that discipline to nonprofits, private schools, and mission-driven organizations without treating donors like prospects or board members like salespeople.
           </p>
 
           <p>
-            The work stays grounded in the nonprofit setting. Advancement is not a sales department. But it does need structure. Donor communication, solicitation planning, stewardship, board participation, and sponsorship follow-up all need to be visible enough for leaders to manage and simple enough for people to use.
+            The result is a partnership built around structure, communication, stewardship, board participation, campaign support, and accountability.
           </p>
         </div>
 
@@ -1118,54 +1222,54 @@
             </p>
 
             <p>
-              His local service, church involvement, and school-based advancement work shape how Waypoint applies commercial discipline in mission-driven settings.
+              His local service, church involvement, and school-based advancement work shape how Waypoint supports mission-driven organizations.
             </p>
           </div>
         </aside>
       </div>
     </section>
 
-    <section class="navy" id="review">
+    <section class="navy" id="conversation">
       <div class="container consultation-grid">
         <div>
-          <div class="eyebrow">Free Advancement Review</div>
+          <div class="eyebrow">Start Here</div>
 
-          <h2>See what is making funding harder to manage.</h2>
+          <h2>Schedule an introductory conversation.</h2>
 
           <p>
-            The first call is a 45-minute review of how your funding work is handled today.
+            The first conversation is a fit call. We’ll talk through your current funding efforts, annual campaigns, donor and sponsor communication, board participation, stewardship practices, and where outside support would be most useful.
           </p>
 
           <p>
-            We’ll look at cultivation, solicitation, stewardship, board participation, sponsorship follow-up, campaign timing, records, and next-step ownership.
+            If there’s a fit, the next step is a proposed advancement partnership built around your organization’s funding calendar, people, and capacity.
           </p>
 
           <div class="callout">
-            <h3>You’ll leave with a clearer view of:</h3>
+            <h3>We’ll talk through:</h3>
 
             <ul class="offer-list">
-              <li>Where follow-up is inconsistent</li>
-              <li>Where board participation needs more definition</li>
-              <li>Whether events and appeals are connected</li>
-              <li>Which donor or sponsor records are incomplete</li>
-              <li>What should be addressed first</li>
+              <li>How funding work is currently planned and managed</li>
+              <li>Where board participation is clear or unclear</li>
+              <li>Which campaigns, events, and appeals need support</li>
+              <li>How stewardship and impact reporting are handled</li>
+              <li>Where tracking, accountability, or follow-up needs more structure</li>
             </ul>
           </div>
         </div>
 
-        <aside class="consultation-box" aria-label="Book a free advancement review">
-          <h3>Book a Free Advancement Review</h3>
+        <aside class="consultation-box" aria-label="Schedule an introductory conversation">
+          <h3>Start the conversation</h3>
 
           <p>
-            Start with a free 45-minute review. There is no obligation after the call.
+            Tell us a little about your organization and what kind of advancement support you’re looking for.
           </p>
 
-          <a class="button button-primary" href="mailto:roarkgaltrandazzo@gmail.com?subject=Waypoint%20Advancement%20Review&body=I%20would%20like%20to%20book%20a%20free%20Advancement%20Review.%0A%0AName:%0AOrganization:%0ARole:%0AWhat%20feels%20stuck:%0APreferred%20times%20for%20a%20call:">
-            Book a Free Advancement Review
+          <a class="button button-primary" href="mailto:roarkgaltrandazzo@gmail.com?subject=Waypoint%20Introductory%20Conversation&body=I%20would%20like%20to%20schedule%20an%20introductory%20conversation%20with%20Waypoint%20Mission%20Partners.%0A%0AName:%0AOrganization:%0ARole:%0AWhat%20kind%20of%20advancement%20support%20are%20you%20looking%20for:%0APreferred%20times%20for%20a%20call:">
+            Schedule an Introductory Conversation
           </a>
 
           <p class="small-note">
-            No obligation after the call.
+            No obligation after the first conversation.
           </p>
         </aside>
       </div>
@@ -1178,53 +1282,53 @@
         <h2>Common questions before the first call.</h2>
 
         <details>
-          <summary>Is the Advancement Review really free?</summary>
-          <p>Yes. The first call is free. We’ll look at how your funding work is handled now and whether there’s a useful next step.</p>
+          <summary>Is Waypoint a consultant or an outsourced advancement department?</summary>
+          <p>Waypoint is an advancement partner. We help plan, structure, write, build, track, and support the funding work, but we do not replace your donor relationships or make solicitation calls on your behalf.</p>
         </details>
 
         <details>
-          <summary>Who should be on the call?</summary>
-          <p>Usually the executive director, head of school, advancement leader, development director, board president, board treasurer, or the person carrying the most fundraising responsibility.</p>
+          <summary>Do you create campaign and donor materials?</summary>
+          <p>Yes. Waypoint can help create appeal language, sponsorship materials, donor updates, impact reports, stewardship messages, board talking points, follow-up templates, and planning tools.</p>
         </details>
 
         <details>
-          <summary>Do we need a development director or CRM?</summary>
-          <p>No. Some organizations have staff and software. Others are working from spreadsheets, email, and volunteer memory. Waypoint starts with how the work is actually being handled.</p>
+          <summary>Do you work with the board?</summary>
+          <p>Yes. Board advancement structure is often part of the work. That may include defining the advancement chair role, committee support, board participation expectations, relationship champion roles, and reporting rhythms.</p>
         </details>
 
         <details>
-          <summary>How is this different from a campaign consultant?</summary>
-          <p>Campaign consultants usually focus on a specific campaign. Waypoint focuses on the advancement system that supports cultivation, solicitation, stewardship, donor communication, board participation, and sponsorship follow-up.</p>
+          <summary>Do you help with accountability?</summary>
+          <p>Yes. Waypoint helps create simple tracking and reporting rhythms so leaders can see open next steps, follow-up status, campaign activity, board participation, and stewardship commitments.</p>
         </details>
 
         <details>
-          <summary>Do you replace our development director or make asks for us?</summary>
-          <p>No. Waypoint does not replace staff or solicit gifts on your behalf. We help organize the system so your staff, board, and volunteers can work with more clarity.</p>
+          <summary>Do you solicit gifts directly?</summary>
+          <p>No. Your people keep the relationships and make the asks. Waypoint helps prepare, equip, and support them with structure, messaging, materials, and follow-through.</p>
         </details>
 
         <details>
-          <summary>How long does an engagement usually take?</summary>
-          <p>A focused project may run 60 to 90 days. Larger advancement system work or advisory support takes longer. Scope is defined after the first conversation.</p>
+          <summary>Who should be part of the first conversation?</summary>
+          <p>Usually the executive director, head of school, advancement leader, development director, board president, board treasurer, advancement chair, or whoever is closest to the funding work.</p>
         </details>
 
         <details>
           <summary>Is this only for schools?</summary>
-          <p>No. Waypoint works with nonprofits, private schools, and mission-driven organizations that need clearer structure behind funding, donor communication, stewardship, board participation, and sponsorships.</p>
+          <p>No. Waypoint works with nonprofits, private schools, and mission-driven organizations that need stronger support around funding, campaigns, stewardship, board participation, sponsorships, and follow-up.</p>
         </details>
       </div>
     </section>
 
     <section class="navy" id="final-cta">
       <div class="container-narrow">
-        <div class="eyebrow">Start Here</div>
+        <div class="eyebrow">The Funding Behind Your Mission</div>
 
-        <h2>Ready to strengthen the funding behind your mission?</h2>
+        <h2>Waypoint helps plan, build, equip, and support the funding work behind the mission.</h2>
 
         <p class="section-intro">
-          Start with a free 45-minute review. We’ll look at how your funding work is handled today and where clearer structure would help.
+          Your people keep the relationships. We help make the work clearer, better prepared, and easier to manage.
         </p>
 
-        <a class="button button-primary" href="#review">Book a Free Advancement Review</a>
+        <a class="button button-primary" href="#conversation">Schedule an Introductory Conversation</a>
       </div>
     </section>
   </main>
@@ -1241,7 +1345,7 @@
         </p>
 
         <p class="footer-small">
-          Advancement systems for nonprofits, private schools, and mission-driven organizations.
+          Full-service advancement support for nonprofits, private schools, and mission-driven organizations.
         </p>
 
         <p class="footer-small">
@@ -1250,8 +1354,8 @@
       </div>
 
       <p class="footer-small">
-        <a class="button button-primary" href="mailto:roarkgaltrandazzo@gmail.com?subject=Waypoint%20Advancement%20Review&body=I%20would%20like%20to%20book%20a%20free%20Advancement%20Review.%0A%0AName:%0AOrganization:%0ARole:%0AWhat%20feels%20stuck:%0APreferred%20times%20for%20a%20call:">
-          Book a Free Advancement Review
+        <a class="button button-primary" href="mailto:roarkgaltrandazzo@gmail.com?subject=Waypoint%20Introductory%20Conversation&body=I%20would%20like%20to%20schedule%20an%20introductory%20conversation%20with%20Waypoint%20Mission%20Partners.%0A%0AName:%0AOrganization:%0ARole:%0AWhat%20kind%20of%20advancement%20support%20are%20you%20looking%20for:%0APreferred%20times%20for%20a%20call:">
+          Schedule an Introductory Conversation
         </a>
       </p>
     </div>
