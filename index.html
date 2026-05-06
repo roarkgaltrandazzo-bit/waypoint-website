@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Waypoint Mission Partners | The Funding Behind Your Mission</title>
-  <meta name="description" content="Waypoint Mission Partners is a full-service advancement partner for nonprofits, private schools, and mission-driven organizations. We help plan, build, equip, and support the funding work behind the mission." />
+  <meta name="description" content="Waypoint Mission Partners provides full-service advancement support for nonprofits, private schools, and mission-driven organizations. We help plan, build, equip, and support the funding work behind the mission." />
   <meta name="robots" content="index, follow" />
 
   <meta property="og:title" content="Waypoint Mission Partners | The Funding Behind Your Mission" />
@@ -35,6 +35,9 @@
       --rule: #d9cfbd;
       --rule-soft: #eee4d3;
       --shadow: 0 22px 60px rgba(12, 34, 60, 0.13);
+      --shadow-soft: 0 12px 32px rgba(12, 34, 60, 0.08);
+      --radius: 26px;
+      --radius-lg: 34px;
     }
 
     * {
@@ -96,9 +99,11 @@
     }
 
     header {
-      position: relative;
+      position: sticky;
+      top: 0;
       z-index: 50;
-      background: rgba(255, 250, 241, 0.98);
+      background: rgba(255, 250, 241, 0.96);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(238, 228, 211, 0.9);
     }
 
@@ -119,7 +124,7 @@
     }
 
     .brand img {
-      height: 92px;
+      height: 94px;
       width: auto;
       max-width: none;
     }
@@ -127,7 +132,7 @@
     .desktop-nav {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 22px;
       font-size: 14px;
       font-weight: 700;
       color: var(--navy-deep);
@@ -209,15 +214,15 @@
     }
 
     h1 {
-      font-size: clamp(44px, 5.6vw, 72px);
-      line-height: 1;
+      font-size: clamp(56px, 8vw, 104px);
+      line-height: 0.92;
       font-weight: 600;
-      max-width: 880px;
+      max-width: 930px;
       margin-bottom: 22px;
     }
 
     h2 {
-      font-size: clamp(34px, 4.2vw, 56px);
+      font-size: clamp(34px, 4.2vw, 58px);
       line-height: 1.06;
       font-weight: 600;
       max-width: 1000px;
@@ -225,7 +230,7 @@
     }
 
     h3 {
-      font-size: 27px;
+      font-size: 28px;
       line-height: 1.15;
       font-weight: 600;
       margin-bottom: 12px;
@@ -236,7 +241,7 @@
     }
 
     section {
-      padding: 72px 0;
+      padding: 76px 0;
     }
 
     .eyebrow {
@@ -259,77 +264,9 @@
     }
 
     .section-intro {
-      max-width: 860px;
+      max-width: 880px;
       font-size: 19px;
       margin-bottom: 34px;
-    }
-
-    .hero {
-      position: relative;
-      min-height: 600px;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      background:
-        linear-gradient(90deg, rgba(7, 24, 39, 0.96) 0%, rgba(12, 34, 60, 0.91) 54%, rgba(12, 34, 60, 0.5) 100%),
-        url("/ChatGPT%20Image%20Apr%2024%2C%202026%2C%2002_30_58%20PM.png") center right / cover no-repeat,
-        linear-gradient(120deg, var(--navy-deep) 0%, var(--forest) 100%);
-      color: var(--paper);
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at 16% 28%, rgba(201, 154, 69, 0.18), transparent 24%),
-        radial-gradient(circle at 84% 80%, rgba(255, 255, 255, 0.08), transparent 28%);
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      padding: 64px 0;
-    }
-
-    .hero-content {
-      max-width: 920px;
-    }
-
-    .hero .eyebrow {
-      color: var(--gold-soft);
-    }
-
-    .hero .eyebrow::before {
-      background: var(--gold-soft);
-    }
-
-    .hero h1 {
-      color: var(--white);
-    }
-
-    .hero-lede {
-      max-width: 820px;
-      font-size: 20px;
-      line-height: 1.56;
-      color: rgba(255, 250, 241, 0.92);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 28px;
-      align-items: center;
-    }
-
-    .hero-note {
-      margin-top: 18px;
-      color: rgba(255, 250, 241, 0.78);
-      font-size: 15px;
-      max-width: 760px;
     }
 
     .button {
@@ -370,6 +307,16 @@
       background: var(--white);
     }
 
+    .button-outline {
+      border-color: var(--navy-deep);
+      color: var(--navy-deep);
+      background: transparent;
+    }
+
+    .button-outline:hover {
+      background: rgba(12, 34, 60, 0.06);
+    }
+
     .white {
       background: var(--white);
     }
@@ -405,57 +352,146 @@
       background: var(--gold-soft);
     }
 
-    .two-col,
-    .partnership-grid,
-    .consultation-grid,
-    .approach-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-      gap: 58px;
-      align-items: start;
+    .hero {
+      position: relative;
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(7, 24, 39, 0.96) 0%, rgba(12, 34, 60, 0.92) 51%, rgba(12, 34, 60, 0.58) 100%),
+        url("/ChatGPT%20Image%20Apr%2024%2C%202026%2C%2002_30_58%20PM.png") center right / cover no-repeat,
+        linear-gradient(120deg, var(--navy-deep) 0%, var(--forest) 100%);
+      color: var(--paper);
     }
 
-    .consultation-grid {
-      grid-template-columns: minmax(0, 0.9fr) minmax(360px, 0.65fr);
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 18% 28%, rgba(201, 154, 69, 0.18), transparent 24%),
+        radial-gradient(circle at 82% 80%, rgba(255, 255, 255, 0.08), transparent 28%);
     }
 
-    .problem-grid,
-    .framework-grid,
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 76px 0;
+    }
+
+    .hero-content {
+      max-width: 940px;
+    }
+
+    .hero .eyebrow {
+      color: var(--gold-soft);
+    }
+
+    .hero .eyebrow::before {
+      background: var(--gold-soft);
+    }
+
+    .hero h1 {
+      color: var(--white);
+    }
+
+    .hero-subheadline {
+      max-width: 820px;
+      font-size: 25px;
+      line-height: 1.36;
+      color: rgba(255, 250, 241, 0.95);
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .hero-lede {
+      max-width: 820px;
+      font-size: 20px;
+      line-height: 1.56;
+      color: rgba(255, 250, 241, 0.9);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+      align-items: center;
+    }
+
+    .hero-note {
+      margin-top: 18px;
+      color: rgba(255, 250, 241, 0.78);
+      font-size: 15px;
+      max-width: 760px;
+    }
+
+    .support-grid,
     .partner-grid,
     .asset-grid,
+    .testimonial-grid,
     .sector-grid,
-    .testimonial-grid {
+    .framework-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 22px;
     }
 
-    .problem-grid,
-    .partner-grid,
-    .asset-grid {
+    .asset-grid,
+    .partner-grid {
       grid-template-columns: repeat(2, 1fr);
     }
 
-    .problem-card,
-    .framework-card,
+    .support-card,
     .partner-card,
     .asset-card,
+    .testimonial-card,
     .sector-card,
-    .testimonial-card {
+    .framework-card {
       background: var(--paper);
       border: 1px solid var(--rule-soft);
-      border-radius: 24px;
+      border-radius: var(--radius);
       padding: 30px;
-      box-shadow: 0 12px 38px rgba(12, 34, 60, 0.06);
+      box-shadow: var(--shadow-soft);
     }
 
-    .white .problem-card,
-    .white .framework-card,
+    .white .support-card,
     .white .partner-card,
     .white .asset-card,
+    .white .testimonial-card,
     .white .sector-card,
-    .white .testimonial-card {
+    .white .framework-card {
       background: var(--white);
+    }
+
+    .support-card {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .support-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .support-card::after {
+      content: "";
+      position: absolute;
+      left: 30px;
+      right: 30px;
+      bottom: 0;
+      height: 4px;
+      background: var(--gold);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .support-card:hover::after {
+      opacity: 1;
     }
 
     .label {
@@ -468,17 +504,142 @@
       text-transform: uppercase;
     }
 
-    .navy .label {
+    .card-link {
+      display: inline-flex;
+      margin-top: 12px;
+      font-weight: 800;
+      color: var(--navy-deep);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(12, 34, 60, 0.25);
+    }
+
+    .card-link:hover {
+      color: var(--forest);
+      border-bottom-color: var(--forest);
+    }
+
+    .two-col,
+    .approach-grid,
+    .conversation-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 58px;
+      align-items: start;
+    }
+
+    .conversation-grid {
+      grid-template-columns: minmax(0, 0.9fr) minmax(360px, 0.65fr);
+    }
+
+    .process-strip {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .process-step {
+      background: rgba(12, 34, 60, 0.06);
+      border: 1px solid var(--rule-soft);
+      border-radius: 18px;
+      padding: 18px;
+      color: var(--navy-deep);
+    }
+
+    .process-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: var(--navy-deep);
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .process-step p {
+      font-size: 14px;
+      line-height: 1.35;
+      margin-bottom: 0;
+      font-weight: 700;
+    }
+
+    .asset-card {
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .asset-preview {
+      margin-top: 18px;
+      border-radius: 18px;
+      background: var(--white);
+      border: 1px solid var(--rule-soft);
+      padding: 16px;
+    }
+
+    .paper .asset-preview {
+      background: var(--paper);
+    }
+
+    .preview-line {
+      display: block;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(12, 34, 60, 0.12);
+      margin-bottom: 8px;
+    }
+
+    .preview-line.short {
+      width: 48%;
+    }
+
+    .preview-line.medium {
+      width: 72%;
+    }
+
+    .preview-line.gold {
+      background: rgba(201, 154, 69, 0.45);
+    }
+
+    .board-feature {
+      background:
+        linear-gradient(135deg, rgba(12, 34, 60, 0.96), rgba(23, 54, 93, 0.94)),
+        linear-gradient(120deg, var(--navy-deep), var(--navy));
+      color: rgba(255, 250, 241, 0.86);
+    }
+
+    .board-feature h2,
+    .board-feature h3 {
+      color: var(--white);
+    }
+
+    .board-feature .eyebrow {
       color: var(--gold-soft);
     }
 
-    .problem-card p:last-child,
-    .framework-card p:last-child,
-    .partner-card p:last-child,
-    .asset-card p:last-child,
-    .sector-card p:last-child,
-    .testimonial-card p:last-child {
-      margin-bottom: 0;
+    .board-feature .eyebrow::before {
+      background: var(--gold-soft);
+    }
+
+    .board-roles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .board-role {
+      background: rgba(255, 250, 241, 0.08);
+      border: 1px solid rgba(255, 250, 241, 0.16);
+      border-radius: 18px;
+      padding: 18px;
+      font-weight: 800;
+      color: rgba(255, 250, 241, 0.92);
     }
 
     .testimonial-card blockquote {
@@ -501,70 +662,24 @@
       margin-bottom: 0;
     }
 
-    .simple-list,
-    .offer-list {
-      list-style: none;
-      display: grid;
-      gap: 14px;
-    }
-
-    .simple-list li,
-    .offer-list li {
+    .framework-card {
       position: relative;
-      padding-left: 30px;
     }
 
-    .simple-list li::before,
-    .offer-list li::before {
+    .framework-card::before {
       content: "";
-      position: absolute;
-      left: 0;
-      top: 10px;
-      width: 9px;
-      height: 9px;
-      background: var(--gold);
-      border-radius: 50%;
-      box-shadow: 0 0 0 5px rgba(201, 154, 69, 0.16);
-    }
-
-    .role-list,
-    .credential-list {
-      margin-top: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .role-pill {
-      display: inline-flex;
-      align-items: center;
-      padding: 8px 12px;
+      display: block;
+      width: 42px;
+      height: 4px;
       border-radius: 999px;
-      background: rgba(12, 34, 60, 0.06);
-      border: 1px solid var(--rule-soft);
-      color: var(--navy-deep);
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .callout {
-      margin-top: 28px;
-      background: var(--navy-deep);
-      color: rgba(255, 250, 241, 0.86);
-      border-radius: 30px;
-      padding: 34px;
-      box-shadow: var(--shadow);
-    }
-
-    .callout h3 {
-      color: var(--white);
-      font-size: 34px;
+      background: var(--gold);
+      margin-bottom: 18px;
     }
 
     .approach-card {
       background: var(--navy-deep);
       color: rgba(255, 250, 241, 0.84);
-      border-radius: 30px;
+      border-radius: var(--radius-lg);
       padding: 34px;
       box-shadow: var(--shadow);
     }
@@ -615,19 +730,72 @@
       margin-bottom: 0;
     }
 
-    .approach-copy {
-      max-width: 740px;
+    .role-list {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
-    .consultation-box {
+    .role-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(12, 34, 60, 0.06);
+      border: 1px solid var(--rule-soft);
+      color: var(--navy-deep);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .offer-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .offer-list li {
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .offer-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 9px;
+      height: 9px;
+      background: var(--gold);
+      border-radius: 50%;
+      box-shadow: 0 0 0 5px rgba(201, 154, 69, 0.16);
+    }
+
+    .callout {
+      margin-top: 28px;
       background: rgba(255, 250, 241, 0.08);
+      color: rgba(255, 250, 241, 0.86);
       border: 1px solid rgba(255, 250, 241, 0.16);
-      border-radius: 28px;
+      border-radius: var(--radius-lg);
       padding: 34px;
       box-shadow: var(--shadow);
     }
 
-    .consultation-box h3 {
+    .callout h3 {
+      color: var(--white);
+      font-size: 34px;
+    }
+
+    .conversation-box {
+      background: rgba(255, 250, 241, 0.08);
+      border: 1px solid rgba(255, 250, 241, 0.16);
+      border-radius: var(--radius-lg);
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .conversation-box h3 {
       color: var(--white);
     }
 
@@ -686,6 +854,29 @@
       max-width: 540px;
     }
 
+    .sticky-cta {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 40;
+      box-shadow: 0 12px 30px rgba(7, 24, 39, 0.25);
+    }
+
+    @media (max-width: 1180px) {
+      .desktop-nav {
+        gap: 16px;
+        font-size: 13px;
+      }
+
+      .brand img {
+        height: 86px;
+      }
+
+      .header-inner {
+        min-height: 90px;
+      }
+    }
+
     @media (max-width: 1080px) {
       .desktop-nav {
         display: none;
@@ -708,19 +899,27 @@
       }
 
       .two-col,
-      .partnership-grid,
-      .consultation-grid,
-      .approach-grid {
+      .approach-grid,
+      .conversation-grid {
         grid-template-columns: 1fr;
       }
 
-      .problem-grid,
-      .framework-grid,
+      .support-grid,
       .partner-grid,
       .asset-grid,
+      .testimonial-grid,
       .sector-grid,
-      .testimonial-grid {
+      .framework-grid,
+      .board-roles {
         grid-template-columns: 1fr;
+      }
+
+      .process-strip {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .sticky-cta {
+        display: none;
       }
     }
 
@@ -750,8 +949,12 @@
         padding: 52px 0;
       }
 
+      .hero-subheadline {
+        font-size: 21px;
+      }
+
       .hero-lede {
-        font-size: 19px;
+        font-size: 18px;
       }
 
       section {
@@ -762,19 +965,23 @@
         width: 100%;
       }
 
-      .problem-card,
-      .framework-card,
+      .support-card,
       .partner-card,
       .asset-card,
-      .sector-card,
       .testimonial-card,
+      .sector-card,
+      .framework-card,
       .approach-card,
-      .consultation-box,
+      .conversation-box,
       .callout {
         padding: 26px;
       }
 
       .approach-profile {
+        grid-template-columns: 1fr;
+      }
+
+      .process-strip {
         grid-template-columns: 1fr;
       }
 
@@ -830,21 +1037,21 @@
         </a>
 
         <nav class="desktop-nav" aria-label="Primary navigation">
+          <a href="#support">Support</a>
           <a href="#partnership">Partnership</a>
-          <a href="#framework">Framework</a>
           <a href="#assets">What You Receive</a>
-          <a href="#who-we-help">Who We Serve</a>
-          <a href="#conversation" class="nav-cta">Start the Conversation</a>
+          <a href="#board">Board Advancement</a>
+          <a href="#conversation" class="nav-cta">Talk With Waypoint</a>
         </nav>
 
         <details class="mobile-menu">
           <summary>Menu</summary>
           <nav class="mobile-nav-panel" aria-label="Mobile navigation">
+            <a href="#support">Support</a>
             <a href="#partnership">Partnership</a>
-            <a href="#framework">Framework</a>
             <a href="#assets">What You Receive</a>
-            <a href="#who-we-help">Who We Serve</a>
-            <a href="#conversation">Start the Conversation</a>
+            <a href="#board">Board Advancement</a>
+            <a href="#conversation">Talk With Waypoint</a>
           </nav>
         </details>
       </div>
@@ -856,76 +1063,86 @@
       <div class="container">
         <div class="hero-inner">
           <div class="hero-content">
-            <div class="eyebrow">The funding behind your mission</div>
+            <div class="eyebrow">Full-service advancement support</div>
 
-            <h1>Funding should support the mission, not consume the people leading it.</h1>
+            <h1>The Funding Behind Your Mission</h1>
 
-            <p class="hero-lede">
-              Waypoint partners with nonprofits, private schools, and mission-driven organizations to strengthen the advancement function behind the mission.
+            <p class="hero-subheadline">
+              Waypoint helps nonprofits, private schools, and mission-driven organizations build the advancement support needed to fund the work they’re here to do.
             </p>
 
             <p class="hero-lede">
-              We help plan campaigns, create donor and sponsor communication, support stewardship, equip board members, develop impact reports, clarify accountability, and keep the annual funding rhythm moving.
+              We help plan campaigns, prepare donor and sponsor communication, support stewardship, equip board members, create impact reports, and set up the tracking needed to keep funding work moving.
             </p>
 
             <p class="hero-lede">
-              Your people keep the relationships. Waypoint gives them the plan, materials, rhythm, and support to use those relationships well.
+              Your people keep the trust. Waypoint gives them the plan, tools, messaging, and support to use it well.
             </p>
 
             <div class="hero-actions">
-              <a class="button button-primary" href="#conversation">Schedule an Introductory Conversation</a>
-              <a class="button button-light" href="#partnership">See What Waypoint Supports</a>
+              <a class="button button-primary" href="#conversation">Talk Through Your Funding Needs</a>
+              <a class="button button-light" href="#support">See How Waypoint Helps</a>
             </div>
 
             <div class="hero-note">
-              We’ll talk through your current funding efforts and where outside advancement support would help.
+              Start with a practical conversation about your current funding efforts and where outside advancement support would help.
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="white bordered" id="funding-problem">
+    <section class="white bordered" id="support">
       <div class="container">
-        <div class="eyebrow">The Funding Problem</div>
+        <div class="eyebrow">Find Your Starting Point</div>
 
-        <h2>Funding work gets harder when it depends on memory, urgency, and a few overloaded people.</h2>
-
-        <p class="section-intro">
-          Many organizations have generous supporters, committed board members, meaningful events, and real community goodwill. The challenge is turning all of that into a steady advancement rhythm.
-        </p>
+        <h2>Where do you need more advancement support?</h2>
 
         <p class="section-intro">
-          A campaign ends, but donor follow-up is inconsistent. A sponsor says yes, but renewal tracking is loose. A board member wants to help, but the role is vague. A donor gives, but impact reporting comes too late or not at all.
+          Some organizations need help preparing for a campaign. Others need better stewardship, clearer board participation, stronger sponsor follow-up, or a cleaner way to track what happens next.
         </p>
 
-        <p class="section-intro">
-          Waypoint helps put structure around the funding work so leaders can see what is happening, who owns the next step, and what needs support.
-        </p>
-
-        <div class="problem-grid">
-          <article class="problem-card">
-            <span class="label">Follow-Up</span>
-            <h3>Donor and sponsor follow-up gets missed.</h3>
-            <p>Supporters hear from the organization during the ask, but the next meaningful touchpoint is not always assigned, tracked, or prepared.</p>
+        <div class="support-grid">
+          <article class="support-card">
+            <span class="label">Campaigns and Appeals</span>
+            <h3>Prepare the ask with more confidence.</h3>
+            <p>For annual funds, giving days, year-end campaigns, special initiatives, and event-related asks that need clearer messaging, timing, board support, and follow-up.</p>
+            <a class="card-link" href="#conversation">Talk through campaign support</a>
           </article>
 
-          <article class="problem-card">
+          <article class="support-card">
             <span class="label">Board Participation</span>
-            <h3>Board members need clearer advancement roles.</h3>
-            <p>Board members are often willing to help, but vague fundraising expectations do not give them enough structure to act with confidence.</p>
+            <h3>Give board members useful ways to help.</h3>
+            <p>For organizations with willing board members who need clearer expectations, better tools, and a practical structure for participation.</p>
+            <a class="card-link" href="#board">See board advancement support</a>
           </article>
 
-          <article class="problem-card">
-            <span class="label">Campaign Support</span>
-            <h3>Campaigns need more than a launch date.</h3>
-            <p>Appeals, events, giving days, sponsorships, and special campaigns need messaging, timing, follow-up, board support, and stewardship built around them.</p>
+          <article class="support-card">
+            <span class="label">Stewardship</span>
+            <h3>Keep communication moving after the gift.</h3>
+            <p>For organizations that thank donors but need a stronger rhythm for impact updates, personal follow-up, sponsor reporting, and continued communication.</p>
+            <a class="card-link" href="#assets">See stewardship assets</a>
           </article>
 
-          <article class="problem-card">
-            <span class="label">Tracking</span>
-            <h3>Leaders need a clearer view of what is happening.</h3>
-            <p>Funding work improves when open next steps, owner assignments, board activity, sponsor commitments, and stewardship promises are visible.</p>
+          <article class="support-card">
+            <span class="label">Sponsorships</span>
+            <h3>Make sponsorship work last beyond the event.</h3>
+            <p>For events or annual sponsor programs that need better outreach, fulfillment, renewal tracking, thank-yous, visibility, and follow-up.</p>
+            <a class="card-link" href="#conversation">Talk through sponsorship support</a>
+          </article>
+
+          <article class="support-card">
+            <span class="label">Impact Reporting</span>
+            <h3>Show supporters what their giving made possible.</h3>
+            <p>For organizations that need better donor updates, impact reports, beneficiary stories, sponsor recaps, and communication after campaigns or events.</p>
+            <a class="card-link" href="#assets">See reporting support</a>
+          </article>
+
+          <article class="support-card">
+            <span class="label">Tracking and Accountability</span>
+            <h3>Make next steps easier to see.</h3>
+            <p>For leaders who need visibility into open follow-up, board assignments, sponsor commitments, campaign activity, and stewardship promises.</p>
+            <a class="card-link" href="#conversation">Talk through tracking support</a>
           </article>
         </div>
       </div>
@@ -935,55 +1152,208 @@
       <div class="container">
         <div class="eyebrow">Advancement Partnership</div>
 
-        <h2>Waypoint helps carry the advancement function, without replacing your people.</h2>
+        <h2>Your people know the mission. Waypoint supports the funding work around them.</h2>
 
         <p class="section-intro">
-          Waypoint works alongside leadership, staff, board members, and volunteers to strengthen the funding side of the organization.
+          Waypoint works alongside leadership, staff, board members, and volunteers to strengthen the advancement work that supports funding.
         </p>
 
         <p class="section-intro">
-          We help build the plan, create the materials, define the roles, support campaigns, prepare stewardship, track next steps, and equip the people who already have trust with donors, sponsors, families, alumni, and community supporters.
+          We help build the plan, create the materials, define board roles, support campaigns, prepare stewardship, track next steps, and equip the people who already have trust with donors, sponsors, families, alumni, and community supporters.
         </p>
 
         <p class="section-intro">
-          Waypoint does not replace your development director, board, or donor relationships. We support the system around them.
+          Waypoint does not replace your staff, board, or donor connections. We support the system around them.
         </p>
 
-        <div class="partner-grid">
-          <article class="partner-card">
-            <span class="label">Planning</span>
-            <h3>Planning and calendar</h3>
-            <p>Annual advancement rhythm, campaign timing, solicitation windows, stewardship moments, board touchpoints, and sponsor follow-up.</p>
+        <div class="process-strip" aria-label="Waypoint advancement partnership process">
+          <div class="process-step">
+            <span class="process-number">1</span>
+            <p>Listen and learn</p>
+          </div>
+
+          <div class="process-step">
+            <span class="process-number">2</span>
+            <p>Build the plan</p>
+          </div>
+
+          <div class="process-step">
+            <span class="process-number">3</span>
+            <p>Create the materials</p>
+          </div>
+
+          <div class="process-step">
+            <span class="process-number">4</span>
+            <p>Equip the people</p>
+          </div>
+
+          <div class="process-step">
+            <span class="process-number">5</span>
+            <p>Track the work</p>
+          </div>
+
+          <div class="process-step">
+            <span class="process-number">6</span>
+            <p>Support the rhythm</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="paper bordered" id="assets">
+      <div class="container">
+        <div class="eyebrow">What Your Organization Receives</div>
+
+        <h2>Materials your team can use, keep, and repurpose.</h2>
+
+        <p class="section-intro">
+          Waypoint partnerships produce practical assets that support the funding work during the engagement and remain useful after the engagement.
+        </p>
+
+        <div class="asset-grid">
+          <article class="asset-card">
+            <div>
+              <span class="label">Calendar</span>
+              <h3>Advancement calendar</h3>
+              <p>A working calendar for campaigns, appeals, sponsorships, stewardship, board touchpoints, reporting, and follow-up.</p>
+            </div>
+            <div class="asset-preview" aria-hidden="true">
+              <span class="preview-line gold medium"></span>
+              <span class="preview-line"></span>
+              <span class="preview-line short"></span>
+            </div>
           </article>
 
-          <article class="partner-card">
-            <span class="label">Campaigns</span>
-            <h3>Campaign support</h3>
-            <p>Appeal structure, messaging, solicitation language, board talking points, sponsor materials, follow-up templates, and campaign planning support.</p>
+          <article class="asset-card">
+            <div>
+              <span class="label">Campaigns</span>
+              <h3>Campaign and appeal materials</h3>
+              <p>Messaging, appeal copy, solicitation language, board talking points, sponsor outreach, and follow-up templates.</p>
+            </div>
+            <div class="asset-preview" aria-hidden="true">
+              <span class="preview-line gold short"></span>
+              <span class="preview-line medium"></span>
+              <span class="preview-line"></span>
+            </div>
           </article>
 
-          <article class="partner-card">
-            <span class="label">Stewardship</span>
-            <h3>Stewardship and impact</h3>
-            <p>Thank-you language, donor updates, impact reports, story collection, sponsor reporting, and communication after gifts and events.</p>
+          <article class="asset-card">
+            <div>
+              <span class="label">Impact</span>
+              <h3>Impact reports and donor updates</h3>
+              <p>Simple reporting pieces that show supporters what their giving helped make possible.</p>
+            </div>
+            <div class="asset-preview" aria-hidden="true">
+              <span class="preview-line gold"></span>
+              <span class="preview-line medium"></span>
+              <span class="preview-line short"></span>
+            </div>
           </article>
 
-          <article class="partner-card">
-            <span class="label">Board Advancement</span>
-            <h3>Board advancement structure</h3>
-            <p>Board advancement chair structure, committee roles, relationship champion assignments, thank-you participation, sponsor introductions, and board reporting rhythm.</p>
+          <article class="asset-card">
+            <div>
+              <span class="label">Board</span>
+              <h3>Board advancement guide</h3>
+              <p>Role definitions, advancement chair structure, committee support, relationship champion guidance, and board participation tools.</p>
+            </div>
+            <div class="asset-preview" aria-hidden="true">
+              <span class="preview-line gold medium"></span>
+              <span class="preview-line short"></span>
+              <span class="preview-line"></span>
+            </div>
           </article>
 
-          <article class="partner-card">
-            <span class="label">Accountability</span>
-            <h3>Tracking and accountability</h3>
-            <p>Simple tools to track donor communication, sponsor follow-up, open next steps, board participation, campaign activity, and stewardship commitments.</p>
+          <article class="asset-card">
+            <div>
+              <span class="label">Stewardship</span>
+              <h3>Stewardship plan</h3>
+              <p>A written rhythm for thank-yous, updates, personal notes, donor care, sponsor reporting, and post-event communication.</p>
+            </div>
+            <div class="asset-preview" aria-hidden="true">
+              <span class="preview-line gold short"></span>
+              <span class="preview-line"></span>
+              <span class="preview-line medium"></span>
+            </div>
           </article>
 
-          <article class="partner-card">
-            <span class="label">Reusable Tools</span>
-            <h3>Reusable assets</h3>
-            <p>Calendars, templates, reports, messaging, role guides, and planning tools the organization keeps and can repurpose.</p>
+          <article class="asset-card">
+            <div>
+              <span class="label">Tracking</span>
+              <h3>Tracking dashboard</h3>
+              <p>A simple way to see next steps, owners, follow-up status, campaign activity, and stewardship commitments.</p>
+            </div>
+            <div class="asset-preview" aria-hidden="true">
+              <span class="preview-line gold"></span>
+              <span class="preview-line short"></span>
+              <span class="preview-line medium"></span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="board-feature" id="board">
+      <div class="container">
+        <div class="eyebrow">Board Advancement</div>
+
+        <h2>A stronger funding function needs more than staff effort.</h2>
+
+        <p class="section-intro">
+          Board members often want to help, but they need clearer expectations, better tools, and a practical structure for participation.
+        </p>
+
+        <p class="section-intro">
+          Waypoint helps define the board’s advancement role, including the advancement chair, committee rhythm, relationship champion assignments, thank-you participation, sponsor introductions, campaign support, and reporting cadence.
+        </p>
+
+        <p class="section-intro">
+          The goal is not to turn every board member into a solicitor. The goal is to give each person a useful role in strengthening the funding behind the mission.
+        </p>
+
+        <div class="board-roles">
+          <div class="board-role">Advancement Chair</div>
+          <div class="board-role">Committee Rhythm</div>
+          <div class="board-role">Relationship Champions</div>
+          <div class="board-role">Thank-You Participation</div>
+          <div class="board-role">Sponsor Introductions</div>
+          <div class="board-role">Reporting Cadence</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cream bordered" id="testimonials">
+      <div class="container">
+        <div class="eyebrow">Testimonials</div>
+
+        <h2>What leaders say after working through the process.</h2>
+
+        <p class="section-intro">
+          These comments come from leaders who used Waypoint’s process to clarify board participation, stewardship, donor follow-up, and advancement planning.
+        </p>
+
+        <div class="testimonial-grid">
+          <article class="testimonial-card">
+            <blockquote>
+              “Waypoint gave our board the language, structure, and process we needed to participate in fundraising with more confidence. Instead of leaving advancement to one person or waiting for the next event, we had a clearer way to understand our role, talk about the mission, and help move donor conversations forward.”
+            </blockquote>
+            <p class="testimonial-person">Mike S</p>
+            <p class="testimonial-title">Board President</p>
+          </article>
+
+          <article class="testimonial-card">
+            <blockquote>
+              “The value was in turning good intentions into an actual system. We already had people who cared about the school. Waypoint helped us organize the work, clarify next steps, track follow-up, and keep momentum going after the event was over. That made fundraising feel much less scattered and much more sustainable.”
+            </blockquote>
+            <p class="testimonial-person">Paul S</p>
+            <p class="testimonial-title">Board Treasurer</p>
+          </article>
+
+          <article class="testimonial-card">
+            <blockquote>
+              “Waypoint helped us see advancement as more than event planning. We needed a better rhythm for donor communication, stewardship, board participation, and follow-up. Their process gave us a practical framework we could use without adding unnecessary complexity to an already busy school environment.”
+            </blockquote>
+            <p class="testimonial-person">Sarina R</p>
+            <p class="testimonial-title">School Principal</p>
           </article>
         </div>
       </div>
@@ -1003,79 +1373,29 @@
           <article class="framework-card">
             <span class="label">Before the Ask</span>
             <h3>Cultivation</h3>
-            <p>Cultivation prepares people to give through communication, trust-building, introductions, sponsor awareness, and mission storytelling.</p>
+            <p>Communication, introductions, sponsor awareness, mission storytelling, and trust-building before the ask.</p>
           </article>
 
           <article class="framework-card">
             <span class="label">The Ask</span>
             <h3>Solicitation</h3>
-            <p>Solicitation is the ask itself: appeals, sponsorship requests, campaign conversations, event asks, annual giving, and major gift invitations.</p>
+            <p>Appeals, sponsorship requests, campaign conversations, event asks, annual giving, and major gift invitations.</p>
           </article>
 
           <article class="framework-card">
             <span class="label">After the Gift</span>
             <h3>Stewardship</h3>
-            <p>Stewardship is what happens after the gift: thank-yous, updates, impact reports, personal follow-up, and continued care.</p>
+            <p>Thank-yous, updates, impact reports, personal follow-up, and continued care after the gift.</p>
           </article>
         </div>
 
         <p class="section-intro" style="margin-top: 34px; margin-bottom: 0;">
-          Waypoint helps organizations connect those three parts across the year so funding is supported by a working advancement rhythm.
+          Waypoint helps those pieces work together across the year.
         </p>
       </div>
     </section>
 
-    <section class="paper bordered" id="assets">
-      <div class="container">
-        <div class="eyebrow">What Your Organization Receives</div>
-
-        <h2>Materials and tools your organization keeps.</h2>
-
-        <p class="section-intro">
-          Waypoint partnerships produce practical assets that support the funding work during the engagement and remain useful after the engagement.
-        </p>
-
-        <div class="asset-grid">
-          <article class="asset-card">
-            <span class="label">Calendar</span>
-            <h3>Advancement calendar</h3>
-            <p>A working calendar for campaigns, appeals, sponsorships, stewardship, board touchpoints, reporting, and follow-up.</p>
-          </article>
-
-          <article class="asset-card">
-            <span class="label">Campaigns</span>
-            <h3>Campaign and appeal materials</h3>
-            <p>Messaging, appeal copy, solicitation language, board talking points, sponsor outreach, and follow-up templates.</p>
-          </article>
-
-          <article class="asset-card">
-            <span class="label">Impact</span>
-            <h3>Impact reports and donor updates</h3>
-            <p>Simple reporting pieces that show supporters what their giving helped make possible.</p>
-          </article>
-
-          <article class="asset-card">
-            <span class="label">Board</span>
-            <h3>Board advancement guide</h3>
-            <p>Role definitions, advancement chair structure, committee support, relationship champion guidance, and board participation tools.</p>
-          </article>
-
-          <article class="asset-card">
-            <span class="label">Stewardship</span>
-            <h3>Stewardship plan</h3>
-            <p>A written rhythm for thank-yous, updates, personal notes, donor care, sponsor reporting, and post-event communication.</p>
-          </article>
-
-          <article class="asset-card">
-            <span class="label">Tracking</span>
-            <h3>Tracking dashboard</h3>
-            <p>A simple way to see next steps, owners, follow-up status, campaign activity, and stewardship commitments.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="white bordered" id="who-we-help">
+    <section class="paper bordered" id="who-we-help">
       <div class="container">
         <div class="eyebrow">Who We Serve</div>
 
@@ -1118,45 +1438,7 @@
       </div>
     </section>
 
-    <section class="cream bordered" id="testimonials">
-      <div class="container">
-        <div class="eyebrow">Testimonials</div>
-
-        <h2>What nonprofit leaders say after using the process.</h2>
-
-        <p class="section-intro">
-          These comments come from leaders who used Waypoint’s process to clarify board participation, stewardship, donor follow-up, and advancement planning.
-        </p>
-
-        <div class="testimonial-grid">
-          <article class="testimonial-card">
-            <blockquote>
-              “Waypoint gave our board the language, structure, and process we needed to participate in fundraising with more confidence. Instead of leaving advancement to one person or waiting for the next event, we had a clearer way to understand our role, talk about the mission, and help move donor conversations forward.”
-            </blockquote>
-            <p class="testimonial-person">Mike S</p>
-            <p class="testimonial-title">Board President</p>
-          </article>
-
-          <article class="testimonial-card">
-            <blockquote>
-              “The value was in turning good intentions into an actual system. We already had people who cared about the school. Waypoint helped us organize the work, clarify next steps, track follow-up, and keep momentum going after the event was over. That made fundraising feel much less scattered and much more sustainable.”
-            </blockquote>
-            <p class="testimonial-person">Paul S</p>
-            <p class="testimonial-title">Board Treasurer</p>
-          </article>
-
-          <article class="testimonial-card">
-            <blockquote>
-              “Waypoint helped us see advancement as more than event planning. We needed a better rhythm for donor communication, stewardship, board participation, and follow-up. Their process gave us a practical framework we could use without adding unnecessary complexity to an already busy school environment.”
-            </blockquote>
-            <p class="testimonial-person">Sarina R</p>
-            <p class="testimonial-title">School Principal</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="paper bordered" id="approach">
+    <section class="white bordered" id="approach">
       <div class="container approach-grid">
         <div class="approach-copy">
           <div class="eyebrow">The Waypoint Approach</div>
@@ -1168,15 +1450,15 @@
           </p>
 
           <p>
-            Tom Randazzo has worked across sales, business development, strategic accounts, sponsorships, customer communication, and revenue operations in Fortune 500, private equity-backed, family-owned, and privately held companies. That background matters because funding work depends on many of the same habits: clear ownership, timely follow-up, useful materials, accurate records, and a plan people can execute.
+            Tom Randazzo has worked across sales, business development, strategic accounts, sponsorships, customer communication, and revenue operations in Fortune 500, private equity-backed, family-owned, and privately held companies.
+          </p>
+
+          <p>
+            That background matters because funding work depends on clear ownership, timely follow-up, useful materials, accurate records, and a plan people can execute.
           </p>
 
           <p>
             Waypoint applies that discipline to nonprofits, private schools, and mission-driven organizations without treating donors like prospects or board members like salespeople.
-          </p>
-
-          <p>
-            The result is a partnership built around structure, communication, stewardship, board participation, campaign support, and accountability.
           </p>
         </div>
 
@@ -1205,14 +1487,14 @@
     </section>
 
     <section class="navy" id="conversation">
-      <div class="container consultation-grid">
+      <div class="container conversation-grid">
         <div>
           <div class="eyebrow">Start Here</div>
 
-          <h2>Schedule an introductory conversation.</h2>
+          <h2>Talk through your funding needs.</h2>
 
           <p>
-            The first conversation is a fit call. We’ll talk through your current funding efforts, annual campaigns, donor and sponsor communication, board participation, stewardship practices, and where outside support would be most useful.
+            The first conversation is a fit call. We’ll talk through your current campaigns, board involvement, donor and sponsor communication, stewardship practices, and where outside advancement support would be most useful.
           </p>
 
           <p>
@@ -1232,15 +1514,15 @@
           </div>
         </div>
 
-        <aside class="consultation-box" aria-label="Schedule an introductory conversation">
+        <aside class="conversation-box" aria-label="Talk through your funding needs">
           <h3>Start the conversation</h3>
 
           <p>
             Tell us a little about your organization and what kind of advancement support you’re looking for.
           </p>
 
-          <a class="button button-primary" href="mailto:roarkgaltrandazzo@gmail.com?subject=Waypoint%20Introductory%20Conversation&body=I%20would%20like%20to%20schedule%20an%20introductory%20conversation%20with%20Waypoint%20Mission%20Partners.%0A%0AName:%0AOrganization:%0ARole:%0AWhat%20kind%20of%20advancement%20support%20are%20you%20looking%20for:%0APreferred%20times%20for%20a%20call:">
-            Schedule an Introductory Conversation
+          <a class="button button-primary" href="mailto:roarkgaltrandazzo@gmail.com?subject=Waypoint%20Funding%20Needs%20Conversation&body=I%20would%20like%20to%20talk%20through%20our%20funding%20needs%20with%20Waypoint%20Mission%20Partners.%0A%0AName:%0AOrganization:%0ARole:%0AWhat%20kind%20of%20advancement%20support%20are%20you%20looking%20for:%0APreferred%20times%20for%20a%20call:">
+            Talk Through Your Funding Needs
           </a>
 
           <p class="small-note">
@@ -1254,11 +1536,11 @@
       <div class="container-narrow">
         <div class="eyebrow">Questions</div>
 
-        <h2>Common questions before the first call.</h2>
+        <h2>Common questions before the first conversation.</h2>
 
         <details>
           <summary>Is Waypoint a consultant or an outsourced advancement department?</summary>
-          <p>Waypoint is an advancement partner. We help plan, structure, write, build, track, and support the funding work, but we do not replace your donor relationships or make solicitation calls on your behalf.</p>
+          <p>Waypoint is an advancement partner. We help plan, structure, write, build, track, and support the funding work, but we do not replace your donor connections or make solicitation calls on your behalf.</p>
         </details>
 
         <details>
@@ -1278,7 +1560,7 @@
 
         <details>
           <summary>Do you solicit gifts directly?</summary>
-          <p>No. Your people keep the relationships and make the asks. Waypoint helps prepare, equip, and support them with structure, messaging, materials, and follow-through.</p>
+          <p>No. Your people keep the trust and make the asks. Waypoint helps prepare, equip, and support them with structure, messaging, materials, and follow-through.</p>
         </details>
 
         <details>
@@ -1290,6 +1572,11 @@
           <summary>Is this only for schools?</summary>
           <p>No. Waypoint works with nonprofits, private schools, and mission-driven organizations that need stronger support around funding, campaigns, stewardship, board participation, sponsorships, and follow-up.</p>
         </details>
+
+        <details>
+          <summary>How is Waypoint different from a general nonprofit consultant?</summary>
+          <p>Waypoint focuses on the advancement function behind funding. We support the planning, materials, board structure, stewardship, campaign rhythm, sponsor follow-up, and tracking that help funding work move across the year.</p>
+        </details>
       </div>
     </section>
 
@@ -1300,13 +1587,15 @@
         <h2>Waypoint helps plan, build, equip, and support the funding work behind the mission.</h2>
 
         <p class="section-intro">
-          Your people keep the relationships. We help make the work clearer, better prepared, and easier to manage.
+          Your people keep the trust. We help make the work clearer, better prepared, and easier to manage.
         </p>
 
-        <a class="button button-primary" href="#conversation">Schedule an Introductory Conversation</a>
+        <a class="button button-primary" href="#conversation">Talk Through Your Funding Needs</a>
       </div>
     </section>
   </main>
+
+  <a class="button button-primary sticky-cta" href="#conversation">Talk With Waypoint</a>
 
   <footer>
     <div class="container footer-inner">
@@ -1329,8 +1618,8 @@
       </div>
 
       <p class="footer-small">
-        <a class="button button-primary" href="mailto:roarkgaltrandazzo@gmail.com?subject=Waypoint%20Introductory%20Conversation&body=I%20would%20like%20to%20schedule%20an%20introductory%20conversation%20with%20Waypoint%20Mission%20Partners.%0A%0AName:%0AOrganization:%0ARole:%0AWhat%20kind%20of%20advancement%20support%20are%20you%20looking%20for:%0APreferred%20times%20for%20a%20call:">
-          Schedule an Introductory Conversation
+        <a class="button button-primary" href="mailto:roarkgaltrandazzo@gmail.com?subject=Waypoint%20Funding%20Needs%20Conversation&body=I%20would%20like%20to%20talk%20through%20our%20funding%20needs%20with%20Waypoint%20Mission%20Partners.%0A%0AName:%0AOrganization:%0ARole:%0AWhat%20kind%20of%20advancement%20support%20are%20you%20looking%20for:%0APreferred%20times%20for%20a%20call:">
+          Talk Through Your Funding Needs
         </a>
       </p>
     </div>
