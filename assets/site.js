@@ -1,1 +1,9 @@
-const menuButton=document.querySelector('.menu-toggle');const nav=document.querySelector('#main-navigation');if(menuButton&&nav){menuButton.addEventListener('click',()=>{const isOpen=nav.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(isOpen));});}document.querySelectorAll('form').forEach(form=>{form.addEventListener('submit',event=>{const action=form.getAttribute('action');if(!action){event.preventDefault();alert('This form needs to be connected to a form handler before launch.');}});});
+const menuButton=document.querySelector('.menu-toggle');const nav=document.querySelector('#main-navigation');
+if(menuButton&&nav){menuButton.addEventListener('click',()=>{const isOpen=nav.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(isOpen));});nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');menuButton.setAttribute('aria-expanded','false');}));}
+const pathMap={'/approach/':'approach','/who-we-help/':'audiences','/services/':'services','/resources/':'resources','/about/':'about','/contact/':'contact'};
+const targetId=pathMap[window.location.pathname];
+if(targetId&&!window.location.hash){requestAnimationFrame(()=>{const target=document.getElementById(targetId);if(target)target.scrollIntoView();});}
+const emailValue=['hello','waypointmissionpartners.com'].join(String.fromCharCode(64));
+document.querySelectorAll('[data-email-text]').forEach(el=>{el.textContent=emailValue;});
+document.querySelectorAll('[data-copy-email]').forEach(button=>{button.addEventListener('click',async event=>{event.preventDefault();try{await navigator.clipboard.writeText(emailValue);button.textContent='Email copied';}catch(error){button.textContent=emailValue;}});});
+document.querySelectorAll('[data-contact-form]').forEach(form=>{form.addEventListener('submit',event=>{event.preventDefault();const data=new FormData(form);const body=Array.from(data.entries()).map(([key,value])=>`${key}: ${value}`).join('%0D%0A');window.location.href=['mai','lto:'].join('')+emailValue+'?subject=Waypoint%20Mission%20Partners%20Inquiry&body='+body;});});
