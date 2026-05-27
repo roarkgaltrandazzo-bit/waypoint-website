@@ -278,7 +278,7 @@
               <input type="hidden" name="_subject" value="New Advancement Readiness Self-Check Submission" />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_autoresponse" value="Thank you for completing the Waypoint Advancement Readiness Self-Check. Your submission was received. Waypoint will follow up with a practical summary of what your answers suggest." />
+              <input type="hidden" name="_autoresponse" value="Thanks for completing the Waypoint Advancement Readiness Self-Check. We’ve got your answers and will follow up with a summary of what they suggest and a recommended next step." />
               <input type="hidden" id="scoreField" name="Advancement Readiness Score" />
               <input type="hidden" id="categoryField" name="Result Category" />
               <input type="hidden" id="recommendationField" name="Recommended Next Step" />
@@ -294,7 +294,7 @@
               <fieldset class="question-block"><legend>9. We track lead measures such as donor meetings, thank-you calls, introductions, follow-up, and stewardship touches.</legend><div class="scale-options"><label><input required type="radio" name="Lead measures are tracked" value="0 - Not in place" /> Not in place</label><label><input type="radio" name="Lead measures are tracked" value="1 - Inconsistent" /> Inconsistent</label><label><input type="radio" name="Lead measures are tracked" value="2 - Partly in place" /> Partly in place</label><label><input type="radio" name="Lead measures are tracked" value="3 - Clearly in place" /> Clearly in place</label></div></fieldset>
               <fieldset class="question-block"><legend>10. We have an annual advancement rhythm that includes cultivation, solicitation, stewardship, data review, and planning.</legend><div class="scale-options"><label><input required type="radio" name="Annual advancement rhythm exists" value="0 - Not in place" /> Not in place</label><label><input type="radio" name="Annual advancement rhythm exists" value="1 - Inconsistent" /> Inconsistent</label><label><input type="radio" name="Annual advancement rhythm exists" value="2 - Partly in place" /> Partly in place</label><label><input type="radio" name="Annual advancement rhythm exists" value="3 - Clearly in place" /> Clearly in place</label></div></fieldset>
               <fieldset class="question-block"><legend>11. Recurring giving or ongoing support is intentionally invited and stewarded.</legend><div class="scale-options"><label><input required type="radio" name="Recurring giving invited and stewarded" value="0 - Not in place" /> Not in place</label><label><input type="radio" name="Recurring giving invited and stewarded" value="1 - Inconsistent" /> Inconsistent</label><label><input type="radio" name="Recurring giving invited and stewarded" value="2 - Partly in place" /> Partly in place</label><label><input type="radio" name="Recurring giving invited and stewarded" value="3 - Clearly in place" /> Clearly in place</label></div></fieldset>
-              <fieldset class="question-block"><legend>12. Advancement does not depend too heavily on one person’s memory, urgency, or personal relationships.</legend><div class="scale-options"><label><input required type="radio" name="Advancement dependency risk" value="0 - Not in place" /> Not in place</label><label><input type="radio" name="Advancement dependency risk" value="1 - Inconsistent" /> Inconsistent</label><label><input type="radio" name="Advancement dependency risk" value="2 - Partly in place" /> Partly in place</label><label><input type="radio" name="Advancement dependency risk" value="3 - Clearly in place" /> Clearly in place</label></div></fieldset>
+              <fieldset class="question-block"><legend>12. Advancement doesn’t depend too heavily on one person’s memory, urgency, or personal relationships.</legend><div class="scale-options"><label><input required type="radio" name="Advancement dependency risk" value="0 - Not in place" /> Not in place</label><label><input type="radio" name="Advancement dependency risk" value="1 - Inconsistent" /> Inconsistent</label><label><input type="radio" name="Advancement dependency risk" value="2 - Partly in place" /> Partly in place</label><label><input type="radio" name="Advancement dependency risk" value="3 - Clearly in place" /> Clearly in place</label></div></fieldset>
 
               <fieldset class="question-block"><legend>What area feels most urgent right now?</legend><div class="choice-list"><label><input required type="radio" name="Most urgent area" value="Donor records" /> Donor records</label><label><input type="radio" name="Most urgent area" value="Stewardship" /> Stewardship</label><label><input type="radio" name="Most urgent area" value="Board participation" /> Board participation</label><label><input type="radio" name="Most urgent area" value="Event follow-up" /> Event follow-up</label><label><input type="radio" name="Most urgent area" value="Campaign planning" /> Campaign planning</label><label><input type="radio" name="Most urgent area" value="Annual rhythm" /> Annual rhythm</label><label><input type="radio" name="Most urgent area" value="Recurring giving" /> Recurring giving</label><label><input type="radio" name="Most urgent area" value="Not sure" /> Not sure</label></div></fieldset>
 
@@ -320,7 +320,7 @@
                   <div class="field-wrap" style="grid-column:1 / -1;"><label for="orgType">Organization Type</label><select class="assessment-select" id="orgType" name="Organization Type" required><option value="">Select one</option><option>Private school</option><option>Nonprofit</option><option>Faith-based organization</option><option>Other</option></select></div>
                 </div>
                 <div class="actions"><button class="button button-primary" type="submit">Send My Results</button></div>
-                <p class="privacy-note">No Jotform branding, no embedded third-party survey frame. This form lives on the Waypoint site.</p>
+                <p class="privacy-note">Your details stay with Waypoint and are only used to send your results and follow up.</p>
               </div>
             </form>
             <iframe class="hidden-frame" name="submissionFrame" title="Hidden submission frame"></iframe>
@@ -378,13 +378,13 @@
       if (score <= 36) {
         return {
           title: 'Emerging advancement system',
-          text: 'You have useful structure in place. The next step is usually tightening rhythm, ownership, follow-up, reporting, and repeatability so the system does not depend on a few individuals.',
+          text: 'You have useful structure in place. The next step is usually tightening rhythm, ownership, follow-up, and reporting so the system doesn’t depend on a few people.',
           recommendation: 'Use a targeted assessment to refine the system and make the next rhythm more consistent.'
         };
       }
       return {
         title: 'Strong foundation',
-        text: 'Your organization appears to have many core pieces in place. The opportunity is refinement: better reporting, stronger segmentation, clearer board visibility, and scalable stewardship.',
+        text: 'Your organization appears to have many core pieces in place. The next step is refinement: better reporting, stronger segmentation, clearer board visibility, and stewardship that holds up as you grow.',
         recommendation: 'Focus on refinement, reporting, and making the system easier to repeat.'
       };
     }

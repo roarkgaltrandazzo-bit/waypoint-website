@@ -1,7 +1,6 @@
-/ /wmp.html 200
-/approach/ /wmp.html 200
-/who-we-help/ /wmp.html 200
-/services/ /wmp.html 200
-/resources/ /wmp.html 200
-/about/ /wmp.html 200
-/contact/ /wmp.html 200
+/approach/      /services.html   301
+/who-we-help/   /index.html      301
+/services/      /services.html   301
+/resources/     /resources.html  301
+/about/         /about.html      301
+/contact/       /contact.html    301
