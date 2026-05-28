@@ -4,6 +4,6 @@
 /resources/     /resources.html  301
 /about/         /about.html      301
 /contact/       /contact.html    301
-/proof/         /proof.html      301
-/case-studies/  /proof.html      301
-/case-study/    /proof.html      301
+/proof.html     /proof/          301
+/case-studies/  /proof/          301
+/case-study/    /proof/          301
