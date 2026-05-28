@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter+Tight:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=assessment-rebuild-1" />
+  <link rel="stylesheet" href="/styles.css?v=assessment-divs-2" />
   <style>
     .assessment-hero { padding: 82px 0 64px; background: linear-gradient(135deg, var(--navy-deep), var(--forest)); color: var(--paper); }
     .assessment-hero h1 { color: var(--white); max-width: 920px; }
@@ -16,16 +16,13 @@
     .assessment-wrap { background: var(--paper); padding: 64px 0 88px; }
     .assessment-layout { width: min(980px, calc(100% - 48px)); margin: 0 auto; }
     .assessment-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-bottom: 28px; }
-    .assessment-card { background: var(--white); border: 1px solid var(--rule); border-radius: 28px; padding: 28px; box-shadow: var(--shadow-soft); }
+    .assessment-card, .question-card { background: var(--white); border: 1px solid var(--rule); border-radius: 28px; padding: 28px; box-shadow: var(--shadow-soft); }
     .assessment-card h3 { margin-bottom: 12px; }
     .readiness-form { display: grid; gap: 18px; }
-    .question-block { border: 1px solid var(--rule); border-radius: 26px; background: var(--white); padding: 28px; box-shadow: 0 10px 26px rgba(12, 34, 60, .06); }
-    .question-block legend { display: block; width: 100%; padding: 0; margin: 0 0 18px; color: var(--navy-deep); font-size: 20px; line-height: 1.3; font-weight: 900; }
-    .scale-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .question-title, .question-label { display: block; width: 100%; margin: 0 0 18px; padding: 0; color: var(--navy-deep); font-size: 20px; line-height: 1.3; font-weight: 900; }
+    .scale-options, .choice-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
     .scale-options label, .choice-list label { display: flex; align-items: center; gap: 10px; min-height: 56px; padding: 14px 16px; border: 1px solid var(--rule); border-radius: 16px; background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.25; font-weight: 800; cursor: pointer; }
     .scale-options input, .choice-list input { flex: 0 0 auto; accent-color: var(--gold); }
-    .choice-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-    .question-label { display: block; margin-bottom: 10px; color: var(--navy-deep); font-size: 20px; line-height: 1.3; font-weight: 900; }
     .assessment-input, .assessment-textarea, .assessment-select { width: 100%; border: 1px solid var(--rule); border-radius: 16px; padding: 14px 15px; font: inherit; background: var(--paper); color: var(--ink); }
     .assessment-textarea { min-height: 140px; resize: vertical; }
     .transition-box { background: linear-gradient(135deg, var(--navy-deep), var(--navy)); border-radius: 28px; padding: 30px; color: rgba(255,250,241,.88); box-shadow: var(--shadow-soft); }
@@ -37,76 +34,51 @@
     .hidden-frame { display: none; width: 0; height: 0; border: 0; }
     .result-panel { display: none; margin-top: 28px; background: var(--cream); border: 1px solid var(--rule); border-radius: 30px; padding: 30px; box-shadow: var(--shadow-soft); }
     .result-score { display: inline-flex; align-items: center; justify-content: center; min-width: 96px; min-height: 96px; padding: 18px; border-radius: 999px; background: var(--gold); color: var(--navy-deep); font-size: 30px; font-weight: 900; margin-bottom: 16px; }
-    @media (max-width: 760px) { .assessment-layout { width: min(100% - 32px, 980px); } .assessment-intro-grid, .scale-options, .choice-list, .contact-grid { grid-template-columns: 1fr; } .question-block, .assessment-card, .transition-box { padding: 22px; } }
+    @media (max-width: 760px) { .assessment-layout { width: min(100% - 32px, 980px); } .assessment-intro-grid, .scale-options, .choice-list, .contact-grid { grid-template-columns: 1fr; } .question-card, .assessment-card, .transition-box { padding: 22px; } }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="container-wide"><div class="header-inner">
-      <a class="brand" href="/" aria-label="Waypoint Mission Partners home"><img src="/WMP%20Logo.png" alt="Waypoint Mission Partners" /></a>
-      <nav class="nav" aria-label="Primary navigation"><a href="/about.html">About Sarina</a><a href="/services.html">Services</a><a href="/proof/">Proof</a><a href="/resources.html">Resources</a><a href="/contact.html">Contact</a><a class="nav-cta" href="/assessment.html">Take the Self-Check</a></nav>
-      <details class="mobile-menu"><summary>Menu</summary><nav class="mobile-nav-panel" aria-label="Mobile navigation"><a href="/about.html">About Sarina</a><a href="/services.html">Services</a><a href="/proof/">Proof</a><a href="/resources.html">Resources</a><a href="/contact.html">Contact</a><a href="/assessment.html">Take the Self-Check</a></nav></details>
-    </div></div>
-  </header>
+  <header class="site-header"><div class="container-wide"><div class="header-inner"><a class="brand" href="/" aria-label="Waypoint Mission Partners home"><img src="/WMP%20Logo.png" alt="Waypoint Mission Partners" /></a><nav class="nav" aria-label="Primary navigation"><a href="/about.html">About Sarina</a><a href="/services.html">Services</a><a href="/proof/">Proof</a><a href="/resources.html">Resources</a><a href="/contact.html">Contact</a><a class="nav-cta" href="/assessment.html">Take the Self-Check</a></nav><details class="mobile-menu"><summary>Menu</summary><nav class="mobile-nav-panel" aria-label="Mobile navigation"><a href="/about.html">About Sarina</a><a href="/services.html">Services</a><a href="/proof/">Proof</a><a href="/resources.html">Resources</a><a href="/contact.html">Contact</a><a href="/assessment.html">Take the Self-Check</a></nav></details></div></div></header>
 
   <main id="main">
-    <section class="assessment-hero">
-      <div class="container">
-        <div class="kicker">Interactive assessment</div>
-        <h1>Advancement Readiness Self-Check</h1>
-        <p>This self-check helps you see whether your fundraising activity has enough advancement structure behind it. Answer the questions first, then share where we should send your results.</p>
-      </div>
-    </section>
-
-    <section class="assessment-wrap">
-      <div class="assessment-layout">
-        <div class="assessment-intro-grid">
-          <div class="assessment-card"><span class="label">How scoring works</span><h3>Use the answer that best reflects your current reality.</h3><ul class="check-list"><li>Not in place = 0</li><li>Inconsistent = 1</li><li>Partly in place = 2</li><li>Clearly in place = 3</li></ul></div>
-          <div class="assessment-card"><span class="label">What this measures</span><p>Donor records, stewardship, board participation, campaign planning, event follow-up, lead measures, annual rhythm, recurring giving, and dependency risk.</p></div>
-        </div>
-
-        <form class="readiness-form" id="readinessForm" action="https://formsubmit.co/hello@waypointmissionpartners.com" method="POST" target="submissionFrame">
-          <input type="hidden" name="_subject" value="New Advancement Readiness Self-Check Submission" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_autoresponse" value="Thanks for completing the Waypoint Advancement Readiness Self-Check. We’ve got your answers and will follow up with a summary of what they suggest and a recommended next step." />
-          <input type="hidden" id="scoreField" name="Advancement Readiness Score" />
-          <input type="hidden" id="categoryField" name="Result Category" />
-          <input type="hidden" id="recommendationField" name="Recommended Next Step" />
-
-          <fieldset class="question-block"><legend>1. Donor records are current, usable, and owned by someone.</legend><div class="scale-options"><label><input required type="radio" name="Donor records are current usable and owned" value="0 - Not in place" /> Not in place</label><label><input type="radio" name="Donor records are current usable and owned" value="1 - Inconsistent" /> Inconsistent</label><label><input type="radio" name="Donor records are current usable and owned" value="2 - Partly in place" /> Partly in place</label><label><input type="radio" name="Donor records are current usable and owned" value="3 - Clearly in place" /> Clearly in place</label></div></fieldset>
-          <fieldset class="question-block"><legend>2. We know who gave, who stopped giving, who increased giving, and who needs follow-up.</legend><div class="scale-options"><label><input required type="radio" name="We know donor movement and follow up needs" value="0 - Not in place" /> Not in place</label><label><input type="radio" name="We know donor movement and follow up needs" value="1 - Inconsistent" /> Inconsistent</label><label><input type="radio" name="We know donor movement and follow up needs" value="2 - Partly in place" /> Partly in place</label><label><input type="radio" name="We know donor movement and follow up needs" value="3 - Clearly in place" /> Clearly in place</label></div></fieldset>
-          <fieldset class="question-block"><legend>3. First-time donors receive timely and personal stewardship after they give.</legend><div class="scale-options"><label><input required type="radio" name="First time donor stewardship" value="0 - Not in place" /> Not in place</label><label><input type="radio" name="First time donor stewardship" value="1 - Inconsistent" /> Inconsistent</label><label><input type="radio" name="First time donor stewardship" value="2 - Partly in place" /> Partly in place</label><label><input type="radio" name="First time donor stewardship" value="3 - Clearly in place" /> Clearly in place</label></div></fieldset>
-          <fieldset class="question-block"><legend>4. Donors hear from us between asks, not only when we need money.</legend><div class="scale-options"><label><input required type="radio" name="Donor communication between asks" value="0 - Not in place" /> Not in place</label><label><input type="radio" name="Donor communication between asks" value="1 - Inconsistent" /> Inconsistent</label><label><input type="radio" name="Donor communication between asks" value="2 - Partly in place" /> Partly in place</label><label><input type="radio" name="Donor communication between asks" value="3 - Clearly in place" /> Clearly in place</label></div></fieldset>
-          <fieldset class="question-block"><legend>5. Campaigns and appeals are planned early enough to prepare lists, messages, board involvement, and follow-up.</legend><div class="scale-options"><label><input required type="radio" name="Campaigns planned early enough" value="0 - Not in place" /> Not in place</label><label><input type="radio" name="Campaigns planned early enough" value="1 - Inconsistent" /> Inconsistent</label><label><input type="radio" name="Campaigns planned early enough" value="2 - Partly in place" /> Partly in place</label><label><input type="radio" name="Campaigns planned early enough" value="3 - Clearly in place" /> Clearly in place</label></div></fieldset>
-          <fieldset class="question-block"><legend>6. Events have a clear purpose: cultivation, solicitation, stewardship, or a defined mix.</legend><div class="scale-options"><label><input required type="radio" name="Events have a clear advancement purpose" value="0 - Not in place" /> Not in place</label><label><input type="radio" name="Events have a clear advancement purpose" value="1 - Inconsistent" /> Inconsistent</label><label><input type="radio" name="Events have a clear advancement purpose" value="2 - Partly in place" /> Partly in place</label><label><input type="radio" name="Events have a clear advancement purpose" value="3 - Clearly in place" /> Clearly in place</label></div></fieldset>
-          <fieldset class="question-block"><legend>7. Event attendees, sponsors, and first-time donors receive intentional follow-up after the event.</legend><div class="scale-options"><label><input required type="radio" name="Event attendee sponsor and first time donor follow up" value="0 - Not in place" /> Not in place</label><label><input type="radio" name="Event attendee sponsor and first time donor follow up" value="1 - Inconsistent" /> Inconsistent</label><label><input type="radio" name="Event attendee sponsor and first time donor follow up" value="2 - Partly in place" /> Partly in place</label><label><input type="radio" name="Event attendee sponsor and first time donor follow up" value="3 - Clearly in place" /> Clearly in place</label></div></fieldset>
-          <fieldset class="question-block"><legend>8. Board members have clear advancement roles they can realistically carry.</legend><div class="scale-options"><label><input required type="radio" name="Board members have clear advancement roles" value="0 - Not in place" /> Not in place</label><label><input type="radio" name="Board members have clear advancement roles" value="1 - Inconsistent" /> Inconsistent</label><label><input type="radio" name="Board members have clear advancement roles" value="2 - Partly in place" /> Partly in place</label><label><input type="radio" name="Board members have clear advancement roles" value="3 - Clearly in place" /> Clearly in place</label></div></fieldset>
-          <fieldset class="question-block"><legend>9. We track lead measures such as donor meetings, thank-you calls, introductions, follow-up, and stewardship touches.</legend><div class="scale-options"><label><input required type="radio" name="Lead measures are tracked" value="0 - Not in place" /> Not in place</label><label><input type="radio" name="Lead measures are tracked" value="1 - Inconsistent" /> Inconsistent</label><label><input type="radio" name="Lead measures are tracked" value="2 - Partly in place" /> Partly in place</label><label><input type="radio" name="Lead measures are tracked" value="3 - Clearly in place" /> Clearly in place</label></div></fieldset>
-          <fieldset class="question-block"><legend>10. We have an annual advancement rhythm that includes cultivation, solicitation, stewardship, data review, and planning.</legend><div class="scale-options"><label><input required type="radio" name="Annual advancement rhythm exists" value="0 - Not in place" /> Not in place</label><label><input type="radio" name="Annual advancement rhythm exists" value="1 - Inconsistent" /> Inconsistent</label><label><input type="radio" name="Annual advancement rhythm exists" value="2 - Partly in place" /> Partly in place</label><label><input type="radio" name="Annual advancement rhythm exists" value="3 - Clearly in place" /> Clearly in place</label></div></fieldset>
-          <fieldset class="question-block"><legend>11. Recurring giving or ongoing support is intentionally invited and stewarded.</legend><div class="scale-options"><label><input required type="radio" name="Recurring giving invited and stewarded" value="0 - Not in place" /> Not in place</label><label><input type="radio" name="Recurring giving invited and stewarded" value="1 - Inconsistent" /> Inconsistent</label><label><input type="radio" name="Recurring giving invited and stewarded" value="2 - Partly in place" /> Partly in place</label><label><input type="radio" name="Recurring giving invited and stewarded" value="3 - Clearly in place" /> Clearly in place</label></div></fieldset>
-          <fieldset class="question-block"><legend>12. Advancement doesn’t depend too heavily on one person’s memory, urgency, or personal relationships.</legend><div class="scale-options"><label><input required type="radio" name="Advancement dependency risk" value="0 - Not in place" /> Not in place</label><label><input type="radio" name="Advancement dependency risk" value="1 - Inconsistent" /> Inconsistent</label><label><input type="radio" name="Advancement dependency risk" value="2 - Partly in place" /> Partly in place</label><label><input type="radio" name="Advancement dependency risk" value="3 - Clearly in place" /> Clearly in place</label></div></fieldset>
-
-          <fieldset class="question-block"><legend>What area feels most urgent right now?</legend><div class="choice-list"><label><input required type="radio" name="Most urgent area" value="Donor records" /> Donor records</label><label><input type="radio" name="Most urgent area" value="Stewardship" /> Stewardship</label><label><input type="radio" name="Most urgent area" value="Board participation" /> Board participation</label><label><input type="radio" name="Most urgent area" value="Event follow-up" /> Event follow-up</label><label><input type="radio" name="Most urgent area" value="Campaign planning" /> Campaign planning</label><label><input type="radio" name="Most urgent area" value="Annual rhythm" /> Annual rhythm</label><label><input type="radio" name="Most urgent area" value="Recurring giving" /> Recurring giving</label><label><input type="radio" name="Most urgent area" value="Not sure" /> Not sure</label></div></fieldset>
-
-          <div class="question-block"><label class="question-label" for="context">What context would help us understand your advancement situation?</label><textarea class="assessment-textarea" id="context" name="Additional context" placeholder="Example: We just finished an event, our board wants to help but needs structure, or our donors hear from us mostly during campaign season."></textarea></div>
-
-          <div class="transition-box"><h2>You’ve completed the self-check.</h2><p>Share where we should send your results, and Waypoint will send a practical summary of what your answers suggest.</p></div>
-
-          <div class="assessment-card"><span class="label">Contact information</span><div class="contact-grid"><div class="field-wrap"><label for="firstName">First Name</label><input class="assessment-input" id="firstName" name="First Name" required /></div><div class="field-wrap"><label for="lastName">Last Name</label><input class="assessment-input" id="lastName" name="Last Name" required /></div><div class="field-wrap"><label for="email">Email</label><input class="assessment-input" id="email" name="email" type="email" required /></div><div class="field-wrap"><label for="phone">Phone</label><input class="assessment-input" id="phone" name="Phone" /></div><div class="field-wrap"><label for="orgName">Organization Name</label><input class="assessment-input" id="orgName" name="Organization Name" required /></div><div class="field-wrap"><label for="role">Role or Title</label><input class="assessment-input" id="role" name="Role or Title" required /></div><div class="field-wrap field-full"><label for="orgType">Organization Type</label><select class="assessment-select" id="orgType" name="Organization Type" required><option value="">Select one</option><option>Private school</option><option>Nonprofit</option><option>Faith-based organization</option><option>Other</option></select></div></div><div class="actions"><button class="button button-primary" type="submit">Send My Results</button></div><p class="privacy-note">Your details stay with Waypoint and are only used to send your results and follow up.</p></div>
-        </form>
-        <iframe class="hidden-frame" name="submissionFrame" title="Hidden submission frame"></iframe>
-
-        <div class="result-panel" id="resultPanel" aria-live="polite"><div class="result-score" id="resultScore">0/36</div><span class="label">Your readiness category</span><h2 id="resultTitle">Result category</h2><p id="resultText"></p><div class="actions"><a class="button button-secondary" href="/contact.html">Talk Through the Results</a><a class="button button-ghost" href="/services.html">Explore Services</a></div></div>
-      </div>
-    </section>
+    <section class="assessment-hero"><div class="container"><div class="kicker">Interactive assessment</div><h1>Advancement Readiness Self-Check</h1><p>This self-check helps you see whether your fundraising activity has enough advancement structure behind it. Answer the questions first, then share where we should send your results.</p></div></section>
+    <section class="assessment-wrap"><div class="assessment-layout">
+      <div class="assessment-intro-grid"><div class="assessment-card"><span class="label">How scoring works</span><h3>Use the answer that best reflects your current reality.</h3><ul class="check-list"><li>Not in place = 0</li><li>Inconsistent = 1</li><li>Partly in place = 2</li><li>Clearly in place = 3</li></ul></div><div class="assessment-card"><span class="label">What this measures</span><p>Donor records, stewardship, board participation, campaign planning, event follow-up, lead measures, annual rhythm, recurring giving, and dependency risk.</p></div></div>
+      <form class="readiness-form" id="readinessForm" action="https://formsubmit.co/hello@waypointmissionpartners.com" method="POST" target="submissionFrame">
+        <input type="hidden" name="_subject" value="New Advancement Readiness Self-Check Submission" /><input type="hidden" name="_captcha" value="false" /><input type="hidden" name="_template" value="table" /><input type="hidden" name="_autoresponse" value="Thanks for completing the Waypoint Advancement Readiness Self-Check. We’ve got your answers and will follow up with a summary of what they suggest and a recommended next step." /><input type="hidden" id="scoreField" name="Advancement Readiness Score" /><input type="hidden" id="categoryField" name="Result Category" /><input type="hidden" id="recommendationField" name="Recommended Next Step" />
+        <div id="questions"></div>
+        <div class="question-card"><p class="question-title">What area feels most urgent right now?</p><div class="choice-list" id="urgentOptions"></div></div>
+        <div class="question-card"><label class="question-label" for="context">What context would help us understand your advancement situation?</label><textarea class="assessment-textarea" id="context" name="Additional context" placeholder="Example: We just finished an event, our board wants to help but needs structure, or our donors hear from us mostly during campaign season."></textarea></div>
+        <div class="transition-box"><h2>You’ve completed the self-check.</h2><p>Share where we should send your results, and Waypoint will send a practical summary of what your answers suggest.</p></div>
+        <div class="assessment-card"><span class="label">Contact information</span><div class="contact-grid"><div class="field-wrap"><label for="firstName">First Name</label><input class="assessment-input" id="firstName" name="First Name" required /></div><div class="field-wrap"><label for="lastName">Last Name</label><input class="assessment-input" id="lastName" name="Last Name" required /></div><div class="field-wrap"><label for="email">Email</label><input class="assessment-input" id="email" name="email" type="email" required /></div><div class="field-wrap"><label for="phone">Phone</label><input class="assessment-input" id="phone" name="Phone" /></div><div class="field-wrap"><label for="orgName">Organization Name</label><input class="assessment-input" id="orgName" name="Organization Name" required /></div><div class="field-wrap"><label for="role">Role or Title</label><input class="assessment-input" id="role" name="Role or Title" required /></div><div class="field-wrap field-full"><label for="orgType">Organization Type</label><select class="assessment-select" id="orgType" name="Organization Type" required><option value="">Select one</option><option>Private school</option><option>Nonprofit</option><option>Faith-based organization</option><option>Other</option></select></div></div><div class="actions"><button class="button button-primary" type="submit">Send My Results</button></div><p class="privacy-note">Your details stay with Waypoint and are only used to send your results and follow up.</p></div>
+      </form>
+      <iframe class="hidden-frame" name="submissionFrame" title="Hidden submission frame"></iframe><div class="result-panel" id="resultPanel" aria-live="polite"><div class="result-score" id="resultScore">0/36</div><span class="label">Your readiness category</span><h2 id="resultTitle">Result category</h2><p id="resultText"></p><div class="actions"><a class="button button-secondary" href="/contact.html">Talk Through the Results</a><a class="button button-ghost" href="/services.html">Explore Services</a></div></div>
+    </div></section>
   </main>
-
   <footer class="site-footer"><div class="container"><div class="footer-grid"><div><a class="footer-logo" href="/"><img src="/WMP%20Logo.png" alt="Waypoint Mission Partners" /></a><p>Advancement system support for private schools, nonprofits, and faith-based organizations.</p></div><div><h3 class="footer-heading">Navigate</h3><div class="footer-links"><a href="/about.html">About Sarina</a><a href="/services.html">Services</a><a href="/proof/">Proof</a><a href="/resources.html">Resources</a><a href="/contact.html">Contact</a></div></div><div><h3 class="footer-heading">Contact</h3><div class="footer-links"><a href="mailto:hello@waypointmissionpartners.com">hello@waypointmissionpartners.com</a><a href="/contact.html">Schedule a fit call</a></div></div></div><div class="footer-bottom"><p>&copy; <span data-year></span> Waypoint Mission Partners. All rights reserved.</p></div></div></footer>
-
-  <script src="/script.js?v=assessment-rebuild-1"></script>
+  <script src="/script.js?v=assessment-divs-2"></script>
   <script>
+    const questions = [
+      ['Donor records are current, usable, and owned by someone.', 'Donor records are current usable and owned'],
+      ['We know who gave, who stopped giving, who increased giving, and who needs follow-up.', 'We know donor movement and follow up needs'],
+      ['First-time donors receive timely and personal stewardship after they give.', 'First time donor stewardship'],
+      ['Donors hear from us between asks, not only when we need money.', 'Donor communication between asks'],
+      ['Campaigns and appeals are planned early enough to prepare lists, messages, board involvement, and follow-up.', 'Campaigns planned early enough'],
+      ['Events have a clear purpose: cultivation, solicitation, stewardship, or a defined mix.', 'Events have a clear advancement purpose'],
+      ['Event attendees, sponsors, and first-time donors receive intentional follow-up after the event.', 'Event attendee sponsor and first time donor follow up'],
+      ['Board members have clear advancement roles they can realistically carry.', 'Board members have clear advancement roles'],
+      ['We track lead measures such as donor meetings, thank-you calls, introductions, follow-up, and stewardship touches.', 'Lead measures are tracked'],
+      ['We have an annual advancement rhythm that includes cultivation, solicitation, stewardship, data review, and planning.', 'Annual advancement rhythm exists'],
+      ['Recurring giving or ongoing support is intentionally invited and stewarded.', 'Recurring giving invited and stewarded'],
+      ['Advancement does not depend too heavily on one person’s memory, urgency, or personal relationships.', 'Advancement dependency risk']
+    ];
+    const scale = [['0 - Not in place','Not in place'], ['1 - Inconsistent','Inconsistent'], ['2 - Partly in place','Partly in place'], ['3 - Clearly in place','Clearly in place']];
+    const questionsEl = document.getElementById('questions');
+    questionsEl.innerHTML = questions.map((q, i) => `<div class="question-card"><p class="question-title">${i + 1}. ${q[0]}</p><div class="scale-options">${scale.map((s, index) => `<label><input ${index === 0 ? 'required' : ''} type="radio" name="${q[1]}" value="${s[0]}" /> ${s[1]}</label>`).join('')}</div></div>`).join('');
+    const urgent = ['Donor records','Stewardship','Board participation','Event follow-up','Campaign planning','Annual rhythm','Recurring giving','Not sure'];
+    document.getElementById('urgentOptions').innerHTML = urgent.map((item, index) => `<label><input ${index === 0 ? 'required' : ''} type="radio" name="Most urgent area" value="${item}" /> ${item}</label>`).join('');
+
     const form = document.getElementById('readinessForm');
     const resultPanel = document.getElementById('resultPanel');
     const resultScore = document.getElementById('resultScore');
@@ -120,16 +92,7 @@
       if (score <= 24) return { title: 'Partial advancement structure', text: 'Some pieces are working, but the system likely has gaps that make funding feel unpredictable. Stewardship, board clarity, donor records, event follow-up, or annual rhythm may need sharper ownership.', recommendation: 'Review the lowest-scoring areas and build a 90-day improvement plan.' };
       return { title: 'Emerging advancement system', text: 'You have useful structure in place. The next step is usually tightening rhythm, ownership, follow-up, and reporting so the system doesn’t depend on a few people.', recommendation: 'Use a targeted assessment to refine the system and make the next rhythm more consistent.' };
     }
-    form.addEventListener('submit', function () {
-      const checked = form.querySelectorAll('input[type="radio"]:checked');
-      let score = 0;
-      checked.forEach((input) => { const value = parseInt(input.value, 10); if (!Number.isNaN(value)) score += value; });
-      const result = getResult(score);
-      scoreField.value = score + '/36';
-      categoryField.value = result.title;
-      recommendationField.value = result.recommendation;
-      window.setTimeout(() => { resultScore.textContent = score + '/36'; resultTitle.textContent = result.title; resultText.textContent = result.text; resultPanel.style.display = 'block'; resultPanel.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 700);
-    });
+    form.addEventListener('submit', function () { const checked = form.querySelectorAll('input[type="radio"]:checked'); let score = 0; checked.forEach((input) => { const value = parseInt(input.value, 10); if (!Number.isNaN(value)) score += value; }); const result = getResult(score); scoreField.value = score + '/36'; categoryField.value = result.title; recommendationField.value = result.recommendation; window.setTimeout(() => { resultScore.textContent = score + '/36'; resultTitle.textContent = result.title; resultText.textContent = result.text; resultPanel.style.display = 'block'; resultPanel.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 700); });
   </script>
 </body>
 </html>
