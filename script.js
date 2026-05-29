@@ -1,7 +1,7 @@
 const year = document.querySelector('[data-year]');
 if (year) year.textContent = new Date().getFullYear();
 
-const sarinaHeadshotPath = '/assets/photos/sarina-randazzo-headshot.jpg?v=sarina-headshot-2026-05-29';
+const sarinaHeadshotPath = '/ChatGPT%20Image%20May%2029,%202026,%2008_45_26%20AM.png?v=sarina-exact-headshot-1';
 
 document.querySelectorAll('a[href="/"], a[href="/index.html"], a[href="index.html"], a[href="https://waypointmissionpartners.com"], a[href="https://waypointmissionpartners.com/"], a[href="https://www.waypointmissionpartners.com"], a[href="https://www.waypointmissionpartners.com/"]').forEach((link) => {
   link.setAttribute('href', '/home/');
@@ -26,8 +26,8 @@ document.querySelectorAll('.mobile-nav-panel a').forEach((link) => {
   });
 });
 
-// Any Sarina image, old or new, should resolve to the single repo-hosted asset.
-document.querySelectorAll('.headshot-wrap img, img[src*="Randazzo_Sarina"], img[src*="Sarina_Randazzo_Headshot"], img[src*="sarina-randazzo-headshot"], img[alt*="Sarina Randazzo"]').forEach((img) => {
+// Single source of truth for Sarina photos.
+document.querySelectorAll('.headshot-wrap img, img[src*="Randazzo_Sarina"], img[src*="Sarina_Randazzo_Headshot"], img[src*="sarina-randazzo-headshot"], img[src*="ChatGPT%20Image%20May%2029"], img[src*="ChatGPT Image May 29"], img[alt*="Sarina Randazzo"]').forEach((img) => {
   img.src = sarinaHeadshotPath;
   img.removeAttribute('srcset');
   img.style.objectFit = 'cover';
