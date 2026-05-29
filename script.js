@@ -2,6 +2,7 @@ const year = document.querySelector('[data-year]');
 if (year) year.textContent = new Date().getFullYear();
 
 const sarinaHeadshotPath = '/ChatGPT%20Image%20May%2029,%202026,%2008_45_26%20AM.png?v=sarina-exact-headshot-1';
+const advancementRhythmPath = '/WMP%20Advancement%20Rhythm.png?v=hero-rhythm-aboutus-2';
 
 document.querySelectorAll('a[href="/"], a[href="/index.html"], a[href="index.html"], a[href="https://waypointmissionpartners.com"], a[href="https://waypointmissionpartners.com/"], a[href="https://www.waypointmissionpartners.com"], a[href="https://www.waypointmissionpartners.com/"]').forEach((link) => {
   link.setAttribute('href', '/home/');
@@ -9,6 +10,13 @@ document.querySelectorAll('a[href="/"], a[href="/index.html"], a[href="index.htm
 
 document.querySelectorAll('a[href="/index.html#proof"], a[href="index.html#proof"], a[href="#proof"], a[href="/proof.html"]').forEach((link) => {
   link.setAttribute('href', '/proof/');
+});
+
+// Keep the nav label consistent across every page, including older cached pages.
+document.querySelectorAll('a, .footer-links a, .mobile-nav-panel a').forEach((link) => {
+  if (link.textContent.trim() === 'About Sarina') {
+    link.textContent = 'About Us';
+  }
 });
 
 if ((window.location.pathname === '/' || window.location.pathname.endsWith('/index.html')) && window.location.hash === '#proof') {
@@ -33,6 +41,13 @@ document.querySelectorAll('.headshot-wrap img, img[src*="Randazzo_Sarina"], img[
   img.style.objectFit = 'cover';
   img.style.objectPosition = 'center top';
 });
+
+// Replace any legacy homepage hero rhythm panel with the finished visual.
+if (document.body && document.querySelector('.hero .hero-grid')) {
+  document.querySelectorAll('.hero .process-panel').forEach((panel) => {
+    panel.outerHTML = `<div class="hero-visual"><img src="${advancementRhythmPath}" alt="Waypoint Advancement Rhythm: Cultivation, Solicitation, and Stewardship" /></div>`;
+  });
+}
 
 // Remove broken SVG-wrapped photo panels from request pages and replace with reliable native content.
 document.querySelectorAll('img[src*="/assets/photos/team-discussion-photo.svg"]').forEach((img) => {
