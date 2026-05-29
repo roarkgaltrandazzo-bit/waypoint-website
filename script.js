@@ -2,7 +2,7 @@ const year = document.querySelector('[data-year]');
 if (year) year.textContent = new Date().getFullYear();
 
 const sarinaHeadshotPath = '/ChatGPT%20Image%20May%2029,%202026,%2008_45_26%20AM.png?v=sarina-exact-headshot-1';
-const advancementRhythmPath = '/WMP%20Advancement%20Rhythm.png?v=hero-rhythm-aboutus-2';
+const advancementRhythmPath = '/WMP%20Advancement%20Rhythm.png?v=hero-rhythm-aboutus-3';
 
 document.querySelectorAll('a[href="/"], a[href="/index.html"], a[href="index.html"], a[href="https://waypointmissionpartners.com"], a[href="https://waypointmissionpartners.com/"], a[href="https://www.waypointmissionpartners.com"], a[href="https://www.waypointmissionpartners.com/"]').forEach((link) => {
   link.setAttribute('href', '/home/');
@@ -12,7 +12,7 @@ document.querySelectorAll('a[href="/index.html#proof"], a[href="index.html#proof
   link.setAttribute('href', '/proof/');
 });
 
-// Keep the nav label consistent across every page, including older cached pages.
+// Keep nav language consistent across all pages, including older static files.
 document.querySelectorAll('a, .footer-links a, .mobile-nav-panel a').forEach((link) => {
   if (link.textContent.trim() === 'About Sarina') {
     link.textContent = 'About Us';
@@ -42,12 +42,20 @@ document.querySelectorAll('.headshot-wrap img, img[src*="Randazzo_Sarina"], img[
   img.style.objectPosition = 'center top';
 });
 
-// Replace any legacy homepage hero rhythm panel with the finished visual.
-if (document.body && document.querySelector('.hero .hero-grid')) {
-  document.querySelectorAll('.hero .process-panel').forEach((panel) => {
-    panel.outerHTML = `<div class="hero-visual"><img src="${advancementRhythmPath}" alt="Waypoint Advancement Rhythm: Cultivation, Solicitation, and Stewardship" /></div>`;
-  });
-}
+// Replace the old homepage text rhythm card with the finished visual.
+document.querySelectorAll('.hero .process-panel').forEach((panel) => {
+  panel.outerHTML = `<div class="hero-visual"><img src="${advancementRhythmPath}" alt="Waypoint Advancement Rhythm: Cultivation, Solicitation, and Stewardship" /></div>`;
+});
+
+// Hero visual sizing override. Keeps the image from looking undersized next to the copy block.
+const visualStyle = document.createElement('style');
+visualStyle.textContent = `
+  .hero-grid { grid-template-columns: minmax(0, .86fr) minmax(520px, 1.14fr) !important; gap: clamp(36px, 5vw, 72px) !important; }
+  .hero-visual { padding: 10px !important; border-radius: 30px !important; }
+  .hero-visual img { width: 100% !important; min-height: 430px !important; object-fit: contain !important; border-radius: 24px !important; }
+  @media (max-width: 1120px) { .hero-grid { grid-template-columns: 1fr !important; } .hero-visual img { min-height: 0 !important; } }
+`;
+document.head.appendChild(visualStyle);
 
 // Remove broken SVG-wrapped photo panels from request pages and replace with reliable native content.
 document.querySelectorAll('img[src*="/assets/photos/team-discussion-photo.svg"]').forEach((img) => {
@@ -58,19 +66,9 @@ document.querySelectorAll('img[src*="/assets/photos/team-discussion-photo.svg"]'
 });
 
 function replaceBrokenGraphics() {
-  const processMarkup = `
-    <div class="process-panel" aria-label="Advancement rhythm">
-      <h3>Advancement rhythm</h3>
-      <div class="process-step"><strong>Cultivation</strong><span>Build trust before the ask.</span></div>
-      <div class="process-arrow">↓</div>
-      <div class="process-step"><strong>Solicitation</strong><span>Make the right ask at the right time.</span></div>
-      <div class="process-arrow">↓</div>
-      <div class="process-step"><strong>Stewardship</strong><span>Show donors what happened because they gave.</span></div>
-    </div>`;
-
   document.querySelectorAll('img[src$="/assets/advancement-cycle.svg"], img[src="/assets/advancement-cycle.svg"]').forEach((img) => {
     const wrapper = img.closest('.hero-visual, .visual-panel, .mockup-panel') || img;
-    wrapper.outerHTML = processMarkup;
+    wrapper.outerHTML = `<div class="hero-visual"><img src="${advancementRhythmPath}" alt="Waypoint Advancement Rhythm: Cultivation, Solicitation, and Stewardship" /></div>`;
   });
 }
 
